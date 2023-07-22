@@ -1,5 +1,5 @@
 import './globals.css'
-import { Rufina, Lato } from 'next/font/google'
+import { Rufina } from 'next/font/google'
 
 const inter = Rufina({ subsets: ['latin'], weight: '400' })
 

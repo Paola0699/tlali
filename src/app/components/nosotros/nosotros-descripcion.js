@@ -1,10 +1,7 @@
 import { useTheme } from "@emotion/react";
-import { Box, Typography, useMediaQuery } from "@mui/material";
-import { Lato, Rufina } from "next/font/google";
+import { Typography, useMediaQuery } from "@mui/material";
 import React from "react";
 
-const rufina = Rufina({ subsets: ["latin"], weight: "400" });
-const lato = Lato({ subsets: ["latin"], weight: "400" });
 
 const NosotrosDescripcion = ({ titulo, descripcion }) => {
   const theme = useTheme();
@@ -13,10 +10,10 @@ const NosotrosDescripcion = ({ titulo, descripcion }) => {
 
   return (
     <>
-      <Typography variant={variantValue} className={rufina.className}>
+      <Typography variant={variantValue} >
         {titulo}
       </Typography>
-      <Typography variant="body1" className={lato.className}>
+      <Typography variant="body1" >
         {descripcion}
       </Typography>
     </>

@@ -1,8 +1,6 @@
 import styled from "@emotion/styled";
 import { TextField, Typography } from "@mui/material";
-import { Lato } from "next/font/google";
 import React from "react";
-const lato = Lato({ subsets: ["latin"], weight: "400" });
 
 const useStyles = styled((theme) => ({
   root: {
@@ -23,8 +21,8 @@ const useStyles = styled((theme) => ({
 const ContactoInputs = () => {
   const classes = useStyles();
   return (
-    <div className={lato.className} color="#665959">
-      <Typography marginBottom={2} className={lato.className} color={"#665959"}>
+    <div  color="#665959">
+      <Typography marginBottom={2} color={"#665959"}>
         *Campos Obligatorios
       </Typography>
       <TextField

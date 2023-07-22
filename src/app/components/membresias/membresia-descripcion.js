@@ -1,9 +1,6 @@
 import { Typography, useMediaQuery } from '@mui/material'
 import React from 'react'
-import { Rufina, Lato } from 'next/font/google'
 import { useTheme } from '@emotion/react'
-const rufina = Rufina({ subsets: ['latin'], weight: '400' })
-const lato = Lato({ subsets: ['latin'], weight: '400' })
 
 const MembresiaDescripcion = ({titulo, descripcion}) => {
   const theme = useTheme();
@@ -12,8 +9,8 @@ const MembresiaDescripcion = ({titulo, descripcion}) => {
 
   return (
     <>
-        <Typography variant={variantValue} className={rufina.className}>{titulo}</Typography>
-        <Typography variant='body1' className={lato.className}>{descripcion}</Typography>
+        <Typography variant={variantValue}>{titulo}</Typography>
+        <Typography variant='body1'>{descripcion}</Typography>
     </>
   )
 }

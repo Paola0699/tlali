@@ -1,10 +1,7 @@
 import { Typography, useMediaQuery } from "@mui/material";
 import React from "react";
-import { Lato, Rufina } from "next/font/google";
 import { useTheme } from "@emotion/react";
 import FundacionButtons from "./fundacion-buttons";
-const rufina = Rufina({ subsets: ["latin"], weight: "400" });
-const lato = Lato({ subsets: ["latin"], weight: "400" });
 
 const FundacionDescripcion = ({ titulo, descripcion }) => {
   const theme = useTheme();
@@ -15,11 +12,10 @@ const FundacionDescripcion = ({ titulo, descripcion }) => {
       <Typography
         color={"#83948F"}
         variant={variantValue}
-        className={rufina.className}
       >
         {titulo}
       </Typography>
-      <Typography color={"#665959"} variant="body1" className={lato.className}>
+      <Typography color={"#665959"} variant="body1">
         {descripcion}
       </Typography>
       <FundacionButtons />
