@@ -11,7 +11,7 @@ const ReservacionesButtons = () => {
       <Grid item xs={6}>
         <Button
           className={rufina.className}
-          style={{ borderColor: "#665959", color: "#665959" }}
+          style={{ borderColor: "#665959", color: "#665959", fontFamily:'Rufina' }}
           fullWidth
           variant="outlined"
           startIcon={<LocalPhoneIcon />}
@@ -22,7 +22,7 @@ const ReservacionesButtons = () => {
       <Grid item xs={6}>
         <Button
           className={rufina.className}
-          style={{ borderColor: "#665959", color: "#665959" }}
+          style={{ borderColor: "#665959", color: "#665959", fontFamily:'Rufina' }}
           fullWidth
           variant="outlined"
           startIcon={<WhatsApp />}

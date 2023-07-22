@@ -6,7 +6,7 @@ const rufina = Rufina({ subsets: ["latin"], weight: "400" });
 const ContactoButton = () => {
   return (
     <Button
-      style={{ borderColor: "#665959", color: "#665959", marginTop: "2rem" }}
+      style={{ borderColor: "#665959", color: "#665959", marginTop: "2rem", fontFamily:'Rufina' }}
       variant="outlined"
       className={rufina.className}
     >
