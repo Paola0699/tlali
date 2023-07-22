@@ -13,18 +13,18 @@ import { FloatingWhatsApp } from "react-floating-whatsapp";
 
 const theme = createTheme({
   typography: {
-    fontFamily: 'Lato, Arial, sans-serif', // Fuente predeterminada para todo el texto
+    fontFamily: 'Lato, sans-serif', // Fuente predeterminada para todo el texto
     h2: {
-      fontFamily: 'Rufina', // Fuente para los h2
+      fontFamily: 'Rufina,  serif', // Fuente para los h2
     },
     h3: {
-      fontFamily: 'Rufina', // Fuente para los h2
+      fontFamily: 'Rufina,  serif', // Fuente para los h2
     },
     subtitle1: {
-      fontFamily: 'Lato, Arial, sans-serif', // Fuente para los subtitle1 (los mantendremos como la fuente predeterminada)
+      fontFamily: 'Lato, sans-serif', // Fuente para los subtitle1 (los mantendremos como la fuente predeterminada)
     },
     body2: {
-      fontFamily: 'Lato, Arial, sans-serif', // Fuente para los subtitle1 (los mantendremos como la fuente predeterminada)
+      fontFamily: 'Lato, sans-serif', // Fuente para los subtitle1 (los mantendremos como la fuente predeterminada)
     },
   },
 });
