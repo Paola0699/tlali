@@ -1,95 +1,60 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+"use client";
+import { createTheme } from "@mui/material";
+import Navbar from "./components/Navbar";
+import SeccionMembresias from "./components/secciones/membresias";
+import { ThemeProvider } from "@emotion/react";
+import SeccionReservaciones from "./components/secciones/reservaciones";
+import SeccionNosotros from "./components/secciones/nosotros";
+import SeccionFundador from "./components/secciones/fundador";
+import SeccionFundacion from "./components/secciones/fundacion";
+import SeccionBlog from "./components/secciones/blog";
+import SeccionContacto from "./components/secciones/contacto";
+import { FloatingWhatsApp } from "react-floating-whatsapp";
 
-export default function Home() {
+const theme = createTheme({
+  typography: {
+    fontFamily: [
+      "Font1", // Nombre de la primera fuente
+      "Font2", // Nombre de la segunda fuente
+      "Roboto", // Fuente por defecto de respaldo
+      "Arial", // Fuente de respaldo
+      "sans-serif", // Fuente genérica de respaldo
+    ].join(","),
+  },
+  overrides: {
+    // Agrega estilos específicos para las fuentes si es necesario
+    // Ejemplo:
+    MuiTypography: {
+      root: {
+        fontFamily: "Font1, sans-serif", // Usar la primera fuente para la mayoría de los elementos de tipografía
+      },
+      h1: {
+        fontFamily: "Font2, serif", // Usar la segunda fuente para los títulos h1
+      },
+    },
+  },
+});
+
+const Home = () => {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+    <ThemeProvider theme={theme}>
+      <Navbar />
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+      <SeccionMembresias id="membresias" />
+      <SeccionReservaciones id={"reservaciones"} />
+      <SeccionNosotros id={"nosotros"} />
+      <SeccionFundador id={"fundador"} />
+      <SeccionFundacion id={"fundacion"} />
+      <SeccionBlog id={"blog"} />
+      <SeccionContacto id={"contacto"} />
+      <FloatingWhatsApp
+        accountName={"Tlali"}
+        phoneNumber={"7712409254"}
+        chatMessage={"Hola! ¿Cómo podemos ayudarte?"}
+        avatar="/assets/img/logos/logo_t.png"
+      />
+    </ThemeProvider>
+  );
+};
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
-}
+export default Home;
