@@ -5,7 +5,7 @@ const MembresiaImagen = () => {
   return (
     <Image
       alt={"membresiasImg"}
-      src={"/assets/img/img_1.jpg"}
+      src={"/assets/img/img_1.JPG"}
       width={300}
       height={400}
       style={{ objectFit: "cover" }}
