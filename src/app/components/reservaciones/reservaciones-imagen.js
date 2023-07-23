@@ -6,7 +6,7 @@ import React from "react";
 const ReservacionesImagen = () => {
   const theme = useTheme();
   const isMdAndLg = useMediaQuery(theme.breakpoints.up("md"));
-  const marginTopValue = isMdAndLg ? '68%' :'135%';
+  const marginTopValue = isMdAndLg ? '108%' :'175%';
   const marginLeftValue = isMdAndLg ? '35%' :'30%';
 
   return (

@@ -8,6 +8,7 @@ const CarouselCover = () => {
   const isMdAndLg = useMediaQuery(theme.breakpoints.up("md"));
   const variantValue = isMdAndLg ? "h2" : "h4";
   const paddingValue = isMdAndLg ? "150px" : "50px";
+  const heigthValue = isMdAndLg ? "30rem" : "100vh";
 
   const carouselItems = [
     {
@@ -47,7 +48,7 @@ const CarouselCover = () => {
           key={index}
           elevation={0}
           sx={{
-            height: "30rem",
+            height: heigthValue,
             backgroundImage: `url(${item.imageUrl})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
