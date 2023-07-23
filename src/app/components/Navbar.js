@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -13,14 +13,13 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 
-
 const pages = ['Products', 'Pricing', 'Blog'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const Navbar = () => {
-
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const [anchorElNav, setAnchorElNav] = useState(null);
+  const [anchorElUser, setAnchorElUser] = useState(null);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -37,10 +36,33 @@ const Navbar = () => {
     setAnchorElUser(null);
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
 
   return (
-    <AppBar position="static">
-      <Container maxWidth="xl">
+    <AppBar
+    position="fixed"
+    sx={{
+      backgroundColor: isScrolled ? 'red' : 'transparent',
+      transition: 'background-color 0.3s ease',
+    }}
+    elevation={0}
+  >
+    <Container maxWidth="xl">
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
           <Typography
