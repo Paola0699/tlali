@@ -57,7 +57,7 @@ const Navbar = () => {
     <AppBar
     position="fixed"
     sx={{
-      backgroundColor: isScrolled ? 'red' : 'transparent',
+      backgroundColor: isScrolled ? '#A9BDB1' : 'transparent',
       transition: 'background-color 0.3s ease',
     }}
     elevation={0}

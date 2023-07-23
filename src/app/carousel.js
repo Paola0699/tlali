@@ -11,26 +11,24 @@ const CarouselCover = () => {
 
   const carouselItems = [
     {
-      imageUrl: "/assets/img/img_4.png",
-      caption:
-        "El restaurante de comida mexicana con el servicio más personalizado de Hidalgo",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vehicula. ",
-    },
-    {
       imageUrl: "/assets/img/img_5.png",
       caption: "Creemos en el potencial mexicano...",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vehicula. ",
     },
     {
-      imageUrl: "/assets/img/img_1.jpg",
+      imageUrl: "/assets/img/img_4.png",
+      caption: "El restaurante de comida mexicana",
+      description: "con el servicio más personalizado de Hidalgo ",
+    },
+    {
+      imageUrl: "/assets/img/img_1.JPG",
       caption: "Cómo lo logramos",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vehicula. ",
     },
     {
-      imageUrl: "/assets/img/img_1.jpg",
+      imageUrl: "/assets/img/img_1.JPG",
       caption: "¿Quieres probarla?",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vehicula. ",
