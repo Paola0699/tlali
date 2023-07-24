@@ -10,7 +10,6 @@ import Container from "@mui/material/Container";
 import Avatar from "@mui/material/Avatar";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
 import { Link } from "@mui/material";
 import Image from "next/image";
 
@@ -108,19 +107,23 @@ const Navbar = () => {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page.title} onClick={handleCloseNavMenu}>
+                <MenuItem
+                  key={page.title}
+                  onClick={handleCloseNavMenu}
+                  style={{ textDecoration: "none" }}
+                >
                   <Typography textAlign="center">{page.title}</Typography>
                 </MenuItem>
               ))}
             </Menu>
           </Box>
 
-          <Box sx={{ display: { xs: "flex", md: "none" }, mr: 8 }}>
+          <Box sx={{ display: { xs: "flex", md: "none" }, mr: 10 }}>
             <Image
               alt="Logo Pájaro"
               src={"/assets/img/logos/logo_pajaro.png"}
-              width={140}
-              height={100}
+              width={120}
+              height={80}
             />
           </Box>
 
