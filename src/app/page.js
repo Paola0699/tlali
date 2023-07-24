@@ -12,6 +12,7 @@ import SeccionContacto from "./components/secciones/contacto";
 import { FloatingWhatsApp } from "react-floating-whatsapp";
 import Carousel from "./carousel";
 import CarouselCover from "./carousel";
+import SeccionMembresiasTabla from "./components/secciones/membresias-tabla";
 
 const theme = createTheme({
   typography: {
@@ -45,6 +46,7 @@ const Home = () => {
           <CarouselCover />
         </Grid>
         <SeccionMembresias id="membresias" />
+        <SeccionMembresiasTabla/>
         <SeccionReservaciones id={"reservaciones"} />
         <SeccionNosotros id={"nosotros"} />
         <SeccionFundador id={"fundador"} />
