@@ -48,7 +48,7 @@ const CarouselCover = () => {
           key={index}
           elevation={0}
           sx={{
-            height: heigthValue,
+            height: "30rem",
             backgroundImage: `url(${item.imageUrl})`,
             backgroundSize: "cover",
             backgroundPosition: "center",

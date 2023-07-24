@@ -6,7 +6,7 @@ import React from "react";
 const FundacionImagen = () => {
   const theme = useTheme();
   const isMdAndLg = useMediaQuery(theme.breakpoints.up("md"));
-  const marginTopValue = isMdAndLg ? "230%" : "440%";
+  const marginTopValue = isMdAndLg ? "250%" : "385%";
   const marginLeftValue = isMdAndLg ? "33%" : "30%";
 
   return (

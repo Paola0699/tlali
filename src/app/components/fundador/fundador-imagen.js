@@ -5,7 +5,7 @@ import React from "react";
 const FundadorImagen = () => {
   const theme = useTheme();
   const isMdAndLg = useMediaQuery(theme.breakpoints.up("md"));
-  const marginTopValue = isMdAndLg ? "195%" : "400%";
+  const marginTopValue = isMdAndLg ? "220%" : "350%";
   const marginLeftValue = isMdAndLg ? "60%" : "30%";
   return (
     <svg
