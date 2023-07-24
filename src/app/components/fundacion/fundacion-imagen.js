@@ -6,11 +6,11 @@ import React from "react";
 const FundacionImagen = () => {
   const theme = useTheme();
   const isMdAndLg = useMediaQuery(theme.breakpoints.up("md"));
-  const marginTopValue = isMdAndLg ? "250%" : "350%";
-  const marginLeftValue = isMdAndLg ? "33%" : "30%";
+  const marginTopValue = isMdAndLg ? "-5rem" : "-5rem";
+  const marginLeftValue = isMdAndLg ? "60%" : "30%";
 
   return (
-    <>
+    <div style={{ position: "relative" }}>
       <Image
         alt={"membresiasImg"}
         src={"/assets/img/img_3.png"}
@@ -36,7 +36,7 @@ const FundacionImagen = () => {
           strokeMiterlimit="10"
         />
       </svg>
-    </>
+    </div>
   );
 };
 
