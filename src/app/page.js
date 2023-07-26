@@ -13,6 +13,7 @@ import { FloatingWhatsApp } from "react-floating-whatsapp";
 import Carousel from "./carousel";
 import CarouselCover from "./carousel";
 import SeccionMembresiasTabla from "./components/secciones/membresias-tabla";
+import Footer from "./components/Footer";
 
 const theme = createTheme({
   typography: {
@@ -59,6 +60,7 @@ const Home = () => {
           chatMessage={"Hola! ¿Cómo podemos ayudarte?"}
           avatar="/assets/img/logos/logo_t.png"
         />
+        <Footer/>
       </Grid>
     </ThemeProvider>
   );

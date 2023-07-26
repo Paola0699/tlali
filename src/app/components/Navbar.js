@@ -132,7 +132,7 @@ const Navbar = () => {
               <MenuItem key={page.link}>
                 <Link
                   href={page.link}
-                  sx={{ my: 2, color: "white", display: "block" }}
+                  sx={{ my: 2, color: "white", display: "block", textDecoration: 'none' }}
                 >
                   {page.title}
                 </Link>
