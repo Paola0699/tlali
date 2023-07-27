@@ -30,8 +30,8 @@ const Footer = () => {
       >
         <Image
           alt="logo_pajaro_negro"
-          src={"/assets/img/logos/logo_pajaro_negro.png"}
-          width={230}
+          src={"/assets/img/logos/logo_pajaro.png"}
+          width={220}
           height={160}
         />
       </Grid>

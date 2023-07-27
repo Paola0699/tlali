@@ -46,9 +46,9 @@ const Home = () => {
         <Grid item xs={12}>
           <CarouselCover />
         </Grid>
+        <SeccionReservaciones id={"reservaciones"} />
         <SeccionMembresias id="membresias" />
         <SeccionMembresiasTabla/>
-        <SeccionReservaciones id={"reservaciones"} />
         <SeccionNosotros id={"nosotros"} />
         <SeccionFundador id={"fundador"} />
         <SeccionFundacion id={"fundacion"} />

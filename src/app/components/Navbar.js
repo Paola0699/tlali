@@ -15,7 +15,7 @@ import Image from "next/image";
 
 const pages = [
   { title: "Membresias", link: "#membresias" },
-  { title: "Menú", link: "/" },
+  { title: "Menú", link: "/menu" },
   { title: "Reservar", link: "#reservaciones" },
   { title: "Nuestro Porqué", link: "#nosotros" },
   { title: "Blog", link: "#blog" },
