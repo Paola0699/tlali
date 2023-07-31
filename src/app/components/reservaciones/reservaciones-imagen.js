@@ -6,17 +6,17 @@ import React from "react";
 const ReservacionesImagen = () => {
   const theme = useTheme();
   const isMdAndLg = useMediaQuery(theme.breakpoints.up("md"));
-  const marginTopValue = isMdAndLg ? '-5rem' :'-7rem';
-  const marginLeftValue = isMdAndLg ? '70%' :'30%';
+  const marginTopValue = isMdAndLg ? '-4rem' :'-7rem';
+  const marginLeftValue = isMdAndLg ? '60%' :'30%';
 
   return (
     <div style={{ position: "relative" }}>
       <Image
         alt={"membresiasImg"}
         src={"/assets/img/img_2.png"}
-        width={300}
-        height={300}
-        style={{ objectFit: "cover" }}
+        width={400}
+        height={400}
+        style={{ objectFit: "cover", borderRadius: '50%' }}
       />
       <svg
         style={{

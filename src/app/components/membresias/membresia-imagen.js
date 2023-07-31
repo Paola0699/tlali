@@ -6,9 +6,9 @@ const MembresiaImagen = () => {
     <Image
       alt={"membresiasImg"}
       src={"/assets/img/img_1.JPG"}
-      width={300}
+      width={400}
       height={400}
-      style={{ objectFit: "cover" }}
+      style={{ objectFit: "cover", borderRadius: '50%' }}
     />
   );
 };

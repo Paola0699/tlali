@@ -6,7 +6,7 @@ import React from "react";
 const FundacionImagen = () => {
   const theme = useTheme();
   const isMdAndLg = useMediaQuery(theme.breakpoints.up("md"));
-  const marginTopValue = isMdAndLg ? "-5rem" : "-5rem";
+  const marginTopValue = isMdAndLg ? "-4rem" : "-5rem";
   const marginLeftValue = isMdAndLg ? "60%" : "30%";
 
   return (
@@ -14,9 +14,9 @@ const FundacionImagen = () => {
       <Image
         alt={"membresiasImg"}
         src={"/assets/img/img_3.png"}
-        width={300}
-        height={300}
-        style={{ objectFit: "cover" }}
+        width={400}
+        height={400}
+        style={{ objectFit: "cover", borderRadius: '50%' }}
       />
       <svg
         style={{

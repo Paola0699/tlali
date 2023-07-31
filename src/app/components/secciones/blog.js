@@ -15,7 +15,7 @@ const SeccionBlog = ({ id }) => {
     <Grid
       id={id}
       container
-      style={{ backgroundColor: "#A9BDB1" }}
+      style={{ backgroundColor: "#83948F" }}
       marginBottom={3}
     >
       <Grid item xs={12} padding={paddingValue}>

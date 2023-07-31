@@ -18,7 +18,7 @@ const SeccionMembresias = ({ id }) => {
       paddingTop={5}
       paddingBottom={7}
       spacing={3}
-      style={{ backgroundColor: "#A9BDB1", color: "white" }}
+      style={{ backgroundColor: "#D7C6A7", color: "white" }}
       marginTop={0}
     >
       <Grid
