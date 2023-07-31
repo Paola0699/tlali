@@ -8,14 +8,15 @@ const FundacionImagen = () => {
   const isMdAndLg = useMediaQuery(theme.breakpoints.up("md"));
   const marginTopValue = isMdAndLg ? "-4rem" : "-5rem";
   const marginLeftValue = isMdAndLg ? "60%" : "30%";
+  const imageWidth = isMdAndLg ? 400 :300;
 
   return (
     <div style={{ position: "relative" }}>
       <Image
         alt={"membresiasImg"}
         src={"/assets/img/img_3.png"}
-        width={400}
-        height={400}
+        width={imageWidth}
+        height={imageWidth}
         style={{ objectFit: "cover", borderRadius: '50%' }}
       />
       <svg

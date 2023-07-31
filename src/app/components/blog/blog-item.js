@@ -13,7 +13,7 @@ const BlogItem = ({ titulo, descripcion, imagen }) => {
             <Typography  variant="body2">
               {descripcion}
             </Typography>
-            <Link color={"#D7C6A7"} marginTop={1}>
+            <Link color={"#DBDCDA"} marginTop={1}>
               Leer más
             </Link>
           </CardContent>
