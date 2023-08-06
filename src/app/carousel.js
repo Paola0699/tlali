@@ -1,5 +1,5 @@
 import { useTheme } from "@emotion/react";
-import { Paper, Typography, useMediaQuery } from "@mui/material";
+import { Box, Paper, Typography, useMediaQuery } from "@mui/material";
 import React from "react";
 import Carousel from "react-material-ui-carousel";
 
@@ -12,81 +12,83 @@ const CarouselCover = () => {
 
   const carouselItems = [
     {
-      imageUrl: "/assets/img/img_5.png",
-      caption: "Creemos en el potencial mexicano...",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vehicula. ",
+      videoUrl: "/assets/videos/video1.mp4",
+      caption: "El restaurante de comida mexicana con el servicio más personalizado de hidalgo",
     },
     {
-      imageUrl: "/assets/img/img_4.png",
-      caption: "El restaurante de comida mexicana",
-      description: "con el servicio más personalizado de Hidalgo ",
+      videoUrl: "/assets/videos/video2.mp4",
+      caption: "Creemos en fortalecer e impulsar el potencial mexicano. ",
+      description: "Creemos en México",
     },
     {
-      imageUrl: "/assets/img/img_1.JPG",
-      caption: "Cómo lo logramos",
+      videoUrl: "/assets/videos/video3.mp4",
+      caption: "Fortalecemos e impulsamos a México a través de la fundación FIM.",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vehicula. ",
+        "Además de tener el servicio más personalizado de hidalgo",
     },
     {
-      imageUrl: "/assets/img/img_1.JPG",
-      caption: "¿Quieres probarla?",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vehicula. ",
+      videoUrl: "/assets/videos/video4.mp4",
+      caption: "Por cierto, preparamos una comida mexicana espectacular ",
+      description: "¿quieres probarla?",
     },
   ];
 
   return (
     <Carousel
-      indicators={false}
-      navButtonsAlwaysVisible
-      sx={{ backgroundColor: "black" }}
-      autoPlay={false}
-    >
-      {carouselItems.map((item, index) => (
-        <Paper
-          key={index}
-          elevation={0}
-          sx={{
-            height: "30rem",
-            backgroundImage: `url(${item.imageUrl})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            display: "flex",
-            padding: paddingValue,
-            position: "relative", // Agregar posición relativa al Paper
-            flexDirection: "column",
-            justifyContent: "center",
+    indicators={false}
+    navButtonsAlwaysVisible
+    sx={{ backgroundColor: "black" }}
+    autoPlay={false}
+  >
+    {carouselItems.map((item, index) => (
+      <Paper
+        key={index}
+        elevation={0}
+        sx={{
+          height: "40rem",
+          display: "flex",
+          padding: paddingValue,
+          position: "relative",
+          flexDirection: "column",
+          justifyContent: "center",
+        }}
+      >
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          style={{
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            position: "absolute",
+            top: 0,
+            left: 0,
           }}
         >
-          {/* Capa con color de fondo y opacidad */}
-          <div
-            style={{
-              position: "absolute",
-              top: 0,
-              left: 0,
-              width: "100%",
-              height: "100%",
-              backgroundColor: "rgba(0, 0, 0, 0.5)", // Utilizar rgba para agregar opacidad al color de fondo
-            }}
-          />
-          <Typography
-            variant={variantValue}
-            color={"white"}
-            style={{ zIndex: "2" }}
-          >
-            {item.caption}
-          </Typography>
-          <Typography
-            variant="subtitle1"
-            color={"white"}
-            style={{ zIndex: "2" }}
-          >
-            {item.description}
-          </Typography>
-        </Paper>
-      ))}
-    </Carousel>
+          <source src={item.videoUrl} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <Box
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            backgroundColor: "rgba(0, 0, 0, 0.5)",
+          }}
+        />
+        <Typography variant={variantValue} color={"white"} style={{ zIndex: "2" }}>
+          {item.caption}
+        </Typography>
+        <Typography variant="h5" color={"white"} style={{ zIndex: "2" }}>
+          {item.description}
+        </Typography>
+      </Paper>
+    ))}
+  </Carousel>
   );
 };
 

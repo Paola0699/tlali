@@ -5,7 +5,7 @@ const FundadorInformacion = ({ nombre, puesto, fotoPerfil }) => {
   return (
     <Grid container marginTop={5}>
       <Grid item xs={3} md={1} lg={1}>
-        <Avatar sx={{ width: 60, height: 60 }} />
+        <Avatar sx={{ width: 60, height: 60 }} src={fotoPerfil} />
       </Grid>
       <Grid item xs={9} md={11} lg={11}>
         <Typography  color={"#665959"} variant="h6">

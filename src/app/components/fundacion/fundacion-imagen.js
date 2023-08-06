@@ -14,12 +14,12 @@ const FundacionImagen = () => {
     <div style={{ position: "relative" }}>
       <Image
         alt={"membresiasImg"}
-        src={"/assets/img/img_3.png"}
+        src={"/assets/img/img_6.png"}
         width={imageWidth}
         height={imageWidth}
         style={{ objectFit: "cover", borderRadius: '50%' }}
       />
-      <svg
+    {/*   <svg
         style={{
           width: "250px",
           height: "200px",
@@ -36,7 +36,7 @@ const FundacionImagen = () => {
           stroke="#665959"
           strokeMiterlimit="10"
         />
-      </svg>
+      </svg> */}
     </div>
   );
 };
