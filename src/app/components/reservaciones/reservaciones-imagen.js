@@ -14,7 +14,7 @@ const ReservacionesImagen = () => {
     <div style={{ position: "relative" }}>
       <Image
         alt={"membresiasImg"}
-        src={"/assets/img/img_2.png"}
+        src={"/assets/img/img_8.png"}
         width={imageWidth}
         height={imageWidth}
         style={{ objectFit: "cover", borderRadius: '50%' }}
