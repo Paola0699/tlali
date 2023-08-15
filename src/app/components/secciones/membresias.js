@@ -7,19 +7,14 @@ import { useMediaQuery, useTheme } from "@mui/material";
 const SeccionMembresias = ({ id }) => {
   const theme = useTheme();
   const isMdAndLg = useMediaQuery(theme.breakpoints.up("md"));
-  const paddingValue = isMdAndLg ? 20 : 4;
+  const paddingValue = isMdAndLg ? 20 : 8;
+  const heightValue = isMdAndLg ? "600px" : "400px";
 
   return (
     <Grid
       id={id}
       container
-      paddingRight={paddingValue}
-      paddingLeft={paddingValue}
-      paddingTop={5}
-      paddingBottom={7}
-      spacing={3}
       style={{ backgroundColor: "#D7C6A7", color: "white" }}
-      marginTop={0}
     >
       <Grid
         item
@@ -30,6 +25,7 @@ const SeccionMembresias = ({ id }) => {
         alignItems={"center"}
         justifyContent={"center"}
         flexDirection={"column"}
+        padding={paddingValue}
       >
         <MembresiaDescripcion
           titulo={"¿Qué es una membresía?"}
@@ -43,14 +39,27 @@ const SeccionMembresias = ({ id }) => {
         xs={12}
         md={6}
         lg={6}
-        display={"flex"}
-        alignItems={"center"}
-        justifyContent={'center'}
-        flexDirection={"column"}
+        height={heightValue}
+        style={{
+          position: "relative",
+          overflow: "hidden",
+        }}
       >
-        <MembresiaImagen />
+        <video
+          autoPlay
+          muted
+          loop
+          style={{
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+          }}
+        >
+          <source src="/assets/videos/video_6.mp4" type="video/mp4" />
+        </video>
       </Grid>
     </Grid>
   );
 };
+
 export default SeccionMembresias;

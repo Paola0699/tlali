@@ -7,7 +7,7 @@ import ReservacionesImagen from "../reservaciones/reservaciones-imagen";
 const SeccionReservaciones = ({ id }) => {
   const theme = useTheme();
   const isMdAndLg = useMediaQuery(theme.breakpoints.up("md"));
-  const paddingValue = isMdAndLg ? 20 : 4;
+  const paddingValue = isMdAndLg ? 20 : 8;
   const heightValue = isMdAndLg ? "auto" : "400px";
 
   return (
