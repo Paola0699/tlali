@@ -61,6 +61,7 @@ const CarouselCover = () => {
             width: "100%",
             height: "100%",
             objectFit: "cover",
+            objectPosition: "left", // Ajuste para enfocar la parte izquierda
             position: "absolute",
             top: 0,
             left: 0,
