@@ -24,7 +24,7 @@ const SeccionBlog = ({ id }) => {
           variant={variantValue}
           color="white"
         >
-          Lo último
+          Blog
         </Typography>
         <Grid container spacing={3} marginTop={1}>
           <Grid item xs={12} md={4} lg={4}>
