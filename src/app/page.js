@@ -4,13 +4,11 @@ import Navbar from "./components/Navbar";
 import SeccionMembresias from "./components/secciones/membresias";
 import { ThemeProvider } from "@emotion/react";
 import SeccionReservaciones from "./components/secciones/reservaciones";
-import SeccionNosotros from "./components/secciones/nosotros";
 import SeccionFundador from "./components/secciones/fundador";
 import SeccionFundacion from "./components/secciones/fundacion";
 import SeccionBlog from "./components/secciones/blog";
 import SeccionContacto from "./components/secciones/contacto";
 import { FloatingWhatsApp } from "react-floating-whatsapp";
-import Carousel from "./carousel";
 import CarouselCover from "./carousel";
 import SeccionMembresiasTabla from "./components/secciones/membresias-tabla";
 import Footer from "./components/Footer";
@@ -49,7 +47,6 @@ const Home = () => {
         <SeccionReservaciones id={"reservaciones"} />
         <SeccionMembresias id="membresias" />
         <SeccionMembresiasTabla/>
-        <SeccionNosotros id={"nosotros"} />
         <SeccionFundador id={"fundador"} />
         <SeccionFundacion id={"fundacion"} />
         <SeccionBlog id={"blog"} />

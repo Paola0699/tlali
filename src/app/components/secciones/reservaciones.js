@@ -8,19 +8,27 @@ const SeccionReservaciones = ({ id }) => {
   const theme = useTheme();
   const isMdAndLg = useMediaQuery(theme.breakpoints.up("md"));
   const paddingValue = isMdAndLg ? 20 : 4;
+  const heightValue = isMdAndLg ? "auto" : "400px";
 
   return (
     <Grid
-      id={id}
-      container
-      paddingRight={paddingValue}
-      paddingLeft={paddingValue}
-      paddingTop={15}
-      paddingBottom={10}
-      spacing={3}
-      style={{backgroundColor: 'white'}}
+    id={id}
+    container
+    style={{ backgroundColor: "white" }}
     >
       <Grid
+        item
+        xs={12}
+        md={6}
+        lg={6}
+        height={heightValue}
+        style={{
+          backgroundImage: `url('/assets/img/img_8.png')`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      ></Grid>
+         <Grid
         item
         xs={12}
         md={6}
@@ -29,19 +37,9 @@ const SeccionReservaciones = ({ id }) => {
         alignItems={"center"}
         justifyContent={"center"}
         flexDirection={"column"}
+        padding={paddingValue}
       >
-        <ReservacionesImagen/>
-      </Grid>
-      <Grid
-        item
-        xs={12}
-        md={6}
-        lg={6}
-        display={"flex"}
-        justifyContent={"center"}
-        flexDirection={"column"}
-      >
-        <ReservacionesDescripcion titulo={'Reservaciones'} descripcion={'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus lorem id penatibus imperdiet. Turpis egestas ultricies purus auctor tincidunt lacus nunc. '}/>
+            <ReservacionesDescripcion titulo={'Reservaciones'} descripcion={'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus lorem id penatibus imperdiet. Turpis egestas ultricies purus auctor tincidunt lacus nunc. '}/>
       </Grid>
     </Grid>
   );
