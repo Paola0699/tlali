@@ -5,7 +5,7 @@ import { useTheme } from '@emotion/react'
 const MembresiaDescripcion = ({titulo, descripcion}) => {
   const theme = useTheme();
   const isMdAndLg = useMediaQuery(theme.breakpoints.up("md"));
-  const variantValue = isMdAndLg ? 'h2' : 'h3';
+  const variantValue = isMdAndLg ? "h2" : "h4";
 
   return (
     <>

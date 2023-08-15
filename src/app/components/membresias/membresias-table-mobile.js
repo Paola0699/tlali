@@ -9,18 +9,21 @@ const MembresiasTableMobile = () => {
       nombre: "Tlali",
       descripcion: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
       precio: "$500",
+      color: '#d7c6a7'
     },
     {
       id: 2,
       nombre: "Maya",
       descripcion: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
       precio: "$600",
+      color: '#dfd1b8'
     },
     {
       id: 3,
       nombre: "Azteca",
       descripcion: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
       precio: "$700",
+      color: '#e7dcca'
     },
   ];
   return (
@@ -32,6 +35,8 @@ const MembresiasTableMobile = () => {
             descripción={membresia.descripcion}
             precio={membresia.precio}
             width={"100%"}
+            color={membresia.color}
+            fontColor='white'
           />
         </Grid>
       ))}

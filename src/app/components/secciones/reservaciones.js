@@ -16,7 +16,7 @@ const SeccionReservaciones = ({ id }) => {
     container
     style={{ backgroundColor: "white" }}
     >
-      <Grid
+      {isMdAndLg && <Grid
         item
         xs={12}
         md={6}
@@ -27,7 +27,8 @@ const SeccionReservaciones = ({ id }) => {
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
-      ></Grid>
+      ></Grid> }
+      
          <Grid
         item
         xs={12}
@@ -41,6 +42,19 @@ const SeccionReservaciones = ({ id }) => {
       >
             <ReservacionesDescripcion titulo={'Reservaciones'} descripcion={'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus lorem id penatibus imperdiet. Turpis egestas ultricies purus auctor tincidunt lacus nunc. '}/>
       </Grid>
+
+      {!isMdAndLg && <Grid
+        item
+        xs={12}
+        md={6}
+        lg={6}
+        height={heightValue}
+        style={{
+          backgroundImage: `url('/assets/img/img_8.png')`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      ></Grid> }
     </Grid>
   );
 };

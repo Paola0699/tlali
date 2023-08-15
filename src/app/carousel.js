@@ -8,7 +8,6 @@ const CarouselCover = () => {
   const isMdAndLg = useMediaQuery(theme.breakpoints.up("md"));
   const variantValue = isMdAndLg ? "h2" : "h4";
   const paddingValue = isMdAndLg ? "150px" : "50px";
-  const heigthValue = isMdAndLg ? "30rem" : "100vh";
 
   const carouselItems = [
     {

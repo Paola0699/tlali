@@ -14,7 +14,7 @@ const SeccionMembresias = ({ id }) => {
     <Grid
       id={id}
       container
-      style={{ backgroundColor: "#D7C6A7", color: "white" }}
+      style={{ backgroundColor: "#c5c6c4", color: "white" }}
     >
       <Grid
         item
