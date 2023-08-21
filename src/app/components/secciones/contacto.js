@@ -34,7 +34,7 @@ const SeccionContacto = ({ id }) => {
         justifyContent={"center"}
         flexDirection={"column"}
       >
-        <ContactoTitulo titulo={'¡Recibe nuestros beneficios!'}/>
+        <ContactoTitulo titulo={'¡Recibe nuestros beneficios antes que nadie!'}/>
       </Grid>
       <Grid
         item

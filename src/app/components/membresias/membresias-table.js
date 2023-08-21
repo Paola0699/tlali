@@ -15,22 +15,94 @@ const MembresiasTable = () => {
     {
       id: 1,
       nombre: "Tlali",
-      descripcion: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
-      precio: "$500",
+      descripcion: "Afiliciación $0",
+      precio: "Mensualidad $250.00 (en consumo)",
     },
     {
       id: 2,
       nombre: "Maya",
-      descripcion: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
-      precio: "$600",
+      descripcion: "Afiliciación $165",
+      precio: "Mensualidad $550 (en consumo)",
     },
     {
       id: 3,
       nombre: "Azteca",
-      descripcion: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
-      precio: "$700",
+      descripcion: "Afiliciación $260",
+      precio: "Mensualidad $800 (en consumo)",
     },
   ];
+  const beneficiosMembresias = [
+    {
+      id: "Bonificación de puntos",
+      title: "Bonificación de puntos",
+      tlali: true, 
+      maya: true, 
+      azteca: true
+    },
+    {
+      id: "Prioridad a sus Platillos",
+      title: "Prioridad a sus Platillos",
+      tlali: true, 
+      maya: true, 
+      azteca: true
+    },
+    {
+      id: "Código de Referencia",
+      title: "Código de Referencia",
+      tlali: true, 
+      maya: true, 
+      azteca: true
+    },
+    {
+      id: "Conferencias y eventos",
+      title: "Conferencias y eventos",
+      tlali: true, 
+      maya: true, 
+      azteca: true
+    },
+    {
+      id: "Suscripción de waffles",
+      title: "Suscripción de waffles",
+      tlali: false, 
+      maya: true, 
+      azteca: true
+    },
+    {
+      id: "Pedidos anticipados",
+      title: "Pedidos anticipados",
+      tlali: false, 
+      maya: true, 
+      azteca: true
+    },
+    {
+      id: "Línea de crédito",
+      title: "Línea de crédito",
+      tlali: false, 
+      maya: false, 
+      azteca: true
+    },
+    {
+      id: "Chef a domicilio",
+      title: "Chef a domicilio",
+      tlali: false, 
+      maya: false, 
+      azteca: true
+    },
+    {
+      id: "Cubiertos personalizados",
+      title: "Cubiertos personalizados",
+      tlali: false, 
+      maya: false, 
+      azteca: true
+    },
+    {
+      id: "Plan de nutrición",
+      title: "Plan de nutrición",
+      tlali: false, 
+      maya: false, 
+      azteca: true
+    }
+  ]
   return (
     <TableContainer sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}>
       <Table>
@@ -64,87 +136,35 @@ const MembresiasTable = () => {
             <TableCell></TableCell>
             <TableCell></TableCell>
           </TableRow>
-          <TableRow>
-            <TableCell>Lorem Ipsum</TableCell>
-            <TableCell
-              style={{
-                color: "rgba(131, 148, 143, 1)",
-                textAlign: "center",
-              }}
-            >
-              <CheckCircle />
-            </TableCell>
-            <TableCell
-              style={{
-                color: "rgba(131, 148, 143, 1)",
-                textAlign: "center",
-              }}
-            >
-              <CheckCircle />
-            </TableCell>
-            <TableCell
-              style={{
-                color: "rgba(131, 148, 143, 1)",
-                textAlign: "center",
-              }}
-            >
-              <CheckCircle />
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell>Lorem Ipsum</TableCell>
-            <TableCell
-              style={{
-                color: "rgba(131, 148, 143, 1)",
-                textAlign: "center",
-              }}
-            >
-              <CheckCircle />
-            </TableCell>
-            <TableCell
-              style={{
-                color: "rgba(131, 148, 143, 1)",
-                textAlign: "center",
-              }}
-            >
-              <CheckCircle />
-            </TableCell>
-            <TableCell
-              style={{
-                color: "rgba(131, 148, 143, 1)",
-                textAlign: "center",
-              }}
-            >
-              <CheckCircle />
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell>Lorem Ipsum</TableCell>
-            <TableCell
-              style={{
-                color: "rgba(131, 148, 143, 1)",
-                textAlign: "center",
-              }}
-            >
-              <CheckCircle />
-            </TableCell>
-            <TableCell
-              style={{
-                color: "rgba(131, 148, 143, 1)",
-                textAlign: "center",
-              }}
-            >
-              <CheckCircle />
-            </TableCell>
-            <TableCell
-              style={{
-                color: "rgba(131, 148, 143, 1)",
-                textAlign: "center",
-              }}
-            >
-              <CheckCircle />
-            </TableCell>
-          </TableRow>
+          {beneficiosMembresias.map((beneficio)=>(
+             <TableRow key={beneficio.id}>
+             <TableCell>{beneficio.title}</TableCell>
+             <TableCell
+               style={{
+                 color: "rgba(131, 148, 143, 1)",
+                 textAlign: "center",
+               }}
+             >
+               {beneficio.tlali && <CheckCircle />}
+             </TableCell>
+             <TableCell
+               style={{
+                 color: "rgba(131, 148, 143, 1)",
+                 textAlign: "center",
+               }}
+             >
+               {beneficio.maya && <CheckCircle />}
+             </TableCell>
+             <TableCell
+               style={{
+                 color: "rgba(131, 148, 143, 1)",
+                 textAlign: "center",
+               }}
+             >
+               {beneficio.azteca && <CheckCircle />}
+             </TableCell>
+           </TableRow>
+          ))}
         </TableBody>
       </Table>
     </TableContainer>

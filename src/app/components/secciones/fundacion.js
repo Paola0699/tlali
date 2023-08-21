@@ -44,7 +44,7 @@ const SeccionFundacion = ({ id }) => {
         <FundacionDescripcion
           titulo={"Fundación FIM"}
           descripcion={
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus lorem id penatibus imperdiet. Turpis egestas ultricies purus auctor tincidunt lacus nunc. "
+            "Conoce la Fundación FIM. Una fundación con la que Tlali trabaja de la mano, para fortalecer e impulsar a México, a través del apoyo a jóvenes de escasos recursos, para que puedan continuar con sus estudios medio-superiores."
           }
         />
       </Grid>

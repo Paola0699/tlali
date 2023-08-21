@@ -40,7 +40,7 @@ const SeccionReservaciones = ({ id }) => {
         flexDirection={"column"}
         padding={paddingValue}
       >
-            <ReservacionesDescripcion titulo={'Reservaciones'} descripcion={'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus lorem id penatibus imperdiet. Turpis egestas ultricies purus auctor tincidunt lacus nunc. '}/>
+            <ReservacionesDescripcion titulo={'Reservaciones'} descripcion={'Reserva ahora la mejor mesa, con la mejor vista de pachuca y disfruta de un momento inolvidable.'}/>
       </Grid>
 
       {!isMdAndLg && <Grid

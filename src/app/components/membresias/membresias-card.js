@@ -26,7 +26,7 @@ const MembresiasCard = ({ nombre, descripción, precio, width, color, fontColor,
         <Typography color={fontColor ? fontColor : "#665959"} variant="body2" textAlign={"center"}>
           {descripción}
         </Typography>
-        <Typography color={fontColor ? fontColor : "#665959"} variant="h5" fontWeight={800}>
+        <Typography color={fontColor ? fontColor : "#665959"} variant="h6" fontWeight={500} textAlign={"center"}>
           {precio}
         </Typography>
         <Button

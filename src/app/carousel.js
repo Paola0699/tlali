@@ -12,23 +12,21 @@ const CarouselCover = () => {
   const carouselItems = [
     {
       videoUrl: "/assets/videos/video1.mp4",
-      caption: "El restaurante de comida mexicana con el servicio más personalizado de hidalgo",
+      caption: "El restaurante de comida mexicana con el servicio más personalizado de Hidalgo",
     },
     {
       videoUrl: "/assets/videos/video2.mp4",
-      caption: "Creemos en fortalecer e impulsar el potencial mexicano. ",
-      description: "Creemos en México",
+      caption: "Creemos en fortalecer e impulsar el potencial mexicano. Creemos en México ",
     },
     {
       videoUrl: "/assets/videos/video3.mp4",
-      caption: "Fortalecemos e impulsamos a México a través de la fundación FIM.",
+      caption: " Fortalecemos e impulsamos a México a través de la fundación FIM.",
       description:
-        "Además de tener el servicio más personalizado de hidalgo",
+        " Además de tener el servicio más personalizado de Hidalgo",
     },
     {
       videoUrl: "/assets/videos/video4.mp4",
-      caption: "Por cierto, preparamos una comida mexicana espectacular ",
-      description: "¿quieres probarla?",
+      caption: "Por cierto, preparamos una comida mexicana espectacular ¿quieres probarla? "
     },
   ];
 
