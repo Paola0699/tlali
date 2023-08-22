@@ -7,24 +7,28 @@ const MembresiasTableMobile = () => {
     {
       id: 1,
       nombre: "Tlali",
-      descripcion: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
-      precio: "$500",
-      color: '#d7c6a7'
+      descripcion: "Afiliciación $0",
+      precio: "Mensualidad $250.00 (en consumo)",
+      color: '#DBDCDA',
+      beneficios: ['Bonificación de puntos','Prioridad a sus Platillos','Código de Referencia','Conferencias y eventos']
     },
     {
       id: 2,
       nombre: "Maya",
-      descripcion: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
-      precio: "$600",
-      color: '#dfd1b8'
+      descripcion: "Afiliciación $165",
+      precio: "Mensualidad $550 (en consumo)",
+      color: '#A9BDB1',
+      beneficios: ['*Beneficios de membresia Tlali','Suscripción de waffles','Pedidos anticipados']
     },
     {
       id: 3,
       nombre: "Azteca",
-      descripcion: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
-      precio: "$700",
-      color: '#e7dcca'
+      descripcion: "Afiliciación $260",
+      precio: "Mensualidad $800 (en consumo)",
+      color: '#D7C6A7',
+      beneficios: ['*Beneficios de membresia Maya','Línea de crédito','Chef a domicilio', 'Cubiertos personalizados', 'Plan de nutrición']
     },
+
   ];
   return (
     <Grid container sx={{ display: { xs: "flex", md: "none" } }} spacing={3}>
@@ -34,6 +38,7 @@ const MembresiasTableMobile = () => {
             nombre={membresia.nombre}
             descripción={membresia.descripcion}
             precio={membresia.precio}
+            beneficios={membresia.beneficios}
             width={"100%"}
             color={membresia.color}
             fontColor='white'

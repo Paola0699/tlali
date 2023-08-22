@@ -1,7 +1,7 @@
-import { Button, Card, CardContent, Typography } from "@mui/material";
+import { Button, Card, CardContent, List, ListItem, ListItemText, Typography } from "@mui/material";
 import React from "react";
 
-const MembresiasCard = ({ nombre, descripción, precio, width, color, fontColor, headerColor }) => {
+const MembresiasCard = ({ nombre, descripción, precio,  beneficios, width, color, fontColor, headerColor }) => {
   return (
     <Card
       style={{
@@ -29,6 +29,10 @@ const MembresiasCard = ({ nombre, descripción, precio, width, color, fontColor,
         <Typography color={fontColor ? fontColor : "#665959"} variant="h6" fontWeight={500} textAlign={"center"}>
           {precio}
         </Typography>
+
+        {beneficios && ( <List dense={true}> {beneficios.map((beneficio)=>(
+          <ListItem key={beneficio}><ListItemText style={{color: 'white', textAlign:'center'}}>{beneficio}</ListItemText></ListItem>
+        ))}</List>)}
         <Button
           style={{
             borderColor: fontColor ? fontColor : "#665959",
