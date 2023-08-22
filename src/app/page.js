@@ -1,5 +1,5 @@
 "use client";
-import { Grid, createTheme } from "@mui/material";
+import { Grid, createTheme, useMediaQuery } from "@mui/material";
 import Navbar from "./components/Navbar";
 import SeccionMembresias from "./components/secciones/membresias";
 import { ThemeProvider } from "@emotion/react";
@@ -12,6 +12,7 @@ import { FloatingWhatsApp } from "react-floating-whatsapp";
 import CarouselCover from "./carousel";
 import SeccionMembresiasTabla from "./components/secciones/membresias-tabla";
 import Footer from "./components/Footer";
+import CarouselMobileCover from "./carousel-mobile";
 
 const theme = createTheme({
   typography: {
@@ -35,6 +36,8 @@ const theme = createTheme({
 });
 
 const Home = () => {
+  const isMdAndLg = useMediaQuery(theme.breakpoints.up("md"));
+
   return (
     <ThemeProvider theme={theme}>
       <Grid container>
@@ -42,7 +45,7 @@ const Home = () => {
           <Navbar />
         </Grid>
         <Grid item xs={12}>
-          <CarouselCover />
+          {isMdAndLg ? <CarouselCover /> : <CarouselMobileCover/>}
         </Grid>
         <SeccionReservaciones id={"reservaciones"} />
         <SeccionMembresias id="membresias" />
