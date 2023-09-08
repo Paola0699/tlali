@@ -1,73 +1,48 @@
 "use client";
 import {
-  Box,
-  Button,
-  Divider,
-  Drawer,
+  BottomNavigation,
+  BottomNavigationAction,
   Grid,
-  List,
-  ListItem,
-  ListItemButton,
-  ListItemIcon,
-  ListItemText,
   Paper,
   Typography,
 } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "../components/Navbar";
+import MenuBody from "./menu-body";
+import MenuDrawer from "./menu-drawer";
 
 const Menu = () => {
-  const [state, setState] = React.useState({
-    top: false,
-    left: false,
-    bottom: false,
-    right: false,
-  });
-
-  const toggleDrawer = (anchor, open) => (event) => {
+  const categories = [
+    {
+      Nombre_categoria: "Desayunos",
+      Icono: "",
+    },
+    {
+      Nombre_categoria: "Comidas",
+      Icono: "",
+    },
+    {
+      Nombre_categoria: "Postres",
+      Icono: "",
+    },
+    {
+      Nombre_categoria: "Bebidas",
+      Icono: "",
+    },
+  ]
+  const [state, setState] = useState(false);
+  const toggleDrawer = (open) => (event) => {
     if (
       event.type === "keydown" &&
       (event.key === "Tab" || event.key === "Shift")
     ) {
       return;
     }
-
-    setState({ ...state, [anchor]: open });
+    setState(open);
   };
 
-  const list = (anchor) => (
-    <Box
-      sx={{ width: anchor === "top" || anchor === "bottom" ? "auto" : 250 }}
-      role="presentation"
-      onClick={toggleDrawer(anchor, false)}
-      onKeyDown={toggleDrawer(anchor, false)}
-    >
-      <List>
-        {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon></ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-      <Divider />
-      <List>
-        {["All mail", "Trash", "Spam"].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon></ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-    </Box>
-  );
-
   return (
-    <Grid container>
+    <Grid container style={{backgroundColor: 'white'}} >
       <Grid item xs={12}>
         <Navbar />
       </Grid>
@@ -81,12 +56,11 @@ const Menu = () => {
             backgroundPosition: "center",
             display: "flex",
             padding: "3rem",
-            position: "relative", // Agregar posición relativa al Paper
+            position: "relative",
             flexDirection: "column",
             justifyContent: "center",
           }}
         >
-          {/* Capa con color de fondo y opacidad */}
           <div
             style={{
               position: "absolute",
@@ -94,7 +68,7 @@ const Menu = () => {
               left: 0,
               width: "100%",
               height: "100%",
-              backgroundColor: "rgba(0, 0, 0, 0.5)", // Utilizar rgba para agregar opacidad al color de fondo
+              backgroundColor: "rgba(0, 0, 0, 0.5)",
             }}
           />
           <Typography variant={"h2"} color={"white"} style={{ zIndex: "2" }}>
@@ -102,20 +76,20 @@ const Menu = () => {
           </Typography>
         </Paper>
       </Grid>
-      <div>
-        {["left", "right", "top", "bottom"].map((anchor) => (
-          <React.Fragment key={anchor}>
-            <Button onClick={toggleDrawer(anchor, true)}>{anchor}</Button>
-            <Drawer
-              anchor={anchor}
-              open={state[anchor]}
-              onClose={toggleDrawer(anchor, false)}
-            >
-              {list(anchor)}
-            </Drawer>
-          </React.Fragment>
-        ))}
-      </div>
+      <Grid item xs={12} style={{minHeight: '50vh'}} padding={10}> 
+        <MenuBody/>
+        <MenuDrawer state={state} toggleDrawer={toggleDrawer}/>      
+      </Grid>
+      <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0, zIndex: 2 }} elevation={3}>
+        <BottomNavigation
+            showLabels
+            onChange={toggleDrawer(true)}
+          >
+            {categories && categories.map((category) => (
+                <BottomNavigationAction key={category.Nombre_categoria} label={category.Nombre_categoria}/>
+            ))}
+          </BottomNavigation>
+      </Paper>
     </Grid>
   );
 };

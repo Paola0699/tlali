@@ -1,0 +1,20 @@
+[
+    {
+        "Platillo": "Tlali",
+        "Descripcion": "Composición de lechugas, espinaca, pera a la mantequilla, queso de cabra, nuez, tocino, aguacate y vinagre balsámico",
+        "Precio": 143,
+        "Categoria": "Ensaladas"
+    },
+    {
+        "Platillo": "Frutos rojos",
+        "Descripcion": "Composición de lechugas, espinaca, fresa, zarzamora y un toque de queso de cabra",
+        "Precio": 168,
+        "Categoria": "Ensaladas"
+    },
+    {
+        "Platillo": "Tropical",
+        "Descripcion": "Composición de lechugas, espinaca, supremas de naranja, pollo asado, jitomate cherry y queso panela",
+        "Precio": 119,
+        "Categoria": "Ensaladas"
+    }
+]

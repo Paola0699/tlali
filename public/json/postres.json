@@ -1,0 +1,69 @@
+[
+
+    {
+        "Platillo": "Trufa",
+        "Descripcion": "",
+        "Precio": 133,
+        "Categoria": "Postres"
+    },
+    {
+        "Platillo": "Cheesecake de fresa",
+        "Descripcion": "",
+        "Precio": 125,
+        "Categoria": "Postres"
+    },
+    {
+        "Platillo": "Pay de queso con guayaba",
+        "Descripcion": "",
+        "Precio": 78,
+        "Categoria": "Postres"
+    },
+    {
+        "Platillo": "Brownie con helado",
+        "Descripcion": "",
+        "Precio": 112,
+        "Categoria": "Postres"
+    },
+    {
+        "Platillo": "Tarta de nuez",
+        "Descripcion": "",
+        "Precio": 79,
+        "Categoria": "Postres"
+    },
+    {
+        "Platillo": "Affogato",
+        "Descripcion": "",
+        "Precio": 72,
+        "Categoria": "Postres"
+    },
+    {
+        "Platillo": "Affogato Baileys",
+        "Descripcion": "",
+        "Precio": 121,
+        "Categoria": "Postres"
+    },
+    {
+        "Platillo": "Tarta de chocolate oscuro",
+        "Descripcion": "",
+        "Precio": 115,
+        "Categoria": "Postres"
+    },
+    {
+        "Platillo": "Tarta de chocolate blanco",
+        "Descripcion": "",
+        "Precio": 132,
+        "Categoria": "Postres"
+    },
+    {
+        "Platillo": "Mousse de chocolate",
+        "Descripcion": "",
+        "Precio": 117,
+        "Categoria": "Postres"
+    },
+    {
+        "Platillo": "Cheesecake tortuga",
+        "Descripcion": "",
+        "Precio": 133,
+        "Categoria": "Postres"
+    }
+]

@@ -1,0 +1,44 @@
+[
+    {
+        "Platillo": "Pollo en crema de chipotle",
+        "Descripcion": "",
+        "Precio": 134,
+        "Categoria": "Burritos"
+    },
+    {
+        "Platillo": "Pollo a las finas hierbas",
+        "Descripcion": "",
+        "Precio": 133,
+        "Categoria": "Burritos"
+    },
+    {
+        "Platillo": "Arrachera",
+        "Descripcion": "",
+        "Precio": 173,
+        "Categoria": "Burritos"
+    },
+    {
+        "Platillo": "Cecina",
+        "Descripcion": "",
+        "Precio": 169,
+        "Categoria": "Burritos"
+    },
+    {
+        "Platillo": "Carne enchilada",
+        "Descripcion": "",
+        "Precio": 151,
+        "Categoria": "Burritos"
+    },
+    {
+        "Platillo": "Alambre",
+        "Descripcion": "",
+        "Precio": 132,
+        "Categoria": "Burritos"
+    },
+    {
+        "Platillo": "Alambre veggie",
+        "Descripcion": "Al grill acompañadas de queso panela, calabaza, cebolla morada y pimientos",
+        "Precio": 128,
+        "Categoria": "Burritos"
+    }
+]

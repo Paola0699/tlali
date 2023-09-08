@@ -1,0 +1,26 @@
+[
+    {
+        "Platillo": "Blancas",
+        "Descripcion": "Helado de chocolate, ferrero, frambuesa y salsa de frutos",
+        "Precio": 209,
+        "Categoria": "Waffles"
+    },
+    {
+        "Platillo": "Serrano",
+        "Descripcion": "Jamón de pierna, queso manchego ahumado, espinacas, jitomate cherry y aguacate",
+        "Precio": 185,
+        "Categoria": "Waffles"
+    },
+    {
+        "Platillo": "Pizzero",
+        "Descripcion": "Salsa pepperoni y queso mozarella",
+        "Precio": 138,
+        "Categoria": "Waffles"
+    },
+    {
+        "Platillo": "Armenta",
+        "Descripcion": "Láminas de oro de 24 kilates sobre una masa belga, acompañada de boleado cremoso helado de vainilla, frutos rojos, moras y ferrero",
+        "Precio": 387,
+        "Categoria": "Waffles"
+    }
+]

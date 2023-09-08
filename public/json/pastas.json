@@ -1,0 +1,33 @@
+[
+
+    {
+        "Platillo": "Pasta Poblana",
+        "Descripcion": "Fetuccini bañado en salsa poblana, queso parmesano, acompañado con pollo a las finas hierbas",
+        "Precio": 140,
+        "Categoria": "Pastas y Sopas"
+    },
+    {
+        "Platillo": "Pasta Carbonara",
+        "Descripcion": "Fetuccini o fusilli de trigo bañado en la tradicional salsa carbonara, acompañada de tocino y queso parmesano",
+        "Precio": 136,
+        "Categoria": "Pastas y Sopas"
+    },
+    {
+        "Platillo": "Pasta Alfredo",
+        "Descripcion": "Fetuccini o fusilli de trigo preparado con salsa alfredo, acompañado de queso parmesano",
+        "Precio": 129,
+        "Categoria": "Pastas y Sopas"
+    },
+    {
+        "Platillo": "Pasta en aceite de chiles",
+        "Descripcion": "Fetuccini o fusilli de trigo sofrito en nuestro aceite de chiles acompañado de queso parmesano",
+        "Precio": 119,
+        "Categoria": "Pastas y Sopas"
+    },
+    {
+        "Platillo": "Pasta Arrabiata",
+        "Descripcion": "Fetuccini o fusilli de trigo bañado en salsa de tomate, con un toque de chile de árbol acompañado de queso parmesano",
+        "Precio": 126,
+        "Categoria": "Pastas y Sopas"
+    }
+]

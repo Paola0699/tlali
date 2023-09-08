@@ -1,0 +1,81 @@
+[
+
+    {
+        "Platillo": "Agua de Jamaica",
+        "Descripcion": "",
+        "Precio": 39,
+        "Categoria": "Bebidas"
+    },
+    {
+        "Platillo": "Agua de Horchata",
+        "Descripcion": "",
+        "Precio": 39,
+        "Categoria": "Bebidas"
+    },
+    {
+        "Platillo": "Agua del día (Pregunte disponibilidad)",
+        "Descripcion": "",
+        "Precio": 35,
+        "Categoria": "Bebidas"
+    },
+    {
+        "Platillo": "Agua natural",
+        "Descripcion": "",
+        "Precio": 28,
+        "Categoria": "Bebidas"
+    },
+    {
+        "Platillo": "Refresco",
+        "Descripcion": "",
+        "Precio": 39,
+        "Categoria": "Bebidas"
+    },
+    {
+        "Platillo": "Limonada",
+        "Descripcion": "",
+        "Precio": 55,
+        "Categoria": "Bebidas"
+    },
+    {
+        "Platillo": "Naranjada",
+        "Descripcion": "",
+        "Precio": 55,
+        "Categoria": "Bebidas"
+    },
+    {
+        "Platillo": "Jugo (naranja o verde)",
+        "Descripcion": "",
+        "Precio": 53,
+        "Categoria": "Bebidas"
+    },
+    {
+        "Platillo": "Agua Perrier",
+        "Descripcion": "",
+        "Precio": 67,
+        "Categoria": "Bebidas"
+    },
+    {
+        "Platillo": "Rusa",
+        "Descripcion": "",
+        "Precio": 45,
+        "Categoria": "Bebidas"
+    },
+    {
+        "Platillo": "Limonada Strawberry",
+        "Descripcion": "",
+        "Precio": 63,
+        "Categoria": "Bebidas"
+    },
+    {
+        "Platillo": "Limonada Espacial (con licor de menta)",
+        "Descripcion": "",
+        "Precio": 73,
+        "Categoria": "Bebidas"
+    },
+    {
+        "Platillo": "Limonada de whisky",
+        "Descripcion": "",
+        "Precio": 89,
+        "Categoria": "Bebidas"
+    }
+]

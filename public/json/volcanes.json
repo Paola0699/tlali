@@ -1,0 +1,26 @@
+[
+    {
+        "Platillo": "Arrachera",
+        "Descripcion": "",
+        "Precio": 115,
+        "Categoria": "Volcanes"
+    },
+    {
+        "Platillo": "Pollo",
+        "Descripcion": "",
+        "Precio": 71,
+        "Categoria": "Volcanes"
+    },
+    {
+        "Platillo": "Carne enchilada",
+        "Descripcion": "",
+        "Precio": 98,
+        "Categoria": "Volcanes"
+    },
+    {
+        "Platillo": "Cecina",
+        "Descripcion": "",
+        "Precio": 109,
+        "Categoria": "Volcanes"
+    }
+]

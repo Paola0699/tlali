@@ -1,0 +1,20 @@
+[
+    {
+        "Platillo": "Mexicana",
+        "Descripcion": "Pan chapata rellena de frijoles refritos, suave arrachera, chorizo, guacamole",
+        "Precio": 173,
+        "Categoria": "Chapatas"
+    },
+    {
+        "Platillo": "Americana",
+        "Descripcion": "Pan chapata rellena de crujiente tocino, cebolla, huevos estrellados y toque de miel maple",
+        "Precio": 122,
+        "Categoria": "Chapatas"
+    },
+    {
+        "Platillo": "Pollo parmesano",
+        "Descripcion": "Pan chapata rellena de suave pollo sazonado con queso parmesano y salsa pomodoro",
+        "Precio": 148,
+        "Categoria": "Chapatas"
+    }
+]

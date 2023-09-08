@@ -1,0 +1,108 @@
+﻿[
+    {
+        "Nombre_categoria": "Entradas",
+        "Descripcion": "",
+        "Icono": "",
+        "API": "/json/entradas.json",
+        "Categoria": "Comidas"
+    },
+    {
+        "Nombre_categoria": "Paquetes Desayunos",
+        "Descripcion": "",
+        "Icono": "",
+        "API": "/json/desayunos.json",
+        "Categoria": "Desayunos"
+    },
+    {
+        "Nombre_categoria": "México a tu Paladar",
+        "Descripcion": "",
+        "Icono": "",
+        "API": "/json/mexico.json",
+        "Categoria": "Comidas"
+        
+    },
+    {
+        "Nombre_categoria": "Platos fuertes",
+        "Descripcion": "",
+        "Icono": "",
+        "API": "/json/platos_fuertes.json",
+        "Categoria": "Comidas"
+    },
+    {
+        "Nombre_categoria": "Burritos",
+        "Descripcion": "Clásica tortilla de harina rellena de proteína a elegir, frijoles de la casa, crujiente lechuga y queso manchego Acompañado de papas a la francesa",
+        "Icono": "",
+        "API": "/json/burritos.json",
+        "Categoria": "Comidas"
+    },
+    {
+        "Nombre_categoria": "Chapatas",
+        "Descripcion": "",
+        "Icono": "",
+        "API": "/json/chapatas.json",
+        "Categoria": "Comidas"
+    },
+    {
+        "Nombre_categoria": "Waffles",
+        "Descripcion": "Hechos de una exquisita masa belga. (En todos nuestros waffles puedes elegir base de chocolate o natural)",
+        "Icono": "",
+        "API": "/json/waffles.json",
+        "Categoria": "Desayunos"
+    },
+    {
+        "Nombre_categoria": "Costras",
+        "Descripcion": "Crujiente queso asado en tortilla de harina con proteína a elegir, acompañadas de guacamole y chilito toreado",
+        "Icono": "",
+        "API": "/json/costras.json",
+        "Categoria": "Comidas"
+    },
+    {
+        "Nombre_categoria": "Volcanes",
+        "Descripcion": "Clásicos volcanes con carne acompañadas de queso gratinado, con la proteína de tu elección",
+        "Icono": "",
+        "API": "/json/volcanes.json",
+        "Categoria": "Comidas"
+    },
+    {
+        "Nombre_categoria": "Bagels",
+        "Descripcion": "",
+        "Icono": "",
+        "API": "/json/bagels.json",
+        "Categoria": "Comidas"
+    },
+    {
+        "Nombre_categoria": "Crepas",
+        "Descripcion": "",
+        "Icono": "",
+        "API": "/json/crepas.json",
+        "Categoria": "Desayunos"
+    },
+    {
+        "Nombre_categoria": "Ensaladas",
+        "Descripcion": "",
+        "Icono": "",
+        "API": "/json/ensaladas.json",
+        "Categoria": "Comidas"
+    },
+    {
+        "Nombre_categoria": "Pastas y Sopas",
+        "Descripcion": "Disfruta de nuestras deliciosas pastas al estilo Tlali, todas acompañadas de pan y queso parmesano rallado",
+        "Icono": "",
+        "API": "/json/pastas.json",
+        "Categoria": "Comidas"
+    },
+    {
+        "Nombre_categoria": "Postres",
+        "Descripcion": "",
+        "Icono": "",
+        "API": "/json/postres.json",
+        "Categoria": "Postres"
+    },
+    {
+        "Nombre_categoria": "Bebidas",
+        "Descripcion": "",
+        "Icono": "",
+        "API": "/json/bebidas.json",
+        "Categoria": "Bebidas"
+    }
+]

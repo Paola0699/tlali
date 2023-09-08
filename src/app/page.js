@@ -1,8 +1,7 @@
 "use client";
-import { Grid, createTheme, useMediaQuery } from "@mui/material";
+import { Grid, useMediaQuery } from "@mui/material";
 import Navbar from "./components/Navbar";
 import SeccionMembresias from "./components/secciones/membresias";
-import { ThemeProvider } from "@emotion/react";
 import SeccionReservaciones from "./components/secciones/reservaciones";
 import SeccionFundador from "./components/secciones/fundador";
 import SeccionFundacion from "./components/secciones/fundacion";
@@ -13,33 +12,12 @@ import CarouselCover from "./carousel";
 import SeccionMembresiasTabla from "./components/secciones/membresias-tabla";
 import Footer from "./components/Footer";
 import CarouselMobileCover from "./carousel-mobile";
-
-const theme = createTheme({
-  typography: {
-    fontFamily: "Lato, sans-serif", // Fuente predeterminada para todo el texto
-    h2: {
-      fontFamily: "Rufina,  serif", // Fuente para los h2
-    },
-    h3: {
-      fontFamily: "Rufina,  serif", // Fuente para los h2
-    },
-    h4: {
-      fontFamily: "Rufina,  serif", // Fuente para los h2
-    },
-    subtitle1: {
-      fontFamily: "Lato, sans-serif", // Fuente para los subtitle1 (los mantendremos como la fuente predeterminada)
-    },
-    body2: {
-      fontFamily: "Lato, sans-serif", // Fuente para los subtitle1 (los mantendremos como la fuente predeterminada)
-    },
-  },
-});
+import { useTheme } from "@emotion/react";
 
 const Home = () => {
+  const theme = useTheme();
   const isMdAndLg = useMediaQuery(theme.breakpoints.up("md"));
-
   return (
-    <ThemeProvider theme={theme}>
       <Grid container>
         <Grid item xs={12}>
           <Navbar />
@@ -62,7 +40,6 @@ const Home = () => {
         />
         <Footer/>
       </Grid>
-    </ThemeProvider>
   );
 };
 

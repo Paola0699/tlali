@@ -1,0 +1,62 @@
+[
+    {
+        "Platillo": "Paquete Cures (Viernes a Domingo)",
+        "Descripcion": "Consome, barbacoa, cerveza/rusa",
+        "Precio": 320,
+        "Categoria": "Paquetes Desayunos"
+    },
+    {
+        "Platillo": "Paquete Fit",
+        "Descripcion": "Ensalada Tlali con pollo, jugo verde, té/café refill y fruta",
+        "Precio": 263,
+        "Categoria": "Paquetes Desayunos"
+    },
+    {
+        "Platillo": "Paquete Llenes",
+        "Descripcion": "Cecina, agua del día, pay de queso",
+        "Precio": 330,
+        "Categoria": "Paquetes Desayunos"
+    },
+    {
+        "Platillo": "Paquete Vegetariano",
+        "Descripcion": "Quesadilla/omelette con dos ingredientes a elegir, ensalada de frutos rojos, café/agua del día y pay de queso",
+        "Precio": 283,
+        "Categoria": "Paquetes Desayunos"
+    },
+    {
+        "Platillo": "Paquete Infantil",
+        "Descripcion": "Molletes, papas a la francesa, jugo de naranja, mini hot cakes",
+        "Precio": 159,
+        "Categoria": "Paquetes Desayunos"
+    },
+    {
+        "Platillo": "Paquete Americano",
+        "Descripcion": "Hot cakes con miel, jugo de naranja, huevos al gusto, café refill",
+        "Precio": 187,
+        "Categoria": "Paquetes Desayunos"
+    },
+    {
+        "Platillo": "Paquete Americano Mini",
+        "Descripcion": "Hot cakes con miel. jugo de narana, huevo al gusto",
+        "Precio": 151,
+        "Categoria": "Paquetes Desayunos"
+    },
+    {
+        "Platillo": "Paquete Mexa",
+        "Descripcion": "Tlacoyos ahogados, café refill, agua del día y muffin de casa",
+        "Precio": 223,
+        "Categoria": "Paquetes Desayunos"
+    },
+    {
+        "Platillo": "Muffin",
+        "Descripcion": "Esponjoso pan tipo muffin, horneado de casa",
+        "Precio": 12,
+        "Categoria": "Paquetes Desayunos"
+    },
+    {
+        "Platillo": "Adicional de Hot Cakes",
+        "Descripcion": "Los clásicos y esponjosos hot cakes acompañados de miel maple y 2 toppings a elegir ( 6 pzas) y 2 café refill",
+        "Precio": 109,
+        "Categoria": "Paquetes Desayunos"
+    }
+]

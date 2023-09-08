@@ -1,0 +1,38 @@
+[
+    {
+        "Platillo": "Arrachera",
+        "Descripcion": "Con una mezcla de lechuga fresca bañada en limonada al orégano, jitomate cherry, tocino premium, aguacate. Acompañada con cebolla caramelizada y frijoles de la casa",
+        "Precio": 277,
+        "Categoria": "Platos fuertes"
+    },
+    {
+        "Platillo": "Nopal",
+        "Descripcion": "Nopal asado con frijoles de casa, queso fresco, guindillas asadas de jalapeño, jitomate cherry asado, cebolla cambray asada, acompañado de guacamole y arrachera",
+        "Precio": 138,
+        "Categoria": "Platos fuertes"
+    },
+    {
+        "Platillo": "Cecina",
+        "Descripcion": "Cecina asada con cebolla cambray, queso panela asado, nopales preparados, quesadillas de chistorra con queso manchego asadas en salsa de cacahuate, acompañada de frijoles y guacamole",
+        "Precio": 298,
+        "Categoria": "Platos fuertes"
+    },
+    {
+        "Platillo": "Pollo a las finas hierbas",
+        "Descripcion": "Filete de pollo a la plancha, acompañado con ensalada de la casa",
+        "Precio": 148,
+        "Categoria": "Platos fuertes"
+    },
+    {
+        "Platillo": "Carne enchilada",
+        "Descripcion": "Carne de cerdo acompañada de queso panela sobre un nopal asado, chiles toreados y frijoles de la casa",
+        "Precio": 176,
+        "Categoria": "Platos fuertes"
+    },
+    {
+        "Platillo": "Plato huasteco",
+        "Descripcion": "Deliciosa cecina acompañada de enchiladas verdes y rojas, nopales, cebollitas asadas y frijoles de la casa para acompañar",
+        "Precio": 235,
+        "Categoria": "Platos fuertes"
+    }
+]

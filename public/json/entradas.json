@@ -1,0 +1,75 @@
+[
+    {
+        "Platillo": "Tapas Serrano y miel",
+        "Descripcion": "Jamón serrano sobre pan blanco tostado, untado con queso de cabra fresco y un toque de miel y mostaza",
+        "Precio": 126,
+        "Categoria": "Entradas"
+    },
+    {
+        "Platillo": "Tapas Frutos del bosque",
+        "Descripcion": "Frutos rojos, nuez sobre pan blanco tostado untado con queso de cabra fresco y un toque de vinagre balsamico",
+        "Precio": 126,
+        "Categoria": "Entradas"
+    },
+    {
+        "Platillo": "Tapas Jamón y tomillo",
+        "Descripcion": "Jamón serrano con pera, sobre pan blanco tostado, untado con queso de cabra y un toque de miel de tomillo",
+        "Precio": 126,
+        "Categoria": "Entradas"
+    },
+    {
+        "Platillo": "Quesadillas Tlali",
+        "Descripcion": "Tortilla de harina gratinada con queso manchego, rellena de pollo a las finas hierbas y pico de gallo",
+        "Precio": 103,
+        "Categoria": "Entradas"
+    },
+    {
+        "Platillo": "Quesadillas Veggie",
+        "Descripcion": "Una alternativa vegetariana de nuestras clásicas quesadillas, rellenas de champiñones, pimientos, cebolla y calabazas asadas",
+        "Precio": 123,
+        "Categoria": "Entradas"
+    },
+    {
+        "Platillo": "Tlacoyos",
+        "Descripcion": "Tradicionales de masa azul acompañados de lechuga, queso fresco y un toco de crema ácida",
+        "Precio": 88,
+        "Categoria": "Entradas"
+    },
+    {
+        "Platillo": "Guacamole",
+        "Descripcion": "Cremoso guacamole, acompañado de chorizo, pico de gallo, totopos, queso y chicharrón esponjado",
+        "Precio": 135,
+        "Categoria": "Entradas"
+    },
+    {
+        "Platillo": "Papas a la francesa (orden)",
+        "Descripcion": "",
+        "Precio": 74,
+        "Categoria": "Entradas"
+    },
+
+    {
+        "Platillo": "Sopes",
+        "Descripcion": "Clásicos sopes con salsa de tu elección (verde o roja), acompañados de queso fresco. Puedes agregar la proteína de tu elección (pollo, cecina, arrachera, carne enchilada, chorizo) por $41 más\"",
+        "Precio": 85,
+        "Categoria": "Entradas"
+    },
+    {
+        "Platillo": "Tacos dorados de pollo",
+        "Descripcion": "Crujientes taquitos rellenos de pollo, servidos sobre una cama de lechuga, acompañados de crema ácida y queso fresco",
+        "Precio": 93,
+        "Categoria": "Entradas"
+    },
+    {
+        "Platillo": "Tacos dorados de barbacoa",
+        "Descripcion": "Crujientes taquitos rellenos de barbacoa, servidos sobre una cama de lechuga, acompañados de crema ácida y queso fresco",
+        "Precio": 169,
+        "Categoria": "Entradas"
+    },
+    {
+        "Platillo": "Nachos",
+        "Descripcion": "Crujientes totopos embarrados de frijoles, gratinados y acompañados de lechuga, crema ácida y pico de gallo. Por $44 más agrega la proteína de tu elección (pollo, arrachera, chorizo, etc)",
+        "Precio": 113,
+        "Categoria": "Entradas"
+    }
+]

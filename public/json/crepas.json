@@ -1,0 +1,51 @@
+[
+
+    {
+        "Platillo": "Pollo en salsa poblana y manchego",
+        "Descripcion": "",
+        "Precio": 118,
+        "Categoria": "Crepas"
+    },
+    {
+        "Platillo": "Pollo, chipotle y manchego",
+        "Descripcion": "",
+        "Precio": 116,
+        "Categoria": "Crepas"
+    },
+    {
+        "Platillo": "Pomodoro, manchego, pepperoni y jamón",
+        "Descripcion": "",
+        "Precio": 127,
+        "Categoria": "Crepas"
+    },
+    {
+        "Platillo": "Choriqueso",
+        "Descripcion": "",
+        "Precio": 83,
+        "Categoria": "Crepas"
+    },
+    {
+        "Platillo": "Strudel de manzana con helado",
+        "Descripcion": "",
+        "Precio": 113,
+        "Categoria": "Crepas"
+    },
+    {
+        "Platillo": "Nutella con plátano",
+        "Descripcion": "",
+        "Precio": 87,
+        "Categoria": "Crepas"
+    },
+    {
+        "Platillo": "Queso de cabra con mermelada de frutos rojos",
+        "Descripcion": "",
+        "Precio": 108,
+        "Categoria": "Crepas"
+    },
+    {
+        "Platillo": "Berries con nutella",
+        "Descripcion": "",
+        "Precio": 119,
+        "Categoria": "Crepas"
+    }
+]

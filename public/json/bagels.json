@@ -1,0 +1,20 @@
+[
+    {
+        "Platillo": "Ibérico",
+        "Descripcion": "Bagel relleno de jamó serrano, dulce pera asada, cremoso queso de cabra",
+        "Precio": 147,
+        "Categoria": "Bagels"
+    },
+    {
+        "Platillo": "Estrellado",
+        "Descripcion": "Bagel relleno de jamón de pavo, espinaca, huevo estrellado, queso manchego y tomates cherry",
+        "Precio": 131,
+        "Categoria": "Bagels"
+    },
+    {
+        "Platillo": "Dulce",
+        "Descripcion": "Bagel relleno de cremoso queso de cabra, dulce mermelada de zarzamora, crujiente nuez y pera asada",
+        "Precio": 105,
+        "Categoria": "Bagels"
+    }
+]

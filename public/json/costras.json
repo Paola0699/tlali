@@ -1,0 +1,26 @@
+[
+    {
+        "Platillo": "Arrachera",
+        "Descripcion": "",
+        "Precio": 131,
+        "Categoria": "Costras"
+    },
+    {
+        "Platillo": "Veggie",
+        "Descripcion": "",
+        "Precio": 98,
+        "Categoria": "Costras"
+    },
+    {
+        "Platillo": "Carne enchilada",
+        "Descripcion": "",
+        "Precio": 119,
+        "Categoria": "Costras"
+    },
+    {
+        "Platillo": "Pollo",
+        "Descripcion": "",
+        "Precio": 103,
+        "Categoria": "Costras"
+    }
+]
