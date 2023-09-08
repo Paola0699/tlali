@@ -9,7 +9,7 @@ export default function MenuDrawer({ state, toggleDrawer }) {
       open={state}
       onClose={toggleDrawer(false)}
     >
-     <MenuDrawerContainer/>
+      <MenuDrawerContainer />
     </Drawer>
   );
 }

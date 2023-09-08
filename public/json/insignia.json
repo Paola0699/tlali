@@ -1,0 +1,75 @@
+
+[
+    {
+        "Platillo": "Waffle Armenta",
+        "Descripcion": "Laminas de oro de 24 kilates sobre masa belga, acompañada de boleado de cremoso helado de vainilla, frutos rojos, moras y ferrero",
+        "Precio": 387,
+        "Categoria": "Platillos Insignia"
+    },
+    {
+        "Platillo": "Chapata Mexicana",
+        "Descripcion": "Crocante pan relleno de arrachera, guacamole y chorizo, con huntado de frijoles de la casa, acompañado de crujientes papas fritas",
+        "Precio": 173,
+        "Categoria": "Platillos Insignia"
+    },
+    {
+        "Platillo": "Pasta Poblana",
+        "Descripcion": "Fetuccini de trigo bañado en crema con rajas, salsa poblana, acompañado de queso manchego rallado.",
+        "Precio": 140,
+        "Categoria": "Platillos Insignia"
+    },
+    {
+        "Platillo": "Quesadillas Tlali",
+        "Descripcion": "Tortillas de harina gratinada con queso manchego, relleno de pollo a las finas hierbas y guacamole",
+        "Precio": 103,
+        "Categoria": "Platillos Insignia"
+    },
+    {
+        "Platillo": "Guacamole",
+        "Descripcion": "Cremoso guacamole, acompañado de chorizo, pico de gallo, totopos, queso y chicharrón esponjado",
+        "Precio": 135,
+        "Categoria": "Platillos Insignia"
+    },
+    {
+        "Platillo": "Sopa Azteca",
+        "Descripcion": "Tradicional sopa de tortilla con nuestra mezcla de chiles, acompañada de guacamole y un toque de crema ácida",
+        "Precio": 89,
+        "Categoria": "Platillos Insignia"
+    },
+    {
+        "Platillo": "Arrachera",
+        "Descripcion": "Con una mezcla de lechuga fresca bañada en limonada al orégano, jitomate cherry, tocino premium, aguacate. Acompañada con cebolla caramelizada y guacamole",
+        "Precio": 277,
+        "Categoria": "Platillos Insignia"
+    },
+    {
+        "Platillo": "Cecina",
+        "Descripcion": "Cecina asada con cebolla cambray, queso panela asado, nopales preparados, quesadillas de chistorra con queso manchego asadas en salsa de cacahuate, acompañada de frijoles y guacamole",
+        "Precio": 298,
+        "Categoria": "Platillos Insignia"
+    },
+    {
+        "Platillo": "Ensalada Tlali",
+        "Descripcion": "Composición de lechugas, espinaca, pera a la mantequilla, queso de cabra, nuez, tocino, aguacate y vinagre balsámico",
+        "Precio": 143,
+        "Categoria": "Platillos Insignia"
+    },
+    {
+        "Platillo": "Enchiladas Suizas",
+        "Descripcion": "Tortilla de maíz rellena de pollo, bañadas en salsa suiza de la casa, gratinadas con queso manchego (4 pzas)",
+        "Precio": 131,
+        "Categoria": "Platillos Insignia"
+    },
+    {
+        "Platillo": "Enfrijoladas",
+        "Descripcion": "Tortillas de maíz, rellena de pollo bañado en salsa de frijol, acompañadas de queso fresco, toque de crema y chorizo",
+        "Precio": 128,
+        "Categoria": "Platillos Insignia"
+    },
+    {
+        "Platillo": "Nopal",
+        "Descripcion": "Nopal asado con frijoles de casa, queso fresco, guindillas asadas de jalapeño, jitomate chreey asad, cebolla cambray asada, acompañado de guacamole y arrachera",
+        "Precio": 138,
+        "Categoria": "Platillos Insignia"
+    }
+]

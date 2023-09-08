@@ -19,6 +19,12 @@ export default function RootLayout({ children }) {
       h4: {
         fontFamily: "Rufina,  serif", // Fuente para los h2
       },
+      h5: {
+        fontFamily: "Rufina,  serif", // Fuente para los h2
+      },
+      h6: {
+        fontFamily: "Rufina,  serif", // Fuente para los h2
+      },
       subtitle1: {
         fontFamily: "Lato, sans-serif", // Fuente para los subtitle1 (los mantendremos como la fuente predeterminada)
       },

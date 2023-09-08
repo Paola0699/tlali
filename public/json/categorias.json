@@ -1,5 +1,12 @@
 ﻿[
     {
+        "Nombre_categoria": "Platillos Insignia",
+        "Descripcion": "Si es tu primera vez en Tlali, conócenos con nuestros platillos insignia.",
+        "Icono": "",
+        "API": "/json/insignia.json",
+        "Categoria": "Platillos Insignia"
+    },
+    {
         "Nombre_categoria": "Entradas",
         "Descripcion": "",
         "Icono": "",
