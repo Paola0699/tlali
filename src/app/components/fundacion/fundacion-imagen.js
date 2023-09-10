@@ -14,7 +14,7 @@ const FundacionImagen = () => {
     <div style={{ position: "relative" }}>
       <Image
         alt={"membresiasImg"}
-        src={"/assets/img/img_6.png"}
+        src={"/assets/img/img_10.png"}
         width={imageWidth}
         height={imageWidth}
         style={{ objectFit: "cover", borderRadius: '50%' }}

@@ -8,9 +8,10 @@ const SeccionMembresiasTabla = () => {
   const theme = useTheme();
   const isMdAndLg = useMediaQuery(theme.breakpoints.up("md"));
   const paddingValue = isMdAndLg ? 15 : 5;
+
   return (
     <Grid container style={{ backgroundColor: "white" }}>
-      <Grid item xs={12} padding={paddingValue}>
+      <Grid item xs={12} paddingRight={paddingValue} paddingLeft={paddingValue} paddingBottom={10} paddingTop={10}>
         <MembresiasTable />
         <MembresiasTableMobile />
       </Grid>

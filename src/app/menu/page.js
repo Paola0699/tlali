@@ -55,7 +55,7 @@ const Menu = () => {
   };
   const handleOpenToggle = (newValue) => {
     setState(true);
-    dispatch(addSelectedMainCategory(categories[newValue]));
+    dispatch(addSelectedMainCategory({ Nombre_categoria: categories[newValue].Nombre_categoria}));
   }
 
   useEffect(()=>{

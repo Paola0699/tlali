@@ -18,8 +18,25 @@ const SeccionFundacion = ({ id }) => {
       paddingTop={10}
       paddingBottom={10}
       spacing={3}
-      style={{ backgroundColor: "white" }}
+      style={{ backgroundColor: "#F7F3ED " }}
     >
+       <Grid
+        item
+        xs={12}
+        md={6}
+        lg={6}
+        display={"flex"}
+        justifyContent={"center"}
+        flexDirection={"column"}
+        style={{backgroundColor:'#F7F3ED'}}
+      >
+        <FundacionDescripcion
+          titulo={"Fundación FIM"}
+          descripcion={
+            "Conoce la Fundación FIM. Una fundación con la que Tlali trabaja de la mano, para fortalecer e impulsar a México, a través del apoyo a jóvenes de escasos recursos, para que puedan continuar con sus estudios medio-superiores."
+          }
+        />
+      </Grid>
       <Grid
         item
         xs={12}
@@ -32,22 +49,7 @@ const SeccionFundacion = ({ id }) => {
       >
         <FundacionImagen />
       </Grid>
-      <Grid
-        item
-        xs={12}
-        md={6}
-        lg={6}
-        display={"flex"}
-        justifyContent={"center"}
-        flexDirection={"column"}
-      >
-        <FundacionDescripcion
-          titulo={"Fundación FIM"}
-          descripcion={
-            "Conoce la Fundación FIM. Una fundación con la que Tlali trabaja de la mano, para fortalecer e impulsar a México, a través del apoyo a jóvenes de escasos recursos, para que puedan continuar con sus estudios medio-superiores."
-          }
-        />
-      </Grid>
+     
     </Grid>
   );
 };

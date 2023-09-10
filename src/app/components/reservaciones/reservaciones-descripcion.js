@@ -9,7 +9,7 @@ const ReservacionesDescripcion = ({ titulo, descripcion }) => {
   const variantValue = isMdAndLg ? "h2" : "h4";
   return (
     <>
-      <Typography color={"#83948F"} variant={variantValue}>
+      <Typography color={"#758580 "} variant={variantValue}>
         {titulo}
       </Typography>
       <Typography color={"#665959"} variant="body1">

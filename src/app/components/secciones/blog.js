@@ -10,15 +10,17 @@ const SeccionBlog = ({ id }) => {
   const isMdAndLg = useMediaQuery(theme.breakpoints.up("md"));
   const paddingValue = isMdAndLg ? 15 : 5;
   const variantValue = isMdAndLg ? "h2" : "h3";
+  const containerPaddingValue = isMdAndLg ? '4rem' : '1.5rem';
 
   return (
     <Grid
       id={id}
       container
-      style={{ backgroundColor: "#83948F" }}
+      style={{ backgroundColor: "#fff" }}
       marginBottom={3}
+      padding={containerPaddingValue}
     >
-      <Grid item xs={12} padding={paddingValue}>
+      <Grid item xs={12} padding={paddingValue} style={{ backgroundColor: "#83948F" }} >
         <Typography
           className={rufina.className}
           variant={variantValue}

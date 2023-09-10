@@ -7,20 +7,20 @@ import { useMediaQuery, useTheme } from "@mui/material";
 const SeccionMembresias = ({ id }) => {
   const theme = useTheme();
   const isMdAndLg = useMediaQuery(theme.breakpoints.up("md"));
-  const paddingValue = isMdAndLg ? 20 : 8;
+  const paddingValue = isMdAndLg ? 10 : 8;
   const heightValue = isMdAndLg ? "600px" : "400px";
 
   return (
     <Grid
       id={id}
       container
-      style={{ backgroundColor: "#c5c6c4", color: "white" }}
+      style={{ backgroundColor: "#83948F", color: "white" }}
     >
       <Grid
         item
         xs={12}
-        md={6}
-        lg={6}
+        md={12}
+        lg={12}
         display={"flex"}
         alignItems={"center"}
         justifyContent={"center"}
@@ -34,7 +34,7 @@ const SeccionMembresias = ({ id }) => {
           }
         />
       </Grid>
-      <Grid
+    {/*   <Grid
         item
         xs={12}
         md={6}
@@ -57,7 +57,7 @@ const SeccionMembresias = ({ id }) => {
         >
           <source src="/assets/videos/video_6.mp4" type="video/mp4" />
         </video>
-      </Grid>
+      </Grid> */}
     </Grid>
   );
 };

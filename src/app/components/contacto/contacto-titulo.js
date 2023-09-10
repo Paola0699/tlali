@@ -5,7 +5,7 @@ import React from "react";
 const ContactoTitulo = ({ titulo }) => {
   const theme = useTheme();
   const isMdAndLg = useMediaQuery(theme.breakpoints.up("md"));
-  const variantValue = isMdAndLg ? "h2" : "h3";
+  const variantValue = isMdAndLg ? "h3" : "h4";
   return (
     <Typography
       color={"#83948F"}

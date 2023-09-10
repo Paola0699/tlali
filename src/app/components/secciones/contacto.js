@@ -19,10 +19,10 @@ const SeccionContacto = ({ id }) => {
       container
       paddingRight={paddingValue}
       paddingLeft={paddingValue}
-      paddingTop={10}
-      paddingBottom={10}
+      paddingTop={15}
+      paddingBottom={15}
       spacing={3}
-      style={{ backgroundColor: "white" }}
+      style={{ backgroundColor: "#F7F8F7" }}
     >
       <Grid
         item

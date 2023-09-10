@@ -10,7 +10,7 @@ const FundacionDescripcion = ({ titulo, descripcion }) => {
   return (
     <>
       <Typography
-        color={"#83948F"}
+        color={"#665959"}
         variant={variantValue}
       >
         {titulo}

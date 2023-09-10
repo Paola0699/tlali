@@ -1,7 +1,7 @@
 import { Button, Card, CardContent, List, ListItem, ListItemText, Typography } from "@mui/material";
 import React from "react";
 
-const MembresiasCard = ({ nombre, descripción, precio,  beneficios, width, color, fontColor, headerColor }) => {
+const MembresiasCard = ({ nombre, descripción, precio,  beneficios, width, color, fontColor }) => {
   return (
     <Card
       style={{
