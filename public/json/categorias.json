@@ -21,7 +21,7 @@
         "Categoria": "Desayunos"
     },
     {
-        "Nombre_categoria": "México a tu Paladar",
+        "Nombre_categoria": "Mexico a tu Paladar",
         "Descripcion": "",
         "Icono": "",
         "API": "/json/mexico.json",
