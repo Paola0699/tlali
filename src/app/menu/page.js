@@ -13,8 +13,8 @@ import MenuBody from "./menu-body";
 import MenuDrawer from "./menu-drawer";
 import { useDispatch, useSelector } from "react-redux";
 import { addSelectedMainCategory } from "../redux/reducers/menu";
-import { Cookie, DinnerDining, EmojiEvents, LightMode, WineBar } from "@mui/icons-material";
 import { useTheme } from "@emotion/react";
+import { Breakfast, Dessert, Drink, Food } from "../svgs";
 
 const Menu = () => {
   const dispatch = useDispatch();
@@ -27,19 +27,19 @@ const Menu = () => {
   const categories = [
     {
       Nombre_categoria: "Desayunos",
-      Icono: <LightMode/>,
+      Icono: <Breakfast style={{fontSize: '2.5rem'}} />,
     },
     {
       Nombre_categoria: "Comidas",
-      Icono: <DinnerDining/>,
+      Icono: <Food style={{fontSize: '2.5rem'}}/>,
     },
     {
       Nombre_categoria: "Postres",
-      Icono: <Cookie/>,
+      Icono: <Dessert style={{fontSize: '2.5rem'}}/>,
     },
     {
       Nombre_categoria: "Bebidas",
-      Icono: <WineBar/>
+      Icono: <Drink style={{fontSize: '2.5rem'}}/>
     },
   ]
   
@@ -105,6 +105,7 @@ const Menu = () => {
         <BottomNavigation
             showLabels
             onChange={(event, newValue) => handleOpenToggle(newValue) }
+            sx={{ height: '5rem' }}
           >
             {categories && categories.map((category) => (
                 <BottomNavigationAction icon={category.Icono} key={category.Nombre_categoria} label={category.Nombre_categoria}/>
