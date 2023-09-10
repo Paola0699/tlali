@@ -21,14 +21,6 @@
         "Categoria": "Desayunos"
     },
     {
-        "Nombre_categoria": "Mexico a tu Paladar",
-        "Descripcion": "",
-        "Icono": "",
-        "API": "/json/mexico.json",
-        "Categoria": "Comidas"
-        
-    },
-    {
         "Nombre_categoria": "Platos fuertes",
         "Descripcion": "",
         "Icono": "",
