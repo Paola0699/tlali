@@ -8,7 +8,7 @@ const FundacionImagen = () => {
   const isMdAndLg = useMediaQuery(theme.breakpoints.up("md"));
   const marginTopValue = isMdAndLg ? "-4rem" : "-5rem";
   const marginLeftValue = isMdAndLg ? "60%" : "30%";
-  const imageWidth = isMdAndLg ? 400 :300;
+  const imageWidth = isMdAndLg ? 300 :200;
 
   return (
     <div style={{ position: "relative" }}>

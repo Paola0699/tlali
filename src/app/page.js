@@ -1,5 +1,5 @@
 "use client";
-import { Grid, useMediaQuery } from "@mui/material";
+import { Grid, ImageList, ImageListItem, useMediaQuery } from "@mui/material";
 import Navbar from "./components/Navbar";
 import SeccionMembresias from "./components/secciones/membresias";
 import SeccionReservaciones from "./components/secciones/reservaciones";
@@ -8,26 +8,59 @@ import SeccionFundacion from "./components/secciones/fundacion";
 import SeccionBlog from "./components/secciones/blog";
 import SeccionContacto from "./components/secciones/contacto";
 import { FloatingWhatsApp } from "react-floating-whatsapp";
-import CarouselCover from "./carousel";
 import SeccionMembresiasTabla from "./components/secciones/membresias-tabla";
 import Footer from "./components/Footer";
-import CarouselMobileCover from "./carousel-mobile";
 import { useTheme } from "@emotion/react";
+
+
+const itemData = [
+  {
+    img: '/assets/img/img_3.png',
+    title: 'Breakfast',
+  },
+  {
+    img: '/assets/img/img_4.png',
+    title: 'Burger',
+  },
+  {
+    img: '/assets/img/img_5.png',
+    title: 'Camera',
+  },
+  {
+    img: '/assets/img/img_9.jpg',
+    title: 'Armenta',
+  },
+];
 
 const Home = () => {
   const theme = useTheme();
   const isMdAndLg = useMediaQuery(theme.breakpoints.up("md"));
+  const rowHeight = isMdAndLg ? 350 : 200
+  const colsMobile = isMdAndLg ? 4 : 2
+
   return (
       <Grid container>
         <Grid item xs={12}>
           <Navbar />
         </Grid>
-        <Grid item xs={12}>
+        {/* <Grid item xs={12}>
           {isMdAndLg ? <CarouselCover /> : <CarouselMobileCover/>}
-        </Grid>
+        </Grid> */}
         <SeccionReservaciones id={"reservaciones"} />
         <SeccionMembresias id="membresias" />
         <SeccionMembresiasTabla/>
+        <ImageList sx={{ width: '100%', height: 'auto', overflow: 'hidden' }} cols={colsMobile} rowHeight={rowHeight} gap={0}>
+          {itemData.map((item) => (
+            <ImageListItem key={item.img}>
+              <img
+                src={`${item.img}`}
+                srcSet={`${item.img}`}
+                alt={item.title}
+              />
+            </ImageListItem>
+          ))}
+        </ImageList>
+
         <SeccionFundador id={"fundador"} />
         <SeccionFundacion id={"fundacion"} />
         <SeccionBlog id={"blog"} />
@@ -38,8 +71,8 @@ const Home = () => {
           chatMessage={"Hola! ¿Cómo podemos ayudarte?"}
           avatar="/assets/img/logos/logo_t.png"
         />
-        <Footer/>
-      </Grid>
+{/*         <Footer/>
+ */}      </Grid>
   );
 };
 
