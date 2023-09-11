@@ -1,0 +1,38 @@
+[
+    {
+        "Platillo": "Base Waffle (incluye mermelada)",
+        "Descripcion": "",
+        "Precio": 78,
+        "Categoria": "Toppings para Crepas y Waffles"
+    },
+    {
+        "Platillo": "Crepa 2 toppings básicos",
+        "Descripcion": "",
+        "Precio": 79,
+        "Categoria": "Toppings para Crepas y Waffles"
+    },
+    {
+        "Platillo": "Crepa 2 toppings premium",
+        "Descripcion": "",
+        "Precio": 115,
+        "Categoria": "Toppings para Crepas y Waffles"
+    },
+    {
+        "Platillo": "Toppings Dulces (Básicos)",
+        "Descripcion": "Cajeta, Lechera, Mermelada de Frutos Rojos, Mermelada de Guayaba, Fresas, Plátano, Helado",
+        "Precio": 19,
+        "Categoria": "Toppings para Crepas y Waffles"
+    },
+    {
+        "Platillo": "Toppings Salados (Básicos)",
+        "Descripcion": "Manchego, Queso Crema, Champiñones, Pepperoni, Jamón de pavo, Aguacate",
+        "Precio": 19,
+        "Categoria": "Toppings para Crepas y Waffles"
+    },
+    {
+        "Platillo": "Toppings Dulces (Premium)",
+        "Descripcion": "Nutella, Ferrero, Blueberry, Frambuesa, Zarzamora",
+        "Precio": 23,
+        "Categoria": "Toppings para Crepas y Waffles"
+    }
+]

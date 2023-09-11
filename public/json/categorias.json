@@ -14,10 +14,24 @@
         "Categoria": "Comidas"
     },
     {
+        "Nombre_categoria": "México a tu paladar",
+        "Descripcion": "",
+        "Icono": "",
+        "API": "/json/mexico.json",
+        "Categoria": "Comidas"
+    },
+    {
+        "Nombre_categoria": "Desayunos (9:00 - 14:00)",
+        "Descripcion": "Nuestros desayunos pueden ir solos o en paquete, tú elijes. Paquete: El platillo de tu elección, café y un plato de fruta. Paquete Premium: Paquete de tu elección, té y café refil, fruta, mimosa y hotcakes.",
+        "Icono": "",
+        "API": "/json/desayunos.json",
+        "Categoria": "Desayunos"
+    },
+    {
         "Nombre_categoria": "Paquetes Desayunos",
         "Descripcion": "",
         "Icono": "",
-        "API": "/json/desayunos.json",
+        "API": "/json/paquetes.json",
         "Categoria": "Desayunos"
     },
     {
@@ -77,6 +91,13 @@
         "Categoria": "Desayunos"
     },
     {
+        "Nombre_categoria": "Toppings para Crepas y Waffles",
+        "Descripcion": "",
+        "Icono": "",
+        "API": "/json/toppings.json",
+        "Categoria": "Desayunos"
+    },
+    {
         "Nombre_categoria": "Ensaladas",
         "Descripcion": "",
         "Icono": "",
@@ -102,6 +123,27 @@
         "Descripcion": "",
         "Icono": "",
         "API": "/json/bebidas.json",
+        "Categoria": "Bebidas"
+    },
+    {
+        "Nombre_categoria": "Café",
+        "Descripcion": "",
+        "Icono": "",
+        "API": "/json/cafe.json",
+        "Categoria": "Bebidas"
+    },
+    {
+        "Nombre_categoria": "Bar",
+        "Descripcion": "",
+        "Icono": "",
+        "API": "/json/bar.json",
+        "Categoria": "Bebidas"
+    },
+    {
+        "Nombre_categoria": "Coctelería",
+        "Descripcion": "",
+        "Icono": "",
+        "API": "/json/cocteleria.json",
         "Categoria": "Bebidas"
     }
 ]

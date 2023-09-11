@@ -1,0 +1,121 @@
+[
+    {
+        "Platillo": "Espresso sencillo",
+        "Descripcion": "",
+        "Precio": 32,
+        "Categoria": "Café"
+    },
+    {
+        "Platillo": "Espresso doble",
+        "Descripcion": "",
+        "Precio": 45,
+        "Categoria": "Café"
+    },
+    {
+        "Platillo": "Americano Chico",
+        "Descripcion": "",
+        "Precio": 32,
+        "Categoria": "Café"
+    },
+    {
+        "Platillo": "Americano Grande",
+        "Descripcion": "",
+        "Precio": 51,
+        "Categoria": "Café"
+    },
+    {
+        "Platillo": "Chocolate",
+        "Descripcion": "",
+        "Precio": 71,
+        "Categoria": "Café"
+    },
+    {
+        "Platillo": "Malteada (chocovainilla, chocolate, fresa)",
+        "Descripcion": "",
+        "Precio": 78,
+        "Categoria": "Café"
+    },
+    {
+        "Platillo": "Capuccino",
+        "Descripcion": "",
+        "Precio": 53,
+        "Precio_frio": 68,
+        "Categoria": "Café"
+    },
+    {
+        "Platillo": "Capuccino de sabor",
+        "Descripcion": "(vainilla. menta, caramelo, avellana, crema irlandesa)",
+        "Precio": 67,
+        "Precio_frio": 76,
+        "Categoria": "Café"
+    },
+    {
+        "Platillo": "Capuccino Baileys",
+        "Descripcion": "",
+        "Precio": 97,
+        "Precio_frio": 103,
+        "Categoria": "Café"
+    },
+    {
+        "Platillo": "Latte",
+        "Descripcion": "",
+        "Precio": 57,
+        "Precio_frio": 69,
+        "Categoria": "Café"
+    },
+    {
+        "Platillo": "Latte de sabor",
+        "Descripcion": "(Vainilla, menta. caramelo, avellana y crema irlandesa)",
+        "Precio": 71,
+        "Precio_frio": 78,
+        "Categoria": "Café"
+    },
+    {
+        "Platillo": "Moka",
+        "Descripcion": "",
+        "Precio": 58,
+        "Precio_frio": 68,
+        "Categoria": "Café"
+    },
+    {
+        "Platillo": "Moka de menta",
+        "Descripcion": "",
+        "Precio": 79,
+        "Precio_frio": 84,
+        "Categoria": "Café"
+    },
+    {
+        "Platillo": "Té",
+        "Descripcion": "",
+        "Precio": 25,
+        "Precio_frio": 28,
+        "Categoria": "Café"
+    },
+    {
+        "Platillo": "Chai",
+        "Descripcion": "",
+        "Precio": 53,
+        "Precio_frio": 68,
+        "Categoria": "Café"
+    },
+    {
+        "Platillo": "Chai vainilla",
+        "Descripcion": "",
+        "Precio": 68,
+        "Precio_frio": 79,
+        "Categoria": "Café"
+    },
+    {
+        "Platillo": "Chai menta",
+        "Descripcion": "",
+        "Precio": 68,
+        "Precio_frio": 79,
+        "Categoria": "Café"
+    },
+    {
+        "Platillo": "*Leche de almendra",
+        "Descripcion": "Cambio por leche normal",
+        "Precio": 5,
+        "Categoria": "Café"
+    }
+]

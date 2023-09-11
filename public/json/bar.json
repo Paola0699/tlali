@@ -1,0 +1,175 @@
+[
+    {
+        "Platillo": "Cerveza Nacional",
+        "Descripcion": "",
+        "Precio": 47,
+        "Categoria": "Bar"
+    },
+
+    {
+        "Platillo": "Cerveza Premium",
+        "Descripcion": "",
+        "Precio": 51,
+        "Categoria": "Bar"
+    },
+
+    {
+        "Platillo": "Bacardi",
+        "Descripcion": "",
+        "Precio": 68,
+        "Categoria": "Bar"
+    },
+    {
+        "Platillo": "Antillano (Ron)",
+        "Descripcion": "",
+        "Precio": 53,
+        "Categoria": "Bar"
+    },
+
+    {
+        "Platillo": "400 conejos",
+        "Descripcion": "",
+        "Precio": 103,
+        "Categoria": "Bar"
+    },
+
+    {
+        "Platillo": "Maestro Dobel",
+        "Descripcion": "",
+        "Precio": 139,
+        "Categoria": "Bar"
+    },
+    {
+        "Platillo": "José cuervo tradicional",
+        "Descripcion": "",
+        "Precio": 89,
+        "Categoria": "Bar"
+    },
+
+    {
+        "Platillo": "José cuervo tradicional plata",
+        "Descripcion": "",
+        "Precio": 103,
+        "Categoria": "Bar"
+    },
+
+    {
+        "Platillo": "José cuervo especial",
+        "Descripcion": "",
+        "Precio": 87,
+        "Categoria": "Bar"
+    },
+    {
+        "Platillo": "Tanqueray",
+        "Descripcion": "",
+        "Precio": 168,
+        "Categoria": "Bar"
+    },
+
+    {
+        "Platillo": "Hendricks",
+        "Descripcion": "",
+        "Precio": 183,
+        "Categoria": "Bar"
+    },
+
+    {
+        "Platillo": "Torres 5",
+        "Descripcion": "",
+        "Precio": 107,
+        "Categoria": "Bar"
+    },
+    {
+        "Platillo": "Label 5",
+        "Descripcion": "",
+        "Precio": 87,
+        "Categoria": "Bar"
+    },
+
+    {
+        "Platillo": "Red Label",
+        "Descripcion": "",
+        "Precio": 109,
+        "Categoria": "Bar"
+    },
+    {
+        "Platillo": "Jack Daniel ́s",
+        "Descripcion": "",
+        "Precio": 128,
+        "Categoria": "Bar"
+    },
+
+    {
+        "Platillo": "Buchanans 12",
+        "Descripcion": "",
+        "Precio": 149,
+        "Categoria": "Bar"
+    },
+
+    {
+        "Platillo": "Absolut",
+        "Descripcion": "",
+        "Precio": 78,
+        "Categoria": "Bar"
+    },
+    {
+        "Platillo": "Smirnoff de tamarindo",
+        "Descripcion": "",
+        "Precio": 73,
+        "Categoria": "Bar"
+    },
+    {
+        "Platillo": "Absolut",
+        "Descripcion": "78",
+        "Precio": 45,
+        "Categoria": "Bar"
+    },
+    {
+        "Platillo": "Licor 43",
+        "Descripcion": "",
+        "Precio": 111,
+        "Categoria": "Bar"
+    },
+    {
+        "Platillo": "Licor 43 Horchata",
+        "Descripcion": "",
+        "Precio": 117,
+        "Categoria": "Bar"
+    },
+    {
+        "Platillo": "Copa de vino tinto",
+        "Descripcion": "",
+        "Precio": 73,
+        "Categoria": "Bar"
+    },
+    {
+        "Platillo": "Copa de vino blanco",
+        "Descripcion": "",
+        "Precio": 75,
+        "Categoria": "Bar"
+    },
+    {
+        "Platillo": "Botella de vino tinto",
+        "Descripcion": "",
+        "Precio": 365,
+        "Categoria": "Bar"
+    },
+    {
+        "Platillo": "Botella de vino blanco",
+        "Descripcion": "",
+        "Precio": 347,
+        "Categoria": "Bar"
+    },
+    {
+        "Platillo": "Copa de clericot",
+        "Descripcion": "",
+        "Precio": 87,
+        "Categoria": "Bar"
+    },
+    {
+        "Platillo": "Jarra de clericot",
+        "Descripcion": "",
+        "Precio": 269,
+        "Categoria": "Bar"
+    }
+]

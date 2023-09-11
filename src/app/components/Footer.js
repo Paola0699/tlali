@@ -18,7 +18,7 @@ const Footer = () => {
       style={{ backgroundColor: "#A9BDB1", color: "white" }}
       marginTop={0}
     >
-      <Grid
+{/*       <Grid
         item
         xs={12}
         md={6}
@@ -34,12 +34,12 @@ const Footer = () => {
           width={220}
           height={160}
         />
-      </Grid>
+      </Grid> */}
       <Grid
         item
         xs={12}
-        md={6}
-        lg={6}
+        md={12}
+        lg={12}
         display={"flex"}
         justifyContent={"space-between"}
         flexDirection={"row"}

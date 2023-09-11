@@ -4,18 +4,21 @@
         "Platillo": "Agua de Jamaica",
         "Descripcion": "",
         "Precio": 39,
+        "Precio_jarra": 125,
         "Categoria": "Bebidas"
     },
     {
         "Platillo": "Agua de Horchata",
         "Descripcion": "",
         "Precio": 39,
+        "Precio_jarra": 125,
         "Categoria": "Bebidas"
     },
     {
         "Platillo": "Agua del día (Pregunte disponibilidad)",
         "Descripcion": "",
         "Precio": 35,
+        "Precio_jarra": 110,
         "Categoria": "Bebidas"
     },
     {

@@ -1,0 +1,116 @@
+[
+    {
+        "Platillo": "Mojito Tradicional",
+        "Descripcion": "",
+        "Precio": 97,
+        "Categoria": "Coctelería"
+    },
+    {
+        "Platillo": "Mojito de frutos rojos",
+        "Descripcion": "",
+        "Precio": 109,
+        "Categoria": "Coctelería"
+    },
+    {
+        "Platillo": "Piña colada",
+        "Descripcion": "",
+        "Precio": 89,
+        "Categoria": "Coctelería"
+    },
+    {
+        "Platillo": "Piñada",
+        "Descripcion": "",
+        "Precio": 59,
+        "Categoria": "Coctelería"
+    },
+    {
+        "Platillo": "Mezcal Naranjero",
+        "Descripcion": "",
+        "Precio": 114,
+        "Categoria": "Coctelería"
+    },
+    {
+        "Platillo": "Mezcal de frutos rojos",
+        "Descripcion": "",
+        "Precio": 117,
+        "Categoria": "Coctelería"
+    },
+    {
+        "Platillo": "Mezcalina de Jamaica",
+        "Descripcion": "",
+        "Precio": 114,
+        "Categoria": "Coctelería"
+    },
+    {
+        "Platillo": "Cantarito",
+        "Descripcion": "",
+        "Precio": 85,
+        "Categoria": "Coctelería"
+    },
+    {
+        "Platillo": "Gin tradicional Tanqueray",
+        "Descripcion": "",
+        "Precio": 167,
+        "Categoria": "Coctelería"
+    },
+    {
+        "Platillo": "Gin tradicional Hendricks",
+        "Descripcion": "",
+        "Precio": 186,
+        "Categoria": "Coctelería"
+    },
+    {
+        "Platillo": "Gin de frutos rojos Tanqueray",
+        "Descripcion": "",
+        "Precio": 174,
+        "Categoria": "Coctelería"
+    },
+    {
+        "Platillo": "Gin de frutos rojos Hendricks",
+        "Descripcion": "",
+        "Precio": 194,
+        "Categoria": "Coctelería"
+    },
+    {
+        "Platillo": "Carajillo de horchata",
+        "Descripcion": "",
+        "Precio": 148,
+        "Categoria": "Coctelería"
+    },
+    {
+        "Platillo": "Carajillo",
+        "Descripcion": "",
+        "Precio": 138,
+        "Categoria": "Coctelería"
+    },
+    {
+        "Platillo": "Tinto de verano",
+        "Descripcion": "",
+        "Precio": 87,
+        "Categoria": "Coctelería"
+    },
+    {
+        "Platillo": "Limonada de Whisky",
+        "Descripcion": "",
+        "Precio": 89,
+        "Categoria": "Coctelería"
+    },
+    {
+        "Platillo": "Cosmopolitan",
+        "Descripcion": "",
+        "Precio": 87,
+        "Categoria": "Coctelería"
+    },
+    {
+        "Platillo": "Tropical Sky",
+        "Descripcion": "",
+        "Precio": 92,
+        "Categoria": "Coctelería"
+    },
+    {
+        "Platillo": "Summer Love",
+        "Descripcion": "",
+        "Precio": 121,
+        "Categoria": "Coctelería"
+    }
+]
