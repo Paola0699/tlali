@@ -11,7 +11,29 @@
         "Descripcion": "",
         "Icono": "",
         "API": "/json/entradas.json",
-        "Categoria": "Comidas"
+        "Categoria": "Comidas",
+        "Images": [
+            {
+                "id": "ENT-4",
+                "url": "https://firebasestorage.googleapis.com/v0/b/tlali-6b275.appspot.com/o/QUESADILLAS%20VEGGIE.png?alt=media&token=5ebbe88b-6288-4130-b01f-d3e0e99ca54d",
+                "name": "Quesadillas Veggie"
+            },
+            {
+                "id": "ENT-1",
+                "url": "https://firebasestorage.googleapis.com/v0/b/tlali-6b275.appspot.com/o/TAPAS.jpg?alt=media&token=1ec520b8-0afc-44cb-9892-7efe0639eabc",
+                "name": "Tapas"
+            },
+            {
+                "id": "ENT-2",
+                "url": "https://firebasestorage.googleapis.com/v0/b/tlali-6b275.appspot.com/o/GUACAMOLE.jpg?alt=media&token=75ff3b9c-f493-4464-9e04-565d659e4a89",
+                "name": "Guacamole"
+            },
+            {
+                "id": "ENT-3",
+                "url": "https://firebasestorage.googleapis.com/v0/b/tlali-6b275.appspot.com/o/QUESADILLAS%20TLALI.jpg?alt=media&token=39f0b9b2-02e8-4377-ba1a-cfb909a4327d",
+                "name": "Quesadillas Tlali"
+            }
+        ]
     },
     {
         "Nombre_categoria": "México a tu paladar",
@@ -60,7 +82,19 @@
         "Descripcion": "Hechos de una exquisita masa belga. (En todos nuestros waffles puedes elegir base de chocolate o natural)",
         "Icono": "",
         "API": "/json/waffles.json",
-        "Categoria": "Desayunos"
+        "Categoria": "Desayunos",
+        "Images": [
+            {
+                "id": "WFS-1",
+                "url": "https://firebasestorage.googleapis.com/v0/b/tlali-6b275.appspot.com/o/WAFFLE%20ARMENTA.jpg?alt=media&token=9c65114c-2847-4814-b927-42b56b223934",
+                "name": "Waffle Armenta"
+            },
+            {
+                "id": "WFS-2",
+                "url": "https://firebasestorage.googleapis.com/v0/b/tlali-6b275.appspot.com/o/WAFFLE%20SERRANO.JPG?alt=media&token=fce94747-bb2f-4f5b-ab19-2b523bfb9b07",
+                "name": "Waffle Serrano"
+            }
+        ]
     },
     {
         "Nombre_categoria": "Costras",
@@ -116,7 +150,24 @@
         "Descripcion": "",
         "Icono": "",
         "API": "/json/postres.json",
-        "Categoria": "Postres"
+        "Categoria": "Postres",
+        "Images": [
+            {
+                "id": "PT-1",
+                "url": "https://firebasestorage.googleapis.com/v0/b/tlali-6b275.appspot.com/o/CHEESCAKE%20TORTUGA.jpg?alt=media&token=3b46d7de-f605-4aa7-b64e-17bbf37b5a4d",
+                "name": "Cheesecake Tortuga"
+            },
+            {
+                "id": "PT-2",
+                "url": "https://firebasestorage.googleapis.com/v0/b/tlali-6b275.appspot.com/o/TARTA%20CHOCOLATE%20OBSCURO.jpg?alt=media&token=f354b5fd-3a5b-47b1-89be-3783314328d5",
+                "name": "Tarta Chocolate Obscuro"
+            },
+            {
+                "id": "PT-3",
+                "url": "https://firebasestorage.googleapis.com/v0/b/tlali-6b275.appspot.com/o/TRUFA.jpg?alt=media&token=d220aced-9e97-4142-a321-f3f4b7de65ac",
+                "name": "Trufa"
+            }
+        ]
     },
     {
         "Nombre_categoria": "Bebidas",

@@ -3,6 +3,8 @@ import {
   BottomNavigation,
   BottomNavigationAction,
   Grid,
+  ImageList,
+  ImageListItem,
   Paper,
   Typography,
   useMediaQuery
@@ -99,7 +101,18 @@ const Menu = () => {
       </Grid>
       <Grid item xs={12} style={{minHeight: '70vh'}} padding={paddingValue} marginBottom={10}> 
         <MenuBody fontSize={fontSize}/>
-        <MenuDrawer state={state} toggleDrawer={toggleDrawer}/>      
+        <MenuDrawer state={state} toggleDrawer={toggleDrawer}/>  
+        {selectedCategory.Images && <ImageList  sx={{ width: '100%', height: 'auto', overflow: 'hidden', marginTop: '5rem' }} cols={selectedCategory.Images.length} rowHeight={400} gap={0}>
+            {selectedCategory.Images.map((item) => (
+                  <ImageListItem key={item.id}>
+                    <img
+                      src={`${item.url}`}
+                      srcSet={`${item.url}`}
+                      alt={item.name}
+                    />
+                  </ImageListItem>
+                ))}
+         </ImageList>}    
       </Grid>
       <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0, zIndex: 2 }} elevation={3}>
         <BottomNavigation
