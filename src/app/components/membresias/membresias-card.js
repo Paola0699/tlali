@@ -1,4 +1,5 @@
-import { Button, Card, CardContent, List, ListItem, ListItemText, Typography } from "@mui/material";
+import { CheckCircleOutline } from "@mui/icons-material";
+import { Button, Card, CardContent, List, ListItem, ListItemIcon, ListItemText, Typography } from "@mui/material";
 import React from "react";
 
 const MembresiasCard = ({ nombre, descripción, precio,  beneficios, width, color, fontColor }) => {
@@ -6,9 +7,9 @@ const MembresiasCard = ({ nombre, descripción, precio,  beneficios, width, colo
     <Card
       style={{
         width: width,
-        borderRadius: "20px",
-        padding: "2rem",
-        backgroundColor: color
+        borderRadius: "0px 30px 0px 30px",
+        padding: "1.5rem",
+        backgroundColor: color,
       }}
       elevation={0}
     >
@@ -31,7 +32,9 @@ const MembresiasCard = ({ nombre, descripción, precio,  beneficios, width, colo
         </Typography>
 
         {beneficios && ( <List dense={true}> {beneficios.map((beneficio)=>(
-          <ListItem key={beneficio}><ListItemText style={{color: 'white', textAlign:'center'}}>{beneficio}</ListItemText></ListItem>
+          <ListItem key={beneficio}>
+            <ListItemIcon style={{color: 'white'}}><CheckCircleOutline/></ListItemIcon>
+            <ListItemText style={{color: 'white'}}>{beneficio}</ListItemText></ListItem>
         ))}</List>)}
         <Button
           style={{

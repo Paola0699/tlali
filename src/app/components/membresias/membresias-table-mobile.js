@@ -9,7 +9,7 @@ const MembresiasTableMobile = () => {
       nombre: "Tlali",
       descripcion: "Afiliciación $0",
       precio: "Mensualidad $250.00 (en consumo)",
-      color: '#DBDCDA',
+      color: '#C5C6C4',
       beneficios: ['Bonificación de puntos','Prioridad a sus Platillos','Código de Referencia','Conferencias y eventos']
     },
     {
@@ -18,15 +18,15 @@ const MembresiasTableMobile = () => {
       descripcion: "Afiliciación $165",
       precio: "Mensualidad $550 (en consumo)",
       color: '#A9BDB1',
-      beneficios: ['*Beneficios de membresia Tlali','Suscripción de waffles','Pedidos anticipados']
+      beneficios: ['Beneficios de membresia Tlali','Suscripción de waffles','Pedidos anticipados']
     },
     {
       id: 3,
       nombre: "Azteca",
       descripcion: "Afiliciación $260",
       precio: "Mensualidad $800 (en consumo)",
-      color: '#D7C6A7',
-      beneficios: ['*Beneficios de membresia Maya','Línea de crédito','Chef a domicilio', 'Cubiertos personalizados', 'Plan de nutrición']
+      color: '#83948F',
+      beneficios: ['Beneficios de membresia Maya','Línea de crédito','Chef a domicilio', 'Cubiertos personalizados', 'Plan de nutrición']
     },
 
   ];
