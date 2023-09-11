@@ -11,6 +11,8 @@ import { FloatingWhatsApp } from "react-floating-whatsapp";
 import SeccionMembresiasTabla from "./components/secciones/membresias-tabla";
 import Footer from "./components/Footer";
 import { useTheme } from "@emotion/react";
+import CarouselCover from "./carousel";
+import CarouselMobileCover from "./carousel-mobile";
 
 
 const itemData = [
@@ -43,9 +45,9 @@ const Home = () => {
         <Grid item xs={12}>
           <Navbar />
         </Grid>
-        {/* <Grid item xs={12}>
+        <Grid item xs={12}>
           {isMdAndLg ? <CarouselCover /> : <CarouselMobileCover/>}
-        </Grid> */}
+        </Grid>
         <SeccionReservaciones id={"reservaciones"} />
         <SeccionMembresias id="membresias" />
         <SeccionMembresiasTabla/>
