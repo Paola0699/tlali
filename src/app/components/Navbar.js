@@ -118,7 +118,7 @@ const Navbar = () => {
             </Menu>
           </Box>
 
-          <Box sx={{ display: { xs: "flex", md: "none" }, mr: 10 }}>
+          <Box sx={{ display: { xs: "flex", md: "none" }, mr: 17 }}>
             <Image
               alt="Logo Pájaro"
               src={"/assets/img/logos/logo_pajaro.png"}
