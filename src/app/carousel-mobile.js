@@ -6,8 +6,8 @@ import Carousel from "react-material-ui-carousel";
 const CarouselMobileCover = () => {
   const theme = useTheme();
   const isMdAndLg = useMediaQuery(theme.breakpoints.up("md"));
-  const variantValue = isMdAndLg ? "h2" : "h5";
-  const paddingValue = isMdAndLg ? "150px" : "50px";
+  const variantValue = isMdAndLg ? "h2" : "h6";
+  const paddingValue = isMdAndLg ? "150px" : "30px";
 
   const carouselItems = [
     {
@@ -46,7 +46,7 @@ const CarouselMobileCover = () => {
       <Paper
         elevation={0}
         sx={{
-          height: "20rem",
+          height: "15rem",
           display: "flex",
           padding: paddingValue,
           position: "relative",
@@ -83,6 +83,7 @@ const CarouselMobileCover = () => {
          flexDirection: "column",
          justifyContent: "center",
          backgroundColor: "#A9BDB1", // Color de fondo
+         borderRadius: '0px 0px 0px 0px',
        }}
      >
        <Typography variant={variantValue} color="white">
