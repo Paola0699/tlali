@@ -7,7 +7,7 @@ const SeccionReservaciones = ({ id }) => {
   const theme = useTheme();
   const isMdAndLg = useMediaQuery(theme.breakpoints.up("md"));
   const paddingValue = isMdAndLg ? 20 : 6;
-  const heightValue = isMdAndLg ? "auto" : "400px";
+  const heightValue = isMdAndLg ? "auto" : "270px";
   const containerPaddingValue = isMdAndLg ? '4rem' : '1.5rem';
 
 
