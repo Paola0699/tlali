@@ -5,6 +5,7 @@ import {
   Grid,
   ImageList,
   ImageListItem,
+  ImageListItemBar,
   Paper,
   Typography,
   useMediaQuery
@@ -24,8 +25,9 @@ const Menu = () => {
   const isMdAndLg = useMediaQuery(theme.breakpoints.up("md"));
   const fontSize = isMdAndLg ? "h4" : "h6";
   const paddingValue = isMdAndLg ? 10 : 5;
-
   const {selectedCategory} = useSelector(state=>state.menu)
+  const rowHeight = isMdAndLg ? 350 : 420;
+
   const categories = [
     {
       Nombre_categoria: "Desayunos",
@@ -102,7 +104,7 @@ const Menu = () => {
       <Grid item xs={12} style={{minHeight: '70vh'}} padding={paddingValue} marginBottom={10}> 
         <MenuBody fontSize={fontSize}/>
         <MenuDrawer state={state} toggleDrawer={toggleDrawer}/>  
-        {selectedCategory.Images && <ImageList  sx={{ width: '100%', height: 'auto', overflow: 'hidden', marginTop: '5rem' }} cols={selectedCategory.Images.length} rowHeight={400} gap={0}>
+        {selectedCategory.Images && <ImageList  sx={{ width: '100%', height: 'auto', overflow: 'hidden', marginTop: '5rem' }} cols={isMdAndLg ? selectedCategory.Images.length : 1} rowHeight={rowHeight} gap={0}>
             {selectedCategory.Images.map((item) => (
                   <ImageListItem key={item.id}>
                     <img
@@ -110,6 +112,7 @@ const Menu = () => {
                       srcSet={`${item.url}`}
                       alt={item.name}
                     />
+                    <ImageListItemBar  title={item.name}/>
                   </ImageListItem>
                 ))}
          </ImageList>}    

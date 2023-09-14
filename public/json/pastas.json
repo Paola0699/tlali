@@ -1,4 +1,10 @@
 [
+    {
+        "Platillo": "Sopa Azteca",
+        "Descripcion": "Tradicional sopa de tortilla con nuestra mezcla de chiles, acompañada de aguacate y un toque de crema ácida",
+        "Precio": 89,
+        "Categoria": "Pastas y Sopas"
+    },
 
     {
         "Platillo": "Pasta Poblana",

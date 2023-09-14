@@ -82,7 +82,7 @@
         "Descripcion": "Hechos de una exquisita masa belga. (En todos nuestros waffles puedes elegir base de chocolate o natural)",
         "Icono": "",
         "API": "/json/waffles.json",
-        "Categoria": "Desayunos",
+        "Categoria": "Postres",
         "Images": [
             {
                 "id": "WFS-1",
@@ -122,14 +122,14 @@
         "Descripcion": "",
         "Icono": "",
         "API": "/json/crepas.json",
-        "Categoria": "Desayunos"
+        "Categoria": "Postres"
     },
     {
         "Nombre_categoria": "Toppings para Crepas y Waffles",
         "Descripcion": "",
         "Icono": "",
         "API": "/json/toppings.json",
-        "Categoria": "Desayunos"
+        "Categoria": "Postres"
     },
     {
         "Nombre_categoria": "Ensaladas",

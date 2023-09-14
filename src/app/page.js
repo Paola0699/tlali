@@ -14,32 +14,10 @@ import { useTheme } from "@emotion/react";
 import CarouselCover from "./carousel";
 import CarouselMobileCover from "./carousel-mobile";
 
-
-const itemData = [
-  {
-    img: '/assets/img/img_3.png',
-    title: 'Breakfast',
-  },
-  {
-    img: '/assets/img/img_4.png',
-    title: 'Burger',
-  },
-  {
-    img: '/assets/img/img_5.png',
-    title: 'Camera',
-  },
-  {
-    img: '/assets/img/img_9.jpg',
-    title: 'Armenta',
-  },
-];
-
 const Home = () => {
   const theme = useTheme();
   const isMdAndLg = useMediaQuery(theme.breakpoints.up("md"));
-  const rowHeight = isMdAndLg ? 350 : 200
-  const colsMobile = isMdAndLg ? 4 : 2
-
+  
   return (
       <Grid container>
         <Grid item xs={12}>
@@ -51,18 +29,6 @@ const Home = () => {
         <SeccionReservaciones id={"reservaciones"} />
         <SeccionMembresias id="membresias" />
         <SeccionMembresiasTabla/>
-        <ImageList sx={{ width: '100%', height: 'auto', overflow: 'hidden' }} cols={colsMobile} rowHeight={rowHeight} gap={0}>
-          {itemData.map((item) => (
-            <ImageListItem key={item.img}>
-              <img
-                src={`${item.img}`}
-                srcSet={`${item.img}`}
-                alt={item.title}
-              />
-            </ImageListItem>
-          ))}
-        </ImageList>
-
         <SeccionFundador id={"fundador"} />
         <SeccionFundacion id={"fundacion"} />
         <SeccionBlog id={"blog"} />
