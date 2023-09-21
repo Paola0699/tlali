@@ -40,7 +40,24 @@
         "Descripcion": "",
         "Icono": "",
         "API": "/json/mexico.json",
-        "Categoria": "Comidas"
+        "Categoria": "Comidas",
+        "Images": [
+            {
+                "id": "MP-1",
+                "url": "https://firebasestorage.googleapis.com/v0/b/tlali-6b275.appspot.com/o/TLACOYOS%20AHOGADOS.png?alt=media&token=a0a10ac5-3aee-4da4-9814-dc5a4a7b4ad1",
+                "name": "Tlacoyos Ahogados"
+            },
+            {
+                "id": "PM-2",
+                "url": "https://firebasestorage.googleapis.com/v0/b/tlali-6b275.appspot.com/o/ENCHILADASVEGGIE.JPG?alt=media&token=eacdc94a-0b2d-4ba3-a86a-27aa26625a6f",
+                "name": "Enchiladas"
+            },
+            {
+                "id": "MP-3",
+                "url": "https://firebasestorage.googleapis.com/v0/b/tlali-6b275.appspot.com/o/SOPAAZTECA.png?alt=media&token=9e2a4ec9-a65a-45a0-974f-0493d41cc64d",
+                "name": "Sopa Azteca"
+            }
+        ]
     },
     {
         "Nombre_categoria": "Desayunos (9:00 - 14:00)",
@@ -68,7 +85,19 @@
         "Descripcion": "Clásica tortilla de harina rellena de proteína a elegir, frijoles de la casa, crujiente lechuga y queso manchego Acompañado de papas a la francesa",
         "Icono": "",
         "API": "/json/burritos.json",
-        "Categoria": "Comidas"
+        "Categoria": "Comidas",
+        "Images": [
+            {
+                "id": "B-1",
+                "url": "https://firebasestorage.googleapis.com/v0/b/tlali-6b275.appspot.com/o/BURRITO.jpg?alt=media&token=315f5bc4-3308-483f-aaa8-77706fff3836",
+                "name": "Burrito Arrachera"
+            },
+            {
+                "id": "B-2",
+                "url": "https://firebasestorage.googleapis.com/v0/b/tlali-6b275.appspot.com/o/BURRITO4.JPG?alt=media&token=c90b3deb-b3e3-4ddf-96d1-beaab17f0362",
+                "name": "Burrito Arrachera"
+            }
+        ]
     },
     {
         "Nombre_categoria": "Chapatas",
@@ -101,7 +130,19 @@
         "Descripcion": "Crujiente queso asado en tortilla de harina con proteína a elegir, acompañadas de guacamole y chilito toreado",
         "Icono": "",
         "API": "/json/costras.json",
-        "Categoria": "Comidas"
+        "Categoria": "Comidas",
+        "Images": [
+            {
+                "id": "CO-1",
+                "url": "https://firebasestorage.googleapis.com/v0/b/tlali-6b275.appspot.com/o/COSTRACECINA1.JPG?alt=media&token=5ae7a8ef-bd33-4fde-abc6-a50bfcd1a151",
+                "name": "Costra Cecina"
+            },
+            {
+                "id": "CO-2",
+                "url": "https://firebasestorage.googleapis.com/v0/b/tlali-6b275.appspot.com/o/COSTRACECINA5.JPG?alt=media&token=898aec57-869f-4f2e-bd12-31558e643da2",
+                "name": "Costra Cecina"
+            }
+        ]
     },
     {
         "Nombre_categoria": "Volcanes",

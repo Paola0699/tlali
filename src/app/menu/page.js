@@ -26,7 +26,7 @@ const Menu = () => {
   const fontSize = isMdAndLg ? "h4" : "h6";
   const paddingValue = isMdAndLg ? 10 : 5;
   const {selectedCategory} = useSelector(state=>state.menu)
-  const rowHeight = isMdAndLg ? 350 : 520;
+  const rowHeight = isMdAndLg ? 600 : 520;
 
   const categories = [
     {
