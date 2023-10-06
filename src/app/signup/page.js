@@ -1,7 +1,7 @@
 "use client";
 import { useTheme } from "@emotion/react";
-import { Alert, Grid, Paper, Typography, useMediaQuery } from "@mui/material";
-import React, { useState } from "react";
+import { Alert, Grid, Typography, useMediaQuery } from "@mui/material";
+import React, { useEffect, useState } from "react";
 import SignupHeader from "./signup-header";
 import SignupForm from "./signup-form";
 import { useFormik } from "formik";
@@ -16,6 +16,7 @@ import {
 import { auth } from "@/firebase/firebase";
 import { getUserByPhoneNumber, postUser } from "@/services/userServices";
 import LoginCodeVerification from "../login/login-code-verification";
+import { useRouter } from "next/navigation";
 
 const initializeRecaptcha = () => {
   return new RecaptchaVerifier(auth, "recaptcha-container", {
@@ -24,6 +25,7 @@ const initializeRecaptcha = () => {
 };
 
 const Signup = () => {
+  const router = useRouter();
   const theme = useTheme();
   const isMdAndLg = useMediaQuery(theme.breakpoints.up("md"));
   const padding = isMdAndLg ? 10 : 5;
@@ -109,6 +111,7 @@ const Signup = () => {
         birthDay: new Date(FECHA_NACIMIENTO),
       };
       await postUser(user.uid, userData);
+      handleRedirect('/usuario');
     } catch (error) {
       setErrorMessage({
         message: "Error verifying code: ",
@@ -116,7 +119,17 @@ const Signup = () => {
       });
     }
   };
+  const handleRedirect =  (path) => {
+    router.push(path)
+  }
 
+  useEffect(() => {
+    auth.onAuthStateChanged(async (user) => {
+      if (user) {
+        document.cookie = "isAuthenticated=true";
+      }
+    });
+  }, []);
   return (
     <Grid
       container
@@ -128,14 +141,11 @@ const Signup = () => {
     >
       <div id="recaptcha-container"></div>
       <Grid
+        container
         item
         xs={12}
         sm={12}
         md={12}
-        component={Paper}
-        elevation={6}
-        square
-        container
         direction={"column"}
         padding={padding}
         alignItems={"center"}

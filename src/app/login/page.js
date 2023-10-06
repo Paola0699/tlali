@@ -1,5 +1,5 @@
 "use client";
-import { Alert, Grid, Paper, Typography, useMediaQuery } from "@mui/material";
+import { Alert, Grid, Typography, useMediaQuery } from "@mui/material";
 import LoginHeader from "./login-header";
 import { useTheme } from "@emotion/react";
 import LoginForm from "./login-form";
@@ -90,6 +90,7 @@ const Login = () => {
         verificationCode
       );
       await signInWithCredential(auth, credential);
+      handleRedirect('/usuario');
     } catch (error) {
       setErrorMessage({
         message: "Error verifying code: ",
@@ -98,11 +99,17 @@ const Login = () => {
     }
   };
 
-  /*   auth.onAuthStateChanged((user) => {
-    if (user) {
-      document.cookie = "isAuthenticated=true";
-    }
-  }); */
+  const handleRedirect =  (path) => {
+    router.push(path)
+  }
+
+  useEffect(() => {
+    auth.onAuthStateChanged(async (user) => {
+      if (user) {
+        document.cookie = "isAuthenticated=true";
+      }
+    });
+  }, []);
 
   return (
     <Grid
@@ -114,16 +121,11 @@ const Login = () => {
         overflow: "scroll",
       }}
     >
-      <div id="recaptcha-container"></div>
       <Grid
         item
         xs={12}
         sm={12}
         md={12}
-        component={Paper}
-        elevation={6}
-        square
-        container
         direction={"column"}
         padding={padding}
         alignItems={"center"}
