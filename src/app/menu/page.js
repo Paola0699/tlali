@@ -11,13 +11,13 @@ import {
   useMediaQuery
 } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import Navbar from "../components/Navbar";
+import Navbar from "../../components/Navbar";
 import MenuBody from "./menu-body";
 import MenuDrawer from "./menu-drawer";
 import { useDispatch, useSelector } from "react-redux";
-import { addSelectedMainCategory } from "../redux/reducers/menu";
+import { addSelectedMainCategory } from "../../redux/reducers/menu";
 import { useTheme } from "@emotion/react";
-import { Breakfast, Dessert, Drink, Food } from "../svgs";
+import { Breakfast, Dessert, Drink, Food } from "../../assets/svgs";
 
 const Menu = () => {
   const dispatch = useDispatch();

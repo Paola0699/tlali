@@ -1,13 +1,14 @@
-import { Alert, Button, TextField } from "@mui/material";
+import { Button, TextField, Typography } from "@mui/material";
+import Link from "next/link";
+import CurrencyFormat from "react-currency-format";
 
 const LoginForm = ({ formik }) => {
   return (
     <form onSubmit={formik.handleSubmit}>
-      <Alert style={{ marginBottom: "1rem" }}>
-        Recibirás un código de 4 dígitos para verificar a continuación.
-      </Alert>
-
-      <TextField
+      <CurrencyFormat
+        format="+52 (###) ###-####"
+        mask="_"
+        customInput={TextField}
         margin="dense"
         label="Número Telefónico"
         size="small"
@@ -36,9 +37,7 @@ const LoginForm = ({ formik }) => {
           formik.touched.NUMERO_TELEFONO && formik.errors.NUMERO_TELEFONO
         }
         autoFocus={false}
-        type="number"
       />
-
       <Button
         type="submit"
         fullWidth
@@ -49,10 +48,17 @@ const LoginForm = ({ formik }) => {
           color: "white",
           marginTop: "2rem",
           fontFamily: "Rufina",
+          marginBottom: "1rem",
         }}
       >
         Enviar código
       </Button>
+      <Typography variant="body" color={"#665959"} textAlign={"center"}>
+        ¿Aún no tienes cuenta?
+        <Link href={"/signup"}>
+          <b>Regístrate</b>
+        </Link>{" "}
+      </Typography>
     </form>
   );
 };

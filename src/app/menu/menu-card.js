@@ -1,7 +1,7 @@
 import { Grid, Typography } from '@mui/material'
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import { addSelectedCategory } from '../redux/reducers/menu';
+import { addSelectedCategory } from '../../redux/reducers/menu';
 
 const MenuCard = ({category}) => {
   const dispatch = useDispatch();

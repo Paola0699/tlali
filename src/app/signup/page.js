@@ -1,22 +1,21 @@
 "use client";
-import { Alert, Grid, Paper, Typography, useMediaQuery } from "@mui/material";
-import LoginHeader from "./login-header";
 import { useTheme } from "@emotion/react";
-import LoginForm from "./login-form";
+import { Alert, Grid, Paper, Typography, useMediaQuery } from "@mui/material";
+import React, { useState } from "react";
+import SignupHeader from "./signup-header";
+import SignupForm from "./signup-form";
+import { useFormik } from "formik";
+import * as yup from "yup";
+import { formatPhoneNumber } from "@/utils/utils";
 import {
   PhoneAuthProvider,
   RecaptchaVerifier,
   signInWithCredential,
   signInWithPhoneNumber,
 } from "firebase/auth";
-import { useEffect, useState } from "react";
-import { useFormik } from "formik";
-import * as yup from "yup";
-import { auth } from "../../firebase/firebase";
-import LoginCodeVerification from "./login-code-verification";
-import { getUserByPhoneNumber } from "../../services/userServices";
-import { useRouter } from "next/navigation";
-import { formatPhoneNumber } from "@/utils/utils";
+import { auth } from "@/firebase/firebase";
+import { getUserByPhoneNumber, postUser } from "@/services/userServices";
+import LoginCodeVerification from "../login/login-code-verification";
 
 const initializeRecaptcha = () => {
   return new RecaptchaVerifier(auth, "recaptcha-container", {
@@ -24,18 +23,20 @@ const initializeRecaptcha = () => {
   });
 };
 
-const Login = () => {
-  const router = useRouter();
+const Signup = () => {
   const theme = useTheme();
   const isMdAndLg = useMediaQuery(theme.breakpoints.up("md"));
   const padding = isMdAndLg ? 10 : 1;
-  const [sendMessageSuccess, setSendMessageSuccess] = useState(false);
-  const [confirmationResult, setConfirmationResult] = useState({});
   const [errorMessage, setErrorMessage] = useState();
+  const [confirmationResult, setConfirmationResult] = useState({});
+  const [sendMessageSuccess, setSendMessageSuccess] = useState(false);
 
   const formik = useFormik({
     initialValues: {
+      NOMBRE: "",
+      APELLIDOS: "",
       NUMERO_TELEFONO: "",
+      FECHA_NACIMIENTO: "",
     },
     validationSchema: yup.object({
       NUMERO_TELEFONO: yup
@@ -48,6 +49,13 @@ const Login = () => {
             return value === undefined || !value.includes("_");
           }
         ),
+      NOMBRE: yup.string().required("Debes ingresar tu nombre para continuar"),
+      APELLIDOS: yup
+        .string()
+        .required("Debes ingresar tus apellidos para continuar"),
+      FECHA_NACIMIENTO: yup
+        .string()
+        .required("Debes ingresar tu fecha de nacimiento para continuar"),
     }),
     onSubmit: (values) => {
       handleSendCode(values);
@@ -59,10 +67,10 @@ const Login = () => {
       const recaptchaVerifier = initializeRecaptcha();
       const phoneNumber = formatPhoneNumber(values.NUMERO_TELEFONO);
       const userDoc = await getUserByPhoneNumber(phoneNumber);
-      if (userDoc === null) {
+      if (userDoc !== null) {
         setErrorMessage({
           message:
-            "No existe ningún usuario registrado con este número telefónico.",
+            "Ya existe una cuenta que está utilizando ese número telefónico",
         });
         return;
       }
@@ -88,7 +96,19 @@ const Login = () => {
         verificationId,
         verificationCode
       );
-      await signInWithCredential(auth, credential);
+      const response = await signInWithCredential(auth, credential);
+      const { NOMBRE, APELLIDOS, NUMERO_TELEFONO, FECHA_NACIMIENTO } =
+        formik.values;
+      const user = response.user;
+      const userData = {
+        points: 0,
+        name: NOMBRE,
+        lastName: APELLIDOS,
+        membership: "tlali",
+        phoneNumber: formatPhoneNumber(NUMERO_TELEFONO),
+        birthDay: new Date(FECHA_NACIMIENTO),
+      };
+      await postUser(user.uid, userData);
     } catch (error) {
       setErrorMessage({
         message: "Error verifying code: ",
@@ -96,12 +116,6 @@ const Login = () => {
       });
     }
   };
-
-  /*   auth.onAuthStateChanged((user) => {
-    if (user) {
-      document.cookie = "isAuthenticated=true";
-    }
-  }); */
 
   return (
     <Grid
@@ -129,10 +143,11 @@ const Login = () => {
         justifyContent={"center"}
         display={"flex"}
       >
-        <LoginHeader />
+        <SignupHeader />
         <Alert style={{ marginBottom: "1rem" }}>
           <Typography style={{ color: "#665959" }}>
-            Recibirás un código de 4 dígitos para verificar a continuación.
+            Recibirás un código de 4 dígitos para verificar tu cuenta a
+            continuación.
           </Typography>
         </Alert>
         {errorMessage && (
@@ -140,8 +155,9 @@ const Login = () => {
             {errorMessage?.message} {errorMessage?.error?.message}
           </Alert>
         )}
+
         {!sendMessageSuccess ? (
-          <LoginForm formik={formik} />
+          <SignupForm formik={formik} />
         ) : (
           <LoginCodeVerification handleVerifyCode={handleVerifyCode} />
         )}
@@ -150,4 +166,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Signup;

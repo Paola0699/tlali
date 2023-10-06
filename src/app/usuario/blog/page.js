@@ -1,5 +1,5 @@
 "use client";
-import BlogItem from "@/app/components/blog/blog-item";
+import BlogItem from "@/components/blog/blog-item";
 import { useTheme } from "@emotion/react";
 import { Grid, Typography, useMediaQuery } from "@mui/material";
 import Image from "next/image";

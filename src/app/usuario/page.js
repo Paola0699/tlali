@@ -5,11 +5,44 @@ import { Button, Grid, Typography, useMediaQuery } from "@mui/material";
 import Image from "next/image";
 import QRCode from "qrcode.react";
 import BottomNavigationComponent from "./components/bottom-navigation";
+import { signOut } from "firebase/auth";
+import { auth } from "../../firebase/firebase";
+import { useEffect, useState } from "react";
+import { getUser } from "@/services/userServices";
 
 const Usuario = () => {
   const theme = useTheme();
   const isMdAndLg = useMediaQuery(theme.breakpoints.up("md"));
   const padding = isMdAndLg ? 15 : 5;
+  const [userData, setUserData] = useState();
+
+  const logOut = () => {
+    signOut(auth)
+      .then(async () => {
+        document.cookie =
+          "isAuthenticated=; Max-Age=0; Expires=Thu, 01 Jan 1970 00:00:00 GMT";
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+  const handleGetUserData = async (uid) => {
+    try {
+      const response = await getUser(uid);
+      setUserData(response);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    auth.onAuthStateChanged(async (user) => {
+      if (user) {
+        document.cookie = "isAuthenticated=true";
+        handleGetUserData(user.uid);
+      }
+    });
+  }, []);
 
   return (
     <Grid
@@ -30,6 +63,7 @@ const Usuario = () => {
         justifyContent={"center"}
         flexDirection={"column"}
       >
+        <Button onClick={logOut}>Logout</Button>
         <Image
           alt="logo_pajaro_negro"
           src={"/assets/img/logos/logo_pajaro_negro.png"}
@@ -37,7 +71,7 @@ const Usuario = () => {
           height={90}
         />
         <Typography variant="h2" color={"#665959"}>
-          ¡Hola, Axel!
+          ¡Hola, {userData?.name}!
         </Typography>
         <Typography variant="h5" color={"#665959"}>
           Es un gusto tenerte de vuelta
@@ -53,7 +87,14 @@ const Usuario = () => {
         marginBottom={10}
       >
         <Typography variant="h4" color={"#665959"} textAlign={"center"}>
-          450 <Star style={{ color: "#f4c01e" }} />
+          {userData?.points} <Star style={{ color: "#f4c01e" }} />
+          {userData?.points === 0 && (
+            <Typography>
+              {" "}
+              Aún no cuentas con ningún punto,realiza tu primera compra para
+              comenzar a acumular
+            </Typography>
+          )}
         </Typography>
         <Button
           style={{
@@ -62,24 +103,28 @@ const Usuario = () => {
             fontFamily: "Rufina",
             borderRadius: "20px",
             marginBottom: "2rem",
+            marginTop: "1rem",
           }}
           variant="outlined"
         >
           Consultar Historial
         </Button>
-        <div
-          style={{
-            backgroundColor: "white",
-            padding: "1rem",
-            borderRadius: "20px",
-          }}
-        >
-          <QRCode
-            size={200}
-            fgColor="#665959"
-            value={JSON.stringify({ Nombre: "Paola" })}
-          />
-        </div>
+        {userData && (
+          <div
+            style={{
+              backgroundColor: "white",
+              padding: "1rem",
+              borderRadius: "20px",
+            }}
+          >
+            <QRCode
+              size={200}
+              fgColor="#665959"
+              value={JSON.stringify(userData)}
+            />
+          </div>
+        )}
+
         <Typography
           color={"#665959"}
           style={{ marginTop: "2rem" }}

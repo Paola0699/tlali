@@ -1,7 +1,8 @@
 import { Box, Typography } from "@mui/material";
 import Image from "next/image";
+import React from "react";
 
-const LoginHeader = () => {
+const SignupHeader = () => {
   return (
     <Box padding={"3em"} textAlign={"center"}>
       <Image
@@ -10,17 +11,14 @@ const LoginHeader = () => {
         width={200}
         height={140}
       />
-      <Typography variant="h2" color={"#665959"}>
-        Bienvenido de nuevo
-      </Typography>
       <Typography variant="h5" color={"#665959"}>
-        Es un gusto tenerte de vuelta
+        Regístrate y obtén beneficios
       </Typography>
       <Typography color={"#665959"}>
-        Introduce el número de móvil e inicia sesión
+        Introduce el número de móvil para completar tu registro.
       </Typography>
     </Box>
   );
 };
 
-export default LoginHeader;
+export default SignupHeader;
