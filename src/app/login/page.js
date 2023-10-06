@@ -110,7 +110,7 @@ const Login = () => {
       }
     });
   }, []);
-
+console.log(errorMessage)
   return (
     <Grid
       container
@@ -121,6 +121,7 @@ const Login = () => {
         overflow: "scroll",
       }}
     >
+      <div id="recaptcha-container"></div>
       <Grid
         item
         xs={12}
