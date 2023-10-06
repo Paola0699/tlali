@@ -16,6 +16,7 @@ const Usuario = () => {
   const theme = useTheme();
   const isMdAndLg = useMediaQuery(theme.breakpoints.up("md"));
   const padding = isMdAndLg ? 15 : 5;
+  const title = isMdAndLg ? 'h2' : 'h4';
   const [userData, setUserData] = useState();
 
   const logOut = () => {
@@ -58,6 +59,7 @@ const Usuario = () => {
         backgroundColor: "#eff1ed",
         height: "100vh",
         width: "100vw",
+        overflow:'scroll'
       }}
       direction={"row"}
       padding={padding}
@@ -77,7 +79,7 @@ const Usuario = () => {
           width={120}
           height={90}
         />
-        <Typography variant="h2" color={"#665959"}>
+        <Typography variant={title} color={"#665959"}>
           ¡Hola, {userData?.name}!
         </Typography>
         <Typography variant="h5" color={"#665959"}>
