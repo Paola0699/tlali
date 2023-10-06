@@ -1,7 +1,12 @@
-import { Box, Typography } from "@mui/material";
+import { useTheme } from "@emotion/react";
+import { Box, Typography, useMediaQuery } from "@mui/material";
 import Image from "next/image";
 
 const LoginHeader = () => {
+  const theme = useTheme();
+  const isMdAndLg = useMediaQuery(theme.breakpoints.up("md"));
+  const title = isMdAndLg ? 'h2' : 'h4';
+
   return (
     <Box padding={"3em"} textAlign={"center"}>
       <Image
@@ -10,14 +15,14 @@ const LoginHeader = () => {
         width={200}
         height={140}
       />
-      <Typography variant="h2" color={"#665959"}>
+      <Typography variant={title} color={"#665959"}>
         Bienvenido de nuevo
       </Typography>
       <Typography variant="h5" color={"#665959"}>
         Es un gusto tenerte de vuelta
       </Typography>
       <Typography color={"#665959"}>
-        Introduce el número de móvil e inicia sesión
+        Introduce tu número telefónico e inicia sesión
       </Typography>
     </Box>
   );

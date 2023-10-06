@@ -28,7 +28,8 @@ const Login = () => {
   const router = useRouter();
   const theme = useTheme();
   const isMdAndLg = useMediaQuery(theme.breakpoints.up("md"));
-  const padding = isMdAndLg ? 10 : 1;
+  const padding = isMdAndLg ? 10 : 5;
+
   const [sendMessageSuccess, setSendMessageSuccess] = useState(false);
   const [confirmationResult, setConfirmationResult] = useState({});
   const [errorMessage, setErrorMessage] = useState();
@@ -110,11 +111,11 @@ const Login = () => {
         backgroundColor: "#eff1ed",
         height: "100vh",
         width: "100vw",
+        overflow: "scroll",
       }}
     >
       <div id="recaptcha-container"></div>
       <Grid
-        style={{ height: "100vh" }}
         item
         xs={12}
         sm={12}

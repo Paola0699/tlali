@@ -26,7 +26,7 @@ const initializeRecaptcha = () => {
 const Signup = () => {
   const theme = useTheme();
   const isMdAndLg = useMediaQuery(theme.breakpoints.up("md"));
-  const padding = isMdAndLg ? 10 : 1;
+  const padding = isMdAndLg ? 10 : 5;
   const [errorMessage, setErrorMessage] = useState();
   const [confirmationResult, setConfirmationResult] = useState({});
   const [sendMessageSuccess, setSendMessageSuccess] = useState(false);
@@ -128,7 +128,6 @@ const Signup = () => {
     >
       <div id="recaptcha-container"></div>
       <Grid
-        style={{ height: "100vh" }}
         item
         xs={12}
         sm={12}
