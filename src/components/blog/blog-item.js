@@ -7,7 +7,7 @@ const BlogItem = ({ titulo, descripcion, imagen }) => {
       <CardMedia
         component="img"
         height="120"
-        image="/assets/img/bg_1.png"
+        image={imagen ? imagen : "/assets/img/bg_1.png"}
         alt="Paella dish"
       />
        <CardContent>

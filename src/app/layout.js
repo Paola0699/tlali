@@ -33,6 +33,12 @@ export default function RootLayout({ children }) {
       },
     },
     palette: {
+      primary: {
+        light: '#dce4df',
+        main: '#A9BDB1',
+        dark: '#76847b',
+        contrastText: '#fff'
+      },
       success: {
         light: '#dce4df',
         main: '#A9BDB1',
