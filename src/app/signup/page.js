@@ -156,7 +156,7 @@ const Signup = () => {
         <SignupHeader />
         <Alert style={{ marginBottom: "1rem" }}>
           <Typography style={{ color: "#665959" }}>
-            Recibirás un código de 4 dígitos para verificar tu cuenta a
+            Recibirás un código de 6 dígitos para verificar tu cuenta a
             continuación.
           </Typography>
         </Alert>

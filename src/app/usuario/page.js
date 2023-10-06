@@ -9,8 +9,10 @@ import { signOut } from "firebase/auth";
 import { auth } from "../../firebase/firebase";
 import { useEffect, useState } from "react";
 import { getUser } from "@/services/userServices";
+import { useRouter } from "next/navigation";
 
 const Usuario = () => {
+  const router = useRouter();
   const theme = useTheme();
   const isMdAndLg = useMediaQuery(theme.breakpoints.up("md"));
   const padding = isMdAndLg ? 15 : 5;
@@ -21,6 +23,7 @@ const Usuario = () => {
       .then(async () => {
         document.cookie =
           "isAuthenticated=; Max-Age=0; Expires=Thu, 01 Jan 1970 00:00:00 GMT";
+        handleRedirect("/login");
       })
       .catch((error) => {
         console.log(error);
@@ -43,6 +46,10 @@ const Usuario = () => {
       }
     });
   }, []);
+
+  const handleRedirect = (path) => {
+    router.push(path);
+  };
 
   return (
     <Grid

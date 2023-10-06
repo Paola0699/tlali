@@ -1,11 +1,15 @@
 import { Button, TextField } from "@mui/material";
 import { useState } from "react";
+import CurrencyFormat from "react-currency-format";
 
 const LoginCodeVerification = ({ handleVerifyCode }) => {
   const [verificationCode, setVerificationCode] = useState("");
   return (
     <>
-      <TextField
+      <CurrencyFormat
+        format="######"
+        mask="_"
+        customInput={TextField}
         margin="dense"
         label="Código de verificacion"
         size="small"
@@ -38,6 +42,7 @@ const LoginCodeVerification = ({ handleVerifyCode }) => {
           fontFamily: "Rufina",
         }}
         onClick={() => handleVerifyCode(verificationCode)}
+        disabled={verificationCode.length !== 6}
       >
         Verificar código
       </Button>

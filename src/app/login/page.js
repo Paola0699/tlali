@@ -110,7 +110,6 @@ const Login = () => {
       }
     });
   }, []);
-console.log(errorMessage)
   return (
     <Grid
       container
@@ -137,7 +136,7 @@ console.log(errorMessage)
         <LoginHeader />
         <Alert style={{ marginBottom: "1rem" }}>
           <Typography style={{ color: "#665959" }}>
-            Recibirás un código de 4 dígitos para verificar a continuación.
+            Recibirás un código de 6 dígitos para verificar a continuación.
           </Typography>
         </Alert>
         {errorMessage && (
