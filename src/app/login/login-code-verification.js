@@ -1,15 +1,11 @@
 import { Button, TextField } from "@mui/material";
 import { useState } from "react";
-import CurrencyFormat from "react-currency-format";
 
 const LoginCodeVerification = ({ handleVerifyCode }) => {
   const [verificationCode, setVerificationCode] = useState("");
   return (
     <>
-      <CurrencyFormat
-        format="######"
-        mask="_"
-        customInput={TextField}
+      <TextField
         margin="dense"
         label="Código de verificacion"
         size="small"
