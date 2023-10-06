@@ -9,25 +9,25 @@ const BottomNavigationComponent = () => {
     {
       key: "Inicio",
       name: "Inicio",
-      icon: <Home style={{ fontSize: "2rem" }} />,
+      icon: <Home style={{ fontSize: "1.5rem" }} />,
       url: "/usuario",
     },
     {
       key: "Plan de Nutrición",
       name: "Plan de Nutrición",
-      icon: <Veggie style={{ fontSize: "2rem" }} />,
+      icon: <Veggie style={{ fontSize: "1.5rem" }}  />,
       url: "/usuario/nutricion",
     },
     {
       key: "Agendar Chef",
       name: "Agendar Chef",
-      icon: <Chef style={{ fontSize: "2rem" }} />,
+      icon: <Chef style={{ fontSize: "1.5rem" }}  />,
       url: "/usuario/chef",
     },
     {
       key: "Nuestro Blog",
       name: "Nuestro Blog",
-      icon: <Message style={{ fontSize: "2rem" }} />,
+      icon: <Message style={{ fontSize: "1.5rem" }}  />,
       url: "/usuario/blog",
     },
   ];
