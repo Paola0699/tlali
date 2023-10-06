@@ -131,6 +131,7 @@ const Login = () => {
         alignItems={"center"}
         justifyContent={"center"}
         display={"flex"}
+        container
       >
         <LoginHeader />
         <Alert style={{ marginBottom: "1rem" }}>

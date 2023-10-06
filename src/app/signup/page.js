@@ -137,6 +137,7 @@ const Signup = () => {
         backgroundColor: "#eff1ed",
         height: "100vh",
         width: "100vw",
+        overflow:'scroll'
       }}
     >
       <div id="recaptcha-container"></div>
