@@ -2,34 +2,21 @@
 import { useTheme } from "@emotion/react";
 import { Star } from "@mui/icons-material";
 import { Button, Grid, Typography, useMediaQuery } from "@mui/material";
-import Image from "next/image";
 import QRCode from "qrcode.react";
 import BottomNavigationComponent from "./components/bottom-navigation";
-import { signOut } from "firebase/auth";
 import { auth } from "../../firebase/firebase";
 import { useEffect, useState } from "react";
 import { getUser } from "@/services/userServices";
-import { useRouter } from "next/navigation";
+import TopNavbar from "./components/top-navbar";
 
 const Usuario = () => {
-  const router = useRouter();
   const theme = useTheme();
   const isMdAndLg = useMediaQuery(theme.breakpoints.up("md"));
-  const padding = isMdAndLg ? 15 : 5;
+  const padding = isMdAndLg ? 10 : 5;
   const title = isMdAndLg ? 'h2' : 'h4';
   const [userData, setUserData] = useState();
 
-  const logOut = () => {
-    signOut(auth)
-      .then(async () => {
-        document.cookie =
-          "isAuthenticated=; Max-Age=0; Expires=Thu, 01 Jan 1970 00:00:00 GMT";
-        handleRedirect("/login");
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
+
   const handleGetUserData = async (uid) => {
     try {
       const response = await getUser(uid);
@@ -43,16 +30,15 @@ const Usuario = () => {
     auth.onAuthStateChanged(async (user) => {
       if (user) {
         document.cookie = "isAuthenticated=true";
+        document.cookie = 'userType=usuario'
         handleGetUserData(user.uid);
       }
     });
   }, []);
 
-  const handleRedirect = (path) => {
-    router.push(path);
-  };
-
   return (
+    <>
+    <TopNavbar/>
     <Grid
       container
       style={{
@@ -69,16 +55,9 @@ const Usuario = () => {
         xs={12}
         display={"flex"}
         alignItems={"center"}
-        justifyContent={"center"}
         flexDirection={"column"}
+        marginBottom={1}
       >
-        <Button onClick={logOut}>Logout</Button>
-        <Image
-          alt="logo_pajaro_negro"
-          src={"/assets/img/logos/logo_pajaro_negro.png"}
-          width={120}
-          height={90}
-        />
         <Typography variant={title} color={"#665959"}>
           ¡Hola, {userData?.name}!
         </Typography>
@@ -91,7 +70,6 @@ const Usuario = () => {
         xs={12}
         display={"flex"}
         alignItems={"center"}
-        justifyContent={"center"}
         flexDirection={"column"}
         marginBottom={10}
       >
@@ -144,6 +122,7 @@ const Usuario = () => {
       </Grid>
       <BottomNavigationComponent />
     </Grid>
+    </>
   );
 };
 export default Usuario;

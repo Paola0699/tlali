@@ -9,15 +9,23 @@ import SeccionBlog from "../components/secciones/blog";
 import SeccionContacto from "../components/secciones/contacto";
 import { FloatingWhatsApp } from "react-floating-whatsapp";
 import SeccionMembresiasTabla from "../components/secciones/membresias-tabla";
-import Footer from "../components/Footer";
 import { useTheme } from "@emotion/react";
 import CarouselCover from "./carousel";
 import CarouselMobileCover from "./carousel-mobile";
+import { useEffect, useState } from "react";
+import { getLastBlogs } from "@/services/blogServices";
 
 const Home = () => {
   const theme = useTheme();
   const isMdAndLg = useMediaQuery(theme.breakpoints.up("md"));
-  
+  const [blogPosts, setBlogPosts] = useState([]);
+  const handleGetBlogPosts = async () => {
+    const response = await getLastBlogs();
+    setBlogPosts(response);
+  };
+  useEffect(() => {
+    handleGetBlogPosts();
+  }, []);
   return (
       <Grid container>
         <Grid item xs={12}>
@@ -31,7 +39,7 @@ const Home = () => {
         <SeccionMembresiasTabla/>
         <SeccionFundador id={"fundador"} />
         <SeccionFundacion id={"fundacion"} />
-        <SeccionBlog id={"blog"} />
+        <SeccionBlog id={"blog"} data={blogPosts}/>
         <SeccionContacto id={"contacto"} />
         <FloatingWhatsApp
           accountName={"Tlali"}

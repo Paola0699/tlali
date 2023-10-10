@@ -45,7 +45,6 @@ const columns = [
   },
 ];
 const BlogTable = ({ data }) => {
-  console.log(data);
   return <DataGrid rows={data} columns={columns} />;
 };
 

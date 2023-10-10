@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
 import menuReducer from './reducers/menu';
+import blogReducer from './reducers/blog';
 
 const store = configureStore({
   reducer: {
-    menu: menuReducer
+    menu: menuReducer,
+    blog: blogReducer
   },
 });
 

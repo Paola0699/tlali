@@ -1,6 +1,63 @@
-import { Box, Button, TextField } from "@mui/material";
+import { postChefRequest } from "@/services/chefServices";
+import { CloseRounded } from "@mui/icons-material";
+import {
+  Alert,
+  Box,
+  Button,
+  Collapse,
+  IconButton,
+  TextField,
+} from "@mui/material";
+import { useFormik } from "formik";
+import { useState } from "react";
+import * as yup from "yup";
 
-const ChefAppointmentNew = () => {
+const ChefAppointmentNew = ({user}) => {
+  const [successMessage, setSuccessMessage] = useState();
+  const [errorMessage, setErrorMessage] = useState();
+
+  const formik = useFormik({
+    initialValues: {
+      FECHA: "",
+      HORA: "",
+      DIRECCION: "",
+      NUMERO_PERSONAS: 0,
+      PLATILLOS: "",
+    },
+    validationSchema: yup.object({
+      FECHA: yup.string().required(),
+      HORA: yup.string().required(),
+      DIRECCION: yup.string().required(),
+      NUMERO_PERSONAS: yup.string().required(),
+      PLATILLOS: yup.string().required(),
+    }),
+    onSubmit: async (values) => {
+      const { FECHA, HORA, DIRECCION, NUMERO_PERSONAS, PLATILLOS } = values;
+      try {
+        const response = await postChefRequest({
+          appointmentDate: FECHA,
+          appointmentTime: HORA,
+          address: DIRECCION,
+          guestsNumber: NUMERO_PERSONAS,
+          dishes: PLATILLOS,
+          requestDate: new Date(),
+          status: "Pendiente de confirmar",
+          user: user.uid,
+        });
+        console.log(response);
+        setSuccessMessage(
+          "Se ha enviado tu solicitud con éxito, espera a que el restaurante se ponga en contacto contigo"
+        );
+        formik.handleReset();
+      } catch (error) {
+        setErrorMessage({
+          message: "Error, algo salió mal: ",
+          error: error.message,
+        });
+      }
+    },
+  });
+
   return (
     <Box
       style={{
@@ -10,7 +67,50 @@ const ChefAppointmentNew = () => {
         width: "100%",
       }}
     >
-      <form>
+      <form onSubmit={formik.handleSubmit}>
+        <Collapse in={successMessage}>
+          <Alert
+            severity="success"
+            action={
+              <IconButton
+                aria-label="close"
+                color="inherit"
+                size="small"
+                onClick={() => {
+                  setSuccessMessage();
+                }}
+              >
+                <CloseRounded fontSize="inherit" />
+              </IconButton>
+            }
+            sx={{ mb: 2 }}
+          >
+            {successMessage}
+          </Alert>
+        </Collapse>
+
+        <Collapse in={errorMessage?.message}>
+          <Alert
+            severity="error"
+            action={
+              <IconButton
+                aria-label="close"
+                color="inherit"
+                size="small"
+                onClick={() => {
+                  setErrorMessage();
+                }}
+              >
+                <CloseRounded fontSize="inherit" />
+              </IconButton>
+            }
+            sx={{ mb: 2 }}
+          >
+            {errorMessage?.message}
+            {errorMessage?.error}
+          </Alert>
+        </Collapse>
+
         <TextField
           fullWidth
           margin="dense"
@@ -30,6 +130,13 @@ const ChefAppointmentNew = () => {
             },
           }}
           focused={false}
+          id="FECHA"
+          name="FECHA"
+          autoFocus={false}
+          value={formik.values.FECHA}
+          onChange={formik.handleChange}
+          error={formik.touched.FECHA && Boolean(formik.errors.FECHA)}
+          helperText={formik.touched.FECHA && formik.errors.FECHA}
         />
         <TextField
           fullWidth
@@ -50,6 +157,13 @@ const ChefAppointmentNew = () => {
             },
           }}
           focused={false}
+          id="HORA"
+          name="HORA"
+          autoFocus={false}
+          value={formik.values.HORA}
+          onChange={formik.handleChange}
+          error={formik.touched.HORA && Boolean(formik.errors.HORA)}
+          helperText={formik.touched.HORA && formik.errors.HORA}
         />
         <TextField
           fullWidth
@@ -72,6 +186,13 @@ const ChefAppointmentNew = () => {
           focused={false}
           multiline
           rows={3}
+          id="DIRECCION"
+          name="DIRECCION"
+          autoFocus={false}
+          value={formik.values.DIRECCION}
+          onChange={formik.handleChange}
+          error={formik.touched.DIRECCION && Boolean(formik.errors.DIRECCION)}
+          helperText={formik.touched.DIRECCION && formik.errors.DIRECCION}
         />
         <TextField
           fullWidth
@@ -92,6 +213,18 @@ const ChefAppointmentNew = () => {
             },
           }}
           focused={false}
+          id="NUMERO_PERSONAS"
+          name="NUMERO_PERSONAS"
+          autoFocus={false}
+          value={formik.values.NUMERO_PERSONAS}
+          onChange={formik.handleChange}
+          error={
+            formik.touched.NUMERO_PERSONAS &&
+            Boolean(formik.errors.NUMERO_PERSONAS)
+          }
+          helperText={
+            formik.touched.NUMERO_PERSONAS && formik.errors.NUMERO_PERSONAS
+          }
         />
         <TextField
           fullWidth
@@ -113,6 +246,13 @@ const ChefAppointmentNew = () => {
           }}
           focused={false}
           multiline
+          id="PLATILLOS"
+          name="PLATILLOS"
+          autoFocus={false}
+          value={formik.values.PLATILLOS}
+          onChange={formik.handleChange}
+          error={formik.touched.PLATILLOS && Boolean(formik.errors.PLATILLOS)}
+          helperText={formik.touched.PLATILLOS && formik.errors.PLATILLOS}
           rows={3}
         />
         <Button
@@ -125,6 +265,7 @@ const ChefAppointmentNew = () => {
             marginTop: "2rem",
             fontFamily: "Rufina",
           }}
+          type="subtmit"
         >
           Agendar
         </Button>

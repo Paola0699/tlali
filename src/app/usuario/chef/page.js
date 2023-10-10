@@ -6,16 +6,30 @@ import {
   Typography,
   useMediaQuery,
 } from "@mui/material";
-import Image from "next/image";
 import ChefAppointmentNew from "./chef-appointment-new";
 import ChefHistory from "./chef-history";
 import BottomNavigationComponent from "../components/bottom-navigation";
+import TopNavbar from "../components/top-navbar";
+import { auth } from "@/firebase/firebase";
+import { useEffect, useState } from "react";
 
 const Rewards = () => {
   const theme = useTheme();
   const isMdAndLg = useMediaQuery(theme.breakpoints.up("md"));
-  const padding = isMdAndLg ? 15 : 5;
+  const padding = isMdAndLg ? 10 : 5;
+  const [user, setUser]= useState();
+
+  useEffect(() => {
+    auth.onAuthStateChanged(async (user) => {
+      if (user) {
+        setUser(user);
+      }
+    });
+  }, []);
+
   return (
+    <>
+    <TopNavbar/>
     <Grid
       container
       style={{
@@ -32,38 +46,26 @@ const Rewards = () => {
         xs={12}
         display={"flex"}
         alignItems={"center"}
-        justifyContent={"center"}
         flexDirection={"column"}
         marginBottom={10}
       >
-        <Image
-          alt="logo_pajaro_negro"
-          src={"/assets/img/logos/logo_pajaro_negro.png"}
-          width={120}
-          height={90}
-        />
         <Typography variant="h2" color={"#665959"}>
           Chef a domicilio
         </Typography>
         <Alert
-          icon={false}
-          style={{
-            marginBottom: "1rem",
-            width: "100%",
-            color: "#665959",
-            border: "1px solid #665959",
-            backgroundColor: "transparent",
-          }}
+          severity='success'
+          style={{marginBottom: '1rem'}}
         >
           Una vez que envies tu solicitud de cita. El restaurante será
           notificado y se podrá en contacto contigo para confirmar la
           reservación.{" "}
         </Alert>
-        <ChefAppointmentNew />
-        <ChefHistory />
+        <ChefAppointmentNew user={user} />
+        <ChefHistory user={user} />
       </Grid>
       <BottomNavigationComponent />
     </Grid>
+    </>
   );
 };
 export default Rewards;

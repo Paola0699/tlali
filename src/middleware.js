@@ -1,29 +1,46 @@
 import { NextResponse } from "next/server";
 
-const protectedRoutes = [
+const protectedUserRoutes = [
   "/usuario",
   "/usuario/blog",
   "/usuario/chef",
   "/usuario/nutricion",
   "/usuario/suscripcion",
 ];
-const publicRoutes = ["/login", "/signup"];
+const protectedAdminRoutes = [
+  "/admin/blog",
+  "/admin/chef",
+  "/admin/usuarios",
+];
+const publicUserRoutes = ["/login", "/signup"];
+const publicAdminRoutes = ["/admin/login"];
 
 export default async function middleware(req, res) {
-  return new Promise((resolve, reject) => {
-    let cookie = req.cookies.get("isAuthenticated");
-    console.log(req.url);
+  return new Promise((resolve) => {
+    const cookie = req.cookies.get("isAuthenticated");
+    const userType = req.cookies.get('userType');
+    const { pathname, origin } = req.nextUrl;
 
-    const isProtectedRoute = protectedRoutes.includes(req.nextUrl.pathname);
-    const isPublicRoute = publicRoutes.includes(req.nextUrl.pathname);
+    console.log(userType);
+    console.log(cookie);
 
-    if (!cookie && isProtectedRoute) {
-      const absoluteURL = new URL("/login", req.nextUrl.origin);
-      resolve(NextResponse.redirect(absoluteURL.toString()));
-    } else if (cookie && isPublicRoute) {
-      const absoluteURL = new URL("/usuario", req.nextUrl.origin);
-      resolve(NextResponse.redirect(absoluteURL.toString()));
+    const isProtectedUserRoute = protectedUserRoutes.includes(pathname);
+    const isProtectedAdminRoute = protectedAdminRoutes.includes(pathname);
+    const isPublicUserRoute = publicUserRoutes.includes(pathname);
+    const isPublicAdminRoute = publicAdminRoutes.includes(pathname);
+
+    if (!cookie && !userType && isProtectedUserRoute) {
+      resolve(NextResponse.redirect(`${origin}/login`));
+    } else if (cookie && userType.value === 'usuario' && (isPublicUserRoute || isProtectedAdminRoute)) {
+      resolve(NextResponse.redirect(`${origin}/usuario`));
+    } else if (cookie && userType.value === 'admin' && isProtectedUserRoute) {
+      resolve(NextResponse.redirect(`${origin}/admin/usuario`));
+    } else if (!cookie && !userType && isProtectedAdminRoute) {
+      resolve(NextResponse.redirect(`${origin}/admin/login`));
+    } else if (cookie && userType.value === 'admin' && isPublicAdminRoute) {
+      resolve(NextResponse.redirect(`${origin}/admin/usuarios`));
     } else {
+      console.log('Otra ruta')
       resolve(NextResponse.next());
     }
   });

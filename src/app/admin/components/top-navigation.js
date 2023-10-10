@@ -12,8 +12,9 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
+import Image from 'next/image';
 
-const pages = ['Products', 'Pricing', 'Blog'];
+const pages = ['Usuarios', 'Blog', 'Chef privado'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function TopNavigation() {
@@ -39,7 +40,6 @@ function TopNavigation() {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
           <Typography
             variant="h6"
             noWrap
@@ -55,7 +55,12 @@ function TopNavigation() {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            <Image
+              alt="logo_pajaro_negro"
+              src={"/assets/img/logos/logo_pajaro_negro.png"}
+              width={85}
+              height={60}
+            />
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>

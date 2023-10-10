@@ -107,6 +107,7 @@ const Login = () => {
     auth.onAuthStateChanged(async (user) => {
       if (user) {
         document.cookie = "isAuthenticated=true";
+        document.cookie = 'userType=usuario'
       }
     });
   }, []);
