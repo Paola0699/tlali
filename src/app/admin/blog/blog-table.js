@@ -12,10 +12,15 @@ import { DataGrid } from "@mui/x-data-grid";
 import moment from "moment/moment";
 import Image from "next/image";
 import React, { useState } from "react";
-import BlogEditModal from "./blog-edit-modal";
 import { useDispatch } from "react-redux";
 import { addSelectedPost } from "@/redux/reducers/blog";
 import { deleteBlogPost } from "@/services/blogServices";
+import dynamic from "next/dynamic";
+
+// Usa dynamic para cargar dinámicamente BlogNewPostModal
+const BlogEditModal = dynamic(() => import("./blog-edit-modal"), {
+  ssr: false, // Desactiva el prerenderizado del lado del servidor
+});
 
 const BlogTable = ({ data }) => {
   const [open, setOpen] = useState(false);
