@@ -4,7 +4,6 @@ import TopNavigation from "../components/top-navigation";
 import { Button, Grid } from "@mui/material";
 import BoxTitle from "../components/box-title";
 import BlogTable from "./blog-table";
-import BlogNewPostModal from "./blog-new-post-modal";
 import { getAllBlogs } from "@/services/blogServices";
 
 const Blog = () => {
@@ -31,7 +30,7 @@ const Blog = () => {
         }}
         padding={10}
       >
-        <Grid item xs={12}>
+        <Grid item xs={12}>         
           <BoxTitle title={"Blog"} subtitle={"Aquí encontrarás tus posts"} />
           <Button
             variant="contained"
@@ -44,7 +43,6 @@ const Blog = () => {
         </Grid>{" "}
         <Grid item xs={12}></Grid>
       </Grid>
-      {open && <BlogNewPostModal open={open} setOpen={setOpen} />}
     </>
   );
 };
