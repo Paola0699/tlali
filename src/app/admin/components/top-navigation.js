@@ -59,11 +59,11 @@ function TopNavigation() {
   };
   const logOut = () => {
     signOut(auth)
-      .then(async () => {
+      .then(() => {
         document.cookie =
-          "isAuthenticated=; Max-Age=0; Expires=Thu, 01 Jan 1970 00:00:00 GMT";
+          "isAuthenticated=; Max-Age=0; Expires=Thu, 01 Jan 1970 00:00:00 GMT; SameSite=None; Path=/; Secure";
         document.cookie =
-          "userType=; Max-Age=0; Expires=Thu, 01 Jan 1970 00:00:00 GMT";
+          "userType=; Max-Age=0; Expires=Thu, 01 Jan 1970 00:00:00 GMT; SameSite=None; Path=/; Secure";
         handleRedirect("/admin/login");
       })
       .catch((error) => {
