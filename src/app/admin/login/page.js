@@ -1,17 +1,20 @@
 "use client";
 import { Alert, Grid, useMediaQuery } from "@mui/material";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import LoginHeader from "./login-header";
 import LoginForm from "./login-form";
 import { useTheme } from "@emotion/react";
 import { useFormik } from "formik";
 import * as yup from "yup";
+import { auth } from "@/firebase/firebase";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { useRouter } from "next/navigation";
 const Login = () => {
   const theme = useTheme();
   const isMdAndLg = useMediaQuery(theme.breakpoints.up("md"));
   const padding = isMdAndLg ? 10 : 5;
   const [errorMessage, setErrorMessage] = useState();
-
+  const router = useRouter();
   const formik = useFormik({
     initialValues: {
       CORREO_ELECTRONICO: "",
@@ -22,9 +25,29 @@ const Login = () => {
       CONTRASEÑA: yup.string().required(),
     }),
     onSubmit: (values) => {
-      console.log(values);
+      const { CORREO_ELECTRONICO, CONTRASEÑA } = values;
+      signInWithEmailAndPassword(auth, CORREO_ELECTRONICO, CONTRASEÑA)
+        .then((userCredential) => {
+          handleRedirect("/admin/usuarios");
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          setErrorMessage(errorMessage);
+        });
     },
   });
+  const handleRedirect = (path) => {
+    router.push(path);
+  };
+  useEffect(() => {
+    auth.onAuthStateChanged(async (user) => {
+      if (user) {
+        document.cookie = "isAuthenticated=true";
+        document.cookie = "userType=admin";
+      }
+    });
+  }, []);
 
   return (
     <Grid
