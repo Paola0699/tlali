@@ -1,5 +1,6 @@
-import { Box, Modal } from "@mui/material";
+'use client'
 import React from "react";
+import { Box, Modal } from "@mui/material";
 import BoxTitle from "../components/box-title";
 import BlogNewPostForm from "./blog-new-post-form";
 
