@@ -1,10 +1,20 @@
 'use client'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import TopNavigation from '../components/top-navigation'
 import { Grid } from '@mui/material'
 import BoxTitle from '../components/box-title'
+import { getAllUsers } from '@/services/usersServices'
+import UsuariosTable from './usuarios-table'
 
 const Usuarios = () => {
+  const [usersList, setUsersList] = useState([]);
+  const handleGetUsers = async() => {
+    const response = await getAllUsers();
+    setUsersList(response);
+  }
+  useEffect(()=>{
+    handleGetUsers();
+  },[])
   return (
     <>
     <TopNavigation />
@@ -26,6 +36,7 @@ const Usuarios = () => {
           }
         />
         <br></br>
+        <UsuariosTable data={usersList}/>
       </Grid>
     </Grid>
   </>

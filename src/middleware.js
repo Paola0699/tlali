@@ -37,7 +37,6 @@ export default async function middleware(req, res) {
     } else if (cookie && userType.value === 'admin' && isPublicAdminRoute) {
       resolve(NextResponse.redirect(`${origin}/admin/usuarios`));
     } else {
-      console.log('Otra ruta')
       resolve(NextResponse.next());
     }
   });
