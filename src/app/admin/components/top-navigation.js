@@ -15,6 +15,7 @@ import AdbIcon from "@mui/icons-material/Adb";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { signOut } from "firebase/auth";
+import { auth } from "@/firebase/firebase";
 
 const pages = [
   {
@@ -63,7 +64,7 @@ function TopNavigation() {
           "isAuthenticated=; Max-Age=0; Expires=Thu, 01 Jan 1970 00:00:00 GMT";
         document.cookie =
           "userType=; Max-Age=0; Expires=Thu, 01 Jan 1970 00:00:00 GMT";
-        handleRedirect("/login");
+        handleRedirect("/admin/login");
       })
       .catch((error) => {
         console.log(error);
