@@ -20,7 +20,7 @@ const Usuario = () => {
   const handleGetUserData = async (uid) => {
     try {
       const response = await getUser(uid);
-      setUserData(response);
+      return(response);
     } catch (error) {
       console.log(error);
     }
@@ -29,9 +29,14 @@ const Usuario = () => {
   useEffect(() => {
     auth.onAuthStateChanged(async (user) => {
       if (user) {
+        const userData = handleGetUserData(user.uid)
+        if(userData){
+          document.cookie = 'userType=usuario';
+          setUserData(userData);
+        }else{
+          document.cookie = 'userType=admin';
+        }
         document.cookie = "isAuthenticated=true";
-        document.cookie = 'userType=usuario'
-        handleGetUserData(user.uid);
       }
     });
   }, []);

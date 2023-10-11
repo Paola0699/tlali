@@ -9,6 +9,7 @@ import * as yup from "yup";
 import { auth } from "@/firebase/firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useRouter } from "next/navigation";
+import { getUser } from "@/services/userServices";
 const Login = () => {
   const theme = useTheme();
   const isMdAndLg = useMediaQuery(theme.breakpoints.up("md"));
@@ -40,11 +41,17 @@ const Login = () => {
   const handleRedirect = (path) => {
     router.push(path);
   };
+
   useEffect(() => {
     auth.onAuthStateChanged(async (user) => {
       if (user) {
+        const userData = await getUser(user.uid);
+        if(userData){
+          document.cookie = 'userType=usuario';
+        }else{
+          document.cookie = 'userType=admin';
+        }
         document.cookie = "isAuthenticated=true";
-        document.cookie = "userType=admin";
       }
     });
   }, []);

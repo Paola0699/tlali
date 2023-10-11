@@ -14,7 +14,7 @@ import { useFormik } from "formik";
 import * as yup from "yup";
 import { auth } from "../../firebase/firebase";
 import LoginCodeVerification from "./login-code-verification";
-import { getUserByPhoneNumber } from "../../services/userServices";
+import { getUser, getUserByPhoneNumber } from "../../services/userServices";
 import { useRouter } from "next/navigation";
 import { formatPhoneNumber } from "@/utils/utils";
 
@@ -106,8 +106,13 @@ const Login = () => {
   useEffect(() => {
     auth.onAuthStateChanged(async (user) => {
       if (user) {
+        const userData = await getUser(user.uid);
+        if(userData){
+          document.cookie = 'userType=usuario';
+        }else{
+          document.cookie = 'userType=admin';
+        }
         document.cookie = "isAuthenticated=true";
-        document.cookie = 'userType=usuario'
       }
     });
   }, []);

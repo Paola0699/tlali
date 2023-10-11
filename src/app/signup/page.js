@@ -14,7 +14,7 @@ import {
   signInWithPhoneNumber,
 } from "firebase/auth";
 import { auth } from "@/firebase/firebase";
-import { getUserByPhoneNumber, postUser } from "@/services/userServices";
+import { getUser, getUserByPhoneNumber, postUser } from "@/services/userServices";
 import LoginCodeVerification from "../login/login-code-verification";
 import { useRouter } from "next/navigation";
 
@@ -126,8 +126,13 @@ const Signup = () => {
   useEffect(() => {
     auth.onAuthStateChanged(async (user) => {
       if (user) {
+        const userData = await getUser(user.uid);
+        if(userData){
+          document.cookie = 'userType=usuario';
+        }else{
+          document.cookie = 'userType=admin';
+        }
         document.cookie = "isAuthenticated=true";
-        document.cookie = 'userType=usuario';
       }
     });
   }, []);
