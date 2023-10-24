@@ -10,7 +10,7 @@ import Container from "@mui/material/Container";
 import Avatar from "@mui/material/Avatar";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import { Link } from "@mui/material";
+import { Button, Link } from "@mui/material";
 import Image from "next/image";
 
 const pages = [
@@ -107,22 +107,24 @@ const Navbar = () => {
               }}
             >
               {pages.map((page) => (
-                <MenuItem
-                  key={page.title}
-                  style={{ textDecoration: "none" }}
-                >
-                 <Link
+                <MenuItem key={page.title} style={{ textDecoration: "none" }}>
+                  <Link
                     href={page.link}
-                    sx={{ my: 2, color: '#665959',display: "block", textDecoration: 'none' }}
+                    sx={{
+                      my: 2,
+                      color: "#665959",
+                      display: "block",
+                      textDecoration: "none",
+                    }}
                   >
                     {page.title}
-                  </Link>                
+                  </Link>
                 </MenuItem>
               ))}
             </Menu>
           </Box>
 
-          <Box sx={{ display: { xs: "flex", md: "none" }, mr: 17 }}>
+          <Box sx={{ display: { xs: "flex", md: "none" } }}>
             <Image
               alt="Logo Pájaro"
               src={"/assets/img/logos/logo_pajaro.png"}
@@ -136,7 +138,12 @@ const Navbar = () => {
               <MenuItem key={page.link}>
                 <Link
                   href={page.link}
-                  sx={{ my: 2, color: "white", display: "block", textDecoration: 'none' }}
+                  sx={{
+                    my: 2,
+                    color: "white",
+                    display: "block",
+                    textDecoration: "none",
+                  }}
                 >
                   {page.title}
                 </Link>
@@ -144,7 +151,14 @@ const Navbar = () => {
             ))}
           </Box>
 
-         {/*  <Box sx={{ flexGrow: 0 }}>
+          <Box sx={{ flexGrow: 0 }}>
+            <Link href={"/login"}>
+              <Button variant="contained" style={{ boxShadow: "none" }}>
+                Iniciar Sesión
+              </Button>{" "}
+            </Link>
+          </Box>
+          {/*  <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
