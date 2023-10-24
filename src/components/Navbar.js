@@ -12,6 +12,11 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import { Button, Link } from "@mui/material";
 import Image from "next/image";
+import { auth } from "@/firebase/firebase";
+import { getUser } from "@/services/userServices";
+import { useDispatch, useSelector } from "react-redux";
+import { addUserData, resetUserData } from "@/redux/reducers/user";
+import { signOut } from "firebase/auth";
 
 const pages = [
   { title: "Membresias", link: "/#membresias" },
@@ -20,9 +25,18 @@ const pages = [
   { title: "Nuestro Porqué", link: "/#nosotros" },
   { title: "Blog", link: "/#blog" },
 ];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
-
 const Navbar = () => {
+  const { userData } = useSelector((state) => state.user);
+  const dispatch = useDispatch();
+  const handleGetUserData = async (uid) => {
+    try {
+      const response = await getUser(uid);
+      return response;
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [anchorElUser, setAnchorElUser] = useState(null);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -42,7 +56,43 @@ const Navbar = () => {
     setAnchorElUser(null);
   };
 
+  const logOut = () => {
+    signOut(auth)
+      .then(async () => {
+        document.cookie =
+          "isAuthenticated=; Max-Age=0; Expires=Thu, 01 Jan 1970 00:00:00 GMT; SameSite=None; Path=/; Secure";
+        document.cookie =
+          "isAuthenticated=; Max-Age=0; Expires=Thu, 01 Jan 1970 00:00:00 GMT; SameSite=None; Path=/login; Secure";
+        document.cookie =
+          "isAuthenticated=; Max-Age=0; Expires=Thu, 01 Jan 1970 00:00:00 GMT; SameSite=None; Path=/admin; Secure";
+        document.cookie =
+          "userType=; Max-Age=0; Expires=Thu, 01 Jan 1970 00:00:00 GMT; SameSite=None; Path=/; Secure";
+        document.cookie =
+          "userType=; Max-Age=0; Expires=Thu, 01 Jan 1970 00:00:00 GMT; SameSite=None; Path=/login; Secure";
+        document.cookie =
+          "userType=; Max-Age=0; Expires=Thu, 01 Jan 1970 00:00:00 GMT; SameSite=None; Path=/admin; Secure";
+        dispatch(resetUserData());
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   useEffect(() => {
+    auth.onAuthStateChanged(async (user) => {
+      if (user) {
+        const userData = await handleGetUserData(user.uid);
+        if (userData) {
+          dispatch(
+            addUserData({
+              uid: user.uid,
+              ...userData,
+              birthDay: userData.birthDay.seconds,
+            })
+          );
+        }
+      }
+    });
     const handleScroll = () => {
       if (window.scrollY > 0) {
         setIsScrolled(true);
@@ -152,41 +202,52 @@ const Navbar = () => {
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            <Link href={"/login"}>
-              <Button variant="contained" style={{ boxShadow: "none" }}>
-                Iniciar Sesión
-              </Button>{" "}
-            </Link>
+            {userData.uid ? (
+              <>
+                <Tooltip title="Open settings">
+                  <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                    <Avatar alt={userData?.lastName}>
+                      {userData?.lastName?.substr(0, 1)}{" "}
+                    </Avatar>
+                  </IconButton>
+                </Tooltip>
+                <Menu
+                  sx={{ mt: "45px" }}
+                  id="menu-appbar"
+                  anchorEl={anchorElUser}
+                  anchorOrigin={{
+                    vertical: "top",
+                    horizontal: "right",
+                  }}
+                  keepMounted
+                  transformOrigin={{
+                    vertical: "top",
+                    horizontal: "right",
+                  }}
+                  open={Boolean(anchorElUser)}
+                  onClose={handleCloseUserMenu}
+                >
+                  <MenuItem>
+                    <Link
+                      href="/usuario"
+                      style={{ textDecoration: "none", color: "black" }}
+                    >
+                      <Typography textAlign="center">Mi Cuenta</Typography>
+                    </Link>
+                  </MenuItem>
+                  <MenuItem onClick={logOut}>
+                    <Typography textAlign="center">Cerrar Sesión</Typography>
+                  </MenuItem>
+                </Menu>
+              </>
+            ) : (
+              <Link href={"/login"}>
+                <Button variant="contained" style={{ boxShadow: "none" }}>
+                  Iniciar Sesión
+                </Button>{" "}
+              </Link>
+            )}
           </Box>
-          {/*  <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-              </IconButton>
-            </Tooltip>
-            <Menu
-              sx={{ mt: "45px" }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
-            >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box> */}
         </Toolbar>
       </Container>
     </AppBar>

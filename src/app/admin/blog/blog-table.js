@@ -59,11 +59,13 @@ const BlogTable = ({ data }) => {
     },
     {
       field: "title",
-      headerName: "Fecha",
+      headerName: "Título",
+      width: 500,
     },
     {
       field: "author",
       headerName: "Autor",
+      width: 300,
     },
     {
       field: "Acciones",
@@ -72,7 +74,7 @@ const BlogTable = ({ data }) => {
           variant="contained"
           onClick={() => {
             setOpenDialog(true);
-            setSelectedDeletePost(params.row.id);
+            setSelectedDeletePost(params.row);
           }}
         >
           Eliminar

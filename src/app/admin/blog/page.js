@@ -48,6 +48,13 @@ const Blog = () => {
           >
             Crear nuevo post
           </Button>
+          <Button
+            variant="outlined"
+            style={{ marginBottom: "1rem", marginLeft: '.5rem' }}
+            onClick={handleGetBlogPosts}
+          >
+            Refresh
+          </Button>
           <BlogTable data={blogPosts} />
           {open && <BlogNewPostModal open={open} setOpen={setOpen} />}
         </Grid>
