@@ -2,7 +2,7 @@ import { Box, Button, TextField, Typography } from "@mui/material";
 import Link from "next/link";
 import CurrencyFormat from "react-currency-format";
 
-const LoginForm = ({ formik }) => {
+const LoginForm = ({ formik, handleSetLoginMethod }) => {
   return (
     <form onSubmit={formik.handleSubmit}>
       <CurrencyFormat
@@ -61,7 +61,7 @@ const LoginForm = ({ formik }) => {
         }}
       >
         <Typography variant="body" color={"#665959"} textAlign={"center"}>
-          <Link href={"/login/email"}>
+          <Link href={""} onClick={handleSetLoginMethod}>
             <b>Iniciar sesión con correo electrónico</b>
           </Link>{" "}
         </Typography>

@@ -1,5 +1,5 @@
 import { useTheme } from "@emotion/react";
-import { Box, Typography, useMediaQuery } from "@mui/material";
+import { Alert, Box, Typography, useMediaQuery } from "@mui/material";
 import Image from "next/image";
 
 const LoginHeader = () => {
@@ -24,6 +24,11 @@ const LoginHeader = () => {
       <Typography color={"#665959"}>
         Introduce tu número telefónico e inicia sesión
       </Typography>
+      <Alert style={{ marginBottom: "1rem" }}>
+          <Typography style={{ color: "#665959" }}>
+            Recibirás un código de 6 dígitos para verificar a continuación.
+          </Typography>
+        </Alert>
     </Box>
   );
 };

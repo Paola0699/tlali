@@ -12,7 +12,7 @@ const protectedAdminRoutes = [
   "/admin/chef",
   "/admin/usuarios",
 ];
-const publicUserRoutes = ["/login", "/login/email" ,"/signup"];
+const publicUserRoutes = ["/login" ,"/signup"];
 const publicAdminRoutes = ["/admin/login"];
 
 export default async function middleware(req, res) {
@@ -20,7 +20,7 @@ export default async function middleware(req, res) {
     const cookie = req.cookies.get("isAuthenticated");
     const userType = req.cookies.get('userType');
     const { pathname, origin } = req.nextUrl;
-
+   
     const isProtectedUserRoute = protectedUserRoutes.includes(pathname);
     const isProtectedAdminRoute = protectedAdminRoutes.includes(pathname);
     const isPublicUserRoute = publicUserRoutes.includes(pathname);

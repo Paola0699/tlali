@@ -15,7 +15,7 @@ import {
 } from "firebase/auth";
 import { auth } from "@/firebase/firebase";
 import { getUser, getUserByPhoneNumber, postUser } from "@/services/userServices";
-import LoginCodeVerification from "../login/login-code-verification";
+import LoginCodeVerification from "../login/telefono/login-code-verification";
 import { useRouter } from "next/navigation";
 
 const initializeRecaptcha = () => {

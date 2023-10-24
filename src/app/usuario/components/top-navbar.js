@@ -73,7 +73,7 @@ function TopNavbar() {
           "userType=; Max-Age=0; Expires=Thu, 01 Jan 1970 00:00:00 GMT; SameSite=None; Path=/login; Secure";
         document.cookie =
           "userType=; Max-Age=0; Expires=Thu, 01 Jan 1970 00:00:00 GMT; SameSite=None; Path=/admin; Secure";
-        handleRedirect("/login/email");
+        handleRedirect("/login");
         dispatch(resetUserData());
       })
       .catch((error) => {
