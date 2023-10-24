@@ -12,7 +12,7 @@ const protectedAdminRoutes = [
   "/admin/chef",
   "/admin/usuarios",
 ];
-const publicUserRoutes = ["/login", "/signup"];
+const publicUserRoutes = ["/login", "/login/email" ,"/signup"];
 const publicAdminRoutes = ["/admin/login"];
 
 export default async function middleware(req, res) {

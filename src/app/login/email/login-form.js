@@ -1,16 +1,12 @@
 import { Box, Button, TextField, Typography } from "@mui/material";
 import Link from "next/link";
-import CurrencyFormat from "react-currency-format";
 
 const LoginForm = ({ formik }) => {
   return (
     <form onSubmit={formik.handleSubmit}>
-      <CurrencyFormat
-        format="+52 (###) ###-####"
-        mask="_"
-        customInput={TextField}
+    <TextField
         margin="dense"
-        label="Número Telefónico"
+        label="Correo electrónico"
         size="small"
         InputLabelProps={{
           style: {
@@ -25,19 +21,47 @@ const LoginForm = ({ formik }) => {
           },
         }}
         fullWidth
-        id="NUMERO_TELEFONO"
-        name="NUMERO_TELEFONO"
-        value={formik.values.NUMERO_TELEFONO}
+        id="CORREO_ELECTRONICO"
+        name="CORREO_ELECTRONICO"
+        autoFocus={false}
+        value={formik.values.CORREO_ELECTRONICO}
         onChange={formik.handleChange}
         error={
-          formik.touched.NUMERO_TELEFONO &&
-          Boolean(formik.errors.NUMERO_TELEFONO)
+          formik.touched.CORREO_ELECTRONICO &&
+          Boolean(formik.errors.CORREO_ELECTRONICO)
         }
         helperText={
-          formik.touched.NUMERO_TELEFONO && formik.errors.NUMERO_TELEFONO
+          formik.touched.CORREO_ELECTRONICO && formik.errors.CORREO_ELECTRONICO
         }
-        autoFocus={false}
       />
+
+      <TextField
+        margin="dense"
+        label="Contraseña"
+        size="small"
+        InputLabelProps={{
+          style: {
+            color: "#665959", // Change the color of the label text
+          },
+          shrink: true,
+        }}
+        InputProps={{
+          style: {
+            color: "#665959", // Change the color of the input text
+            borderColor: "#665959", // Change the color of the input border
+          },
+        }}
+        fullWidth
+        type="password"
+        id="CONTRASEÑA"
+        name="CONTRASEÑA"
+        autoFocus={false}
+        value={formik.values.CONTRASEÑA}
+        onChange={formik.handleChange}
+        error={formik.touched.CONTRASEÑA && Boolean(formik.errors.CONTRASEÑA)}
+        helperText={formik.touched.CONTRASEÑA && formik.errors.CONTRASEÑA}
+      />
+
       <Button
         type="submit"
         fullWidth
@@ -61,8 +85,8 @@ const LoginForm = ({ formik }) => {
         }}
       >
         <Typography variant="body" color={"#665959"} textAlign={"center"}>
-          <Link href={"/login/email"}>
-            <b>Iniciar sesión con correo electrónico</b>
+          <Link href={"/login"}>
+            <b>Iniciar sesión con número telefónico</b>
           </Link>{" "}
         </Typography>
         <br />

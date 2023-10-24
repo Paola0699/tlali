@@ -14,11 +14,11 @@ import { Button, Link } from "@mui/material";
 import Image from "next/image";
 
 const pages = [
-  { title: "Membresias", link: "#membresias" },
+  { title: "Membresias", link: "/#membresias" },
   { title: "Menú", link: "/menu" },
-  { title: "Reservar", link: "#reservaciones" },
-  { title: "Nuestro Porqué", link: "#nosotros" },
-  { title: "Blog", link: "#blog" },
+  { title: "Reservar", link: "/#reservaciones" },
+  { title: "Nuestro Porqué", link: "/#nosotros" },
+  { title: "Blog", link: "/#blog" },
 ];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 

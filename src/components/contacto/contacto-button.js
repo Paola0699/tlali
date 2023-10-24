@@ -9,6 +9,7 @@ const ContactoButton = () => {
       style={{ borderColor: "#665959", color: "#665959", marginTop: "2rem", fontFamily:'Rufina' }}
       variant="outlined"
       className={rufina.className}
+      type='submit'
     >
      Suscríbete
     </Button>
