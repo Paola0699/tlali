@@ -8,14 +8,16 @@ import { auth } from "../../firebase/firebase";
 import { useEffect, useState } from "react";
 import { getUser } from "@/services/userServices";
 import TopNavbar from "./components/top-navbar";
+import { useDispatch, useSelector } from "react-redux";
+import { addUserData } from "@/redux/reducers/user";
 
 const Usuario = () => {
+  const dispatch = useDispatch();
+  const userData = useSelector(state=>state.user.userData)
   const theme = useTheme();
   const isMdAndLg = useMediaQuery(theme.breakpoints.up("md"));
   const padding = isMdAndLg ? 10 : 5;
   const title = isMdAndLg ? 'h2' : 'h4';
-  const [userData, setUserData] = useState();
-
 
   const handleGetUserData = async (uid) => {
     try {
@@ -29,16 +31,12 @@ const Usuario = () => {
   useEffect(() => {
     auth.onAuthStateChanged(async (user) => {
       if (user) {
-        const userData = handleGetUserData(user.uid)
+        const userData = await handleGetUserData(user.uid);
         if(userData){
-          document.cookie = 'userType=usuario';
-          setUserData(userData);
-        }else{
-          document.cookie = 'userType=admin';
+          dispatch(addUserData({uid:user.uid,...userData, birthDay: userData.birthDay.seconds}));
         }
-        document.cookie = "isAuthenticated=true";
       }
-    });
+    });  
   }, []);
 
   return (
@@ -83,7 +81,7 @@ const Usuario = () => {
           {userData?.points === 0 && (
             <Typography>
               {" "}
-              Aún no cuentas con ningún punto,realiza tu primera compra para
+              Aún no cuentas con ningún punto, realiza tu primera compra para
               comenzar a acumular
             </Typography>
           )}

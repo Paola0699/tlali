@@ -34,6 +34,10 @@ const Login = () => {
   const [confirmationResult, setConfirmationResult] = useState({});
   const [errorMessage, setErrorMessage] = useState();
 
+  const handleRedirect =  (path) => {
+    router.push(path)
+  }
+
   const formik = useFormik({
     initialValues: {
       NUMERO_TELEFONO: "",
@@ -90,6 +94,8 @@ const Login = () => {
         verificationCode
       );
       await signInWithCredential(auth, credential);
+      document.cookie = 'userType=usuario';
+      document.cookie = "isAuthenticated=true";
       handleRedirect('/usuario');
     } catch (error) {
       setErrorMessage({
@@ -99,9 +105,7 @@ const Login = () => {
     }
   };
 
-  const handleRedirect =  (path) => {
-    router.push(path)
-  }
+ 
 
   useEffect(() => {
     auth.onAuthStateChanged(async (user) => {

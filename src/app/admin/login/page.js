@@ -28,11 +28,12 @@ const Login = () => {
     onSubmit: (values) => {
       const { CORREO_ELECTRONICO, CONTRASEÑA } = values;
       signInWithEmailAndPassword(auth, CORREO_ELECTRONICO, CONTRASEÑA)
-        .then((userCredential) => {
+        .then(() => {
+          document.cookie = 'userType=admin';
+          document.cookie = "isAuthenticated=true";
           handleRedirect("/admin/usuarios");
         })
         .catch((error) => {
-          const errorCode = error.code;
           const errorMessage = error.message;
           setErrorMessage(errorMessage);
         });

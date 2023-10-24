@@ -5,7 +5,7 @@ const protectedUserRoutes = [
   "/usuario/blog",
   "/usuario/chef",
   "/usuario/nutricion",
-  "/usuario/suscripcion",
+  "/usuario/suscripciones",
 ];
 const protectedAdminRoutes = [
   "/admin/blog",

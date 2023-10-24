@@ -7,6 +7,7 @@ import {
   query,
   collection,
   where,
+  updateDoc
 } from "firebase/firestore/lite";
 import { app } from "../firebase/firebase";
 const db = getFirestore(app);
@@ -20,6 +21,13 @@ export const getUser = async (uid) => {
 export const postUser = async (uid, userData) => {
   return await setDoc(doc(db, "users", uid), userData);
 };
+
+export const editUserMembership = async (uid, membership) => {
+  console.log(uid);
+  console.log(membership);
+  return await updateDoc(doc(db, 'users', uid), {membership: membership});
+};
+
 export const getUserByPhoneNumber = async (phoneNumber) => {
   const q = query(
     collection(db, "users"),

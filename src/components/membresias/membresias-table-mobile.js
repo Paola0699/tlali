@@ -1,8 +1,10 @@
 import { Grid } from "@mui/material";
 import React from "react";
 import MembresiasCard from "./membresias-card";
+import { useRouter } from "next/navigation";
 
 const MembresiasTableMobile = () => {
+  const router = useRouter();
   const membresias = [
     {
       id: 1,
@@ -30,6 +32,9 @@ const MembresiasTableMobile = () => {
     },
 
   ];
+  const handleRedirect = (path) => {
+    router.push(path);
+  };
   return (
     <Grid container sx={{ display: { xs: "flex", md: "none" } }} spacing={3}>
       {membresias.map((membresia) => (
@@ -42,6 +47,7 @@ const MembresiasTableMobile = () => {
             width={"100%"}
             color={membresia.color}
             fontColor='white'
+            onClick={()=>handleRedirect('/signup')}
           />
         </Grid>
       ))}

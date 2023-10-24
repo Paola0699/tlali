@@ -9,8 +9,10 @@ import {
 } from "@mui/material";
 import React from "react";
 import MembresiasCard from "./membresias-card";
+import { useRouter } from "next/navigation";
 
 const MembresiasTable = () => {
+  const router = useRouter();
   const membresias = [
     {
       id: 1,
@@ -103,6 +105,10 @@ const MembresiasTable = () => {
       azteca: true
     }
   ]
+
+  const handleRedirect = (path) => {
+    router.push(path);
+  };
   return (
     <TableContainer sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}>
       <Table>
@@ -116,6 +122,7 @@ const MembresiasTable = () => {
                   descripción={membresia.descripcion}
                   precio={membresia.precio}
                   width={"20rem"}
+                  onClick={()=>handleRedirect('/signup')}
                 />
               </TableCell>
             ))}

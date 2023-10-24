@@ -1,12 +1,12 @@
-'use client'
-import { Provider } from 'react-redux'
-import './globals.css'
-import store from '../redux/store'
-import { ThemeProvider } from '@emotion/react'
-import { createTheme } from '@mui/material'
+"use client";
+import { Provider } from "react-redux";
+import "./globals.css";
+import { persistor, store } from "../redux/store";
+import { ThemeProvider } from "@emotion/react";
+import { createTheme } from "@mui/material";
+import { PersistGate } from "redux-persist/integration/react";
 
 export default function RootLayout({ children }) {
-
   const theme = createTheme({
     typography: {
       fontFamily: "Lato, sans-serif", // Fuente predeterminada para todo el texto
@@ -34,16 +34,16 @@ export default function RootLayout({ children }) {
     },
     palette: {
       primary: {
-        light: '#dce4df',
-        main: '#A9BDB1',
-        dark: '#76847b',
-        contrastText: '#fff'
+        light: "#dce4df",
+        main: "#A9BDB1",
+        dark: "#76847b",
+        contrastText: "#fff",
       },
       success: {
-        light: '#dce4df',
-        main: '#A9BDB1',
-        dark: '#76847b',
-        contrastText: '#fff'
+        light: "#dce4df",
+        main: "#A9BDB1",
+        dark: "#76847b",
+        contrastText: "#fff",
       },
     },
   });
@@ -51,21 +51,24 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-          <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
-          <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Rufina:wght@400;700&display=swap"
-            rel="stylesheet"
-          />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Rufina:wght@400;700&display=swap"
+          rel="stylesheet"
+        />
       </head>
       <body>
         <main>
-            <ThemeProvider theme={theme}>
+          <ThemeProvider theme={theme}>
             <Provider store={store}>
-              {children}
-              </Provider>
-            </ThemeProvider>
+              <PersistGate loading={null} persistor={persistor}>
+                {children}
+              </PersistGate>
+            </Provider>
+          </ThemeProvider>
         </main>
       </body>
     </html>
-  )
+  );
 }

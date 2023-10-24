@@ -15,6 +15,8 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { signOut } from "firebase/auth";
 import { auth } from "@/firebase/firebase";
+import { useDispatch, useSelector } from "react-redux";
+import { resetUserData } from "@/redux/reducers/user";
 
 const pages = [
   {
@@ -30,6 +32,9 @@ const pages = [
 ];
 
 function TopNavbar() {
+  const userData = useSelector((state) => state.user.userData);
+  const dispatch = useDispatch();
+
   const router = useRouter();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
@@ -55,10 +60,15 @@ function TopNavbar() {
   const logOut = () => {
     signOut(auth)
       .then(async () => {
+        dispatch(resetUserData());
         document.cookie =
-          "isAuthenticated=; Max-Age=0; Expires=Thu, 01 Jan 1970 00:00:00 GMT";
+          "isAuthenticated=; Max-Age=0; Expires=Thu, 01 Jan 1970 00:00:00 GMT; SameSite=None; Path=/; Secure";
           document.cookie =
-          "userType=; Max-Age=0; Expires=Thu, 01 Jan 1970 00:00:00 GMT";
+          "isAuthenticated=; Max-Age=0; Expires=Thu, 01 Jan 1970 00:00:00 GMT; SameSite=None; Path=/admin; Secure";
+          document.cookie =
+          "userType=; Max-Age=0; Expires=Thu, 01 Jan 1970 00:00:00 GMT; SameSite=None; Path=/; Secure";
+          document.cookie =
+          "userType=; Max-Age=0; Expires=Thu, 01 Jan 1970 00:00:00 GMT; SameSite=None; Path=/admin; Secure";
         handleRedirect("/login");
       })
       .catch((error) => {
@@ -170,7 +180,7 @@ function TopNavbar() {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                <Avatar alt={userData?.lastName} >{userData?.lastName?.substr(0,1)} </Avatar>
               </IconButton>
             </Tooltip>
             <Menu

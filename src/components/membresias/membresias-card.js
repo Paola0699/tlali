@@ -2,7 +2,7 @@ import { CheckCircleOutline } from "@mui/icons-material";
 import { Button, Card, CardContent, List, ListItem, ListItemIcon, ListItemText, Typography } from "@mui/material";
 import React from "react";
 
-const MembresiasCard = ({ nombre, descripción, precio,  beneficios, width, color, fontColor }) => {
+const MembresiasCard = ({ nombre, descripción, precio,  beneficios, width, color, fontColor, onClick }) => {
   return (
     <Card
       style={{
@@ -44,6 +44,7 @@ const MembresiasCard = ({ nombre, descripción, precio,  beneficios, width, colo
           }}
           fullWidth
           variant="outlined"
+          onClick={onClick}
         >
           Suscribirme
         </Button>
