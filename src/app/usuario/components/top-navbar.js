@@ -60,16 +60,21 @@ function TopNavbar() {
   const logOut = () => {
     signOut(auth)
       .then(async () => {
-        dispatch(resetUserData());
+        
         document.cookie =
           "isAuthenticated=; Max-Age=0; Expires=Thu, 01 Jan 1970 00:00:00 GMT; SameSite=None; Path=/; Secure";
-          document.cookie =
+        document.cookie =
+          "isAuthenticated=; Max-Age=0; Expires=Thu, 01 Jan 1970 00:00:00 GMT; SameSite=None; Path=/login; Secure";
+        document.cookie =
           "isAuthenticated=; Max-Age=0; Expires=Thu, 01 Jan 1970 00:00:00 GMT; SameSite=None; Path=/admin; Secure";
-          document.cookie =
+        document.cookie =
           "userType=; Max-Age=0; Expires=Thu, 01 Jan 1970 00:00:00 GMT; SameSite=None; Path=/; Secure";
-          document.cookie =
+        document.cookie =
+          "userType=; Max-Age=0; Expires=Thu, 01 Jan 1970 00:00:00 GMT; SameSite=None; Path=/login; Secure";
+        document.cookie =
           "userType=; Max-Age=0; Expires=Thu, 01 Jan 1970 00:00:00 GMT; SameSite=None; Path=/admin; Secure";
-        handleRedirect("/login");
+        handleRedirect("/login/email");
+        dispatch(resetUserData());
       })
       .catch((error) => {
         console.log(error);
@@ -180,7 +185,9 @@ function TopNavbar() {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt={userData?.lastName} >{userData?.lastName?.substr(0,1)} </Avatar>
+                <Avatar alt={userData?.lastName}>
+                  {userData?.lastName?.substr(0, 1)}{" "}
+                </Avatar>
               </IconButton>
             </Tooltip>
             <Menu

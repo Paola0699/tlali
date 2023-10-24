@@ -53,13 +53,13 @@ const LoginForm = ({ formik }) => {
         }}
         fullWidth
         type="password"
-        id="CONTRASEÑA"
-        name="CONTRASEÑA"
+        id="PASSWORD"
+        name="PASSWORD"
         autoFocus={false}
-        value={formik.values.CONTRASEÑA}
+        value={formik.values.PASSWORD}
         onChange={formik.handleChange}
-        error={formik.touched.CONTRASEÑA && Boolean(formik.errors.CONTRASEÑA)}
-        helperText={formik.touched.CONTRASEÑA && formik.errors.CONTRASEÑA}
+        error={formik.touched.PASSWORD && Boolean(formik.errors.PASSWORD)}
+        helperText={formik.touched.PASSWORD && formik.errors.PASSWORD}
       />
 
       <Button
@@ -75,7 +75,7 @@ const LoginForm = ({ formik }) => {
           marginBottom: "1rem",
         }}
       >
-        Enviar código
+        Iniciar Sesión
       </Button>
       <Box
         style={{
