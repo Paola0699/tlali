@@ -34,30 +34,6 @@ const SeccionMembresias = ({ id }) => {
           }
         />
       </Grid>
-    {/*   <Grid
-        item
-        xs={12}
-        md={6}
-        lg={6}
-        height={heightValue}
-        style={{
-          position: "relative",
-          overflow: "hidden",
-        }}
-      >
-        <video
-          autoPlay
-          muted
-          loop
-          style={{
-            width: "100%",
-            height: "100%",
-            objectFit: "cover",
-          }}
-        >
-          <source src="/assets/videos/video_6.mp4" type="video/mp4" />
-        </video>
-      </Grid> */}
     </Grid>
   );
 };

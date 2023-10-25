@@ -7,10 +7,18 @@ import { getAllUsers } from '@/services/usersServices'
 import UsuariosTable from './usuarios-table'
 
 const Usuarios = () => {
+  const [loading, setLoading] = useState(false);
   const [usersList, setUsersList] = useState([]);
   const handleGetUsers = async() => {
+    setLoading(true)
+    try{
     const response = await getAllUsers();
     setUsersList(response);
+    }catch(error){
+      console.log(error)
+    }finally{
+      setLoading(false)
+    }
   }
   useEffect(()=>{
     handleGetUsers();
@@ -36,7 +44,7 @@ const Usuarios = () => {
           }
         />
         <br></br>
-        <UsuariosTable data={usersList}/>
+        <UsuariosTable data={usersList} loading={loading}/>
       </Grid>
     </Grid>
   </>
