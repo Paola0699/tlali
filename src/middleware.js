@@ -11,6 +11,7 @@ const protectedAdminRoutes = [
   "/admin/blog",
   "/admin/chef",
   "/admin/usuarios",
+  "/admin/scanner",
 ];
 const publicUserRoutes = ["/login" ,"/signup"];
 const publicAdminRoutes = ["/admin/login"];
