@@ -1,5 +1,5 @@
 import { app } from "@/firebase/firebase";
-import { collection, doc, getDocs, getFirestore, limit, orderBy, query, setDoc, where } from "firebase/firestore/lite";
+import { collection, doc, getDocs, getFirestore, limit, orderBy, query, setDoc, updateDoc, where } from "firebase/firestore/lite";
 
 const db = getFirestore(app);
 
@@ -41,3 +41,7 @@ export const getAllChefRequest = async () => {
         throw error;
     }
 };
+
+export const putChefRequest = async (requestId, requestData) => {
+    return await updateDoc(doc(db, "chef", requestId), requestData);
+  };

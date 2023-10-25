@@ -23,9 +23,11 @@ export const postUser = async (uid, userData) => {
 };
 
 export const editUserMembership = async (uid, membership) => {
-  console.log(uid);
-  console.log(membership);
   return await updateDoc(doc(db, 'users', uid), {membership: membership});
+};
+
+export const editUserPoints = async (uid, points) => {
+  return await updateDoc(doc(db, 'users', uid), {points: points});
 };
 
 export const getUserByPhoneNumber = async (phoneNumber) => {

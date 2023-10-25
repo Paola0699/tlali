@@ -11,7 +11,6 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { signOut } from "firebase/auth";
@@ -33,6 +32,11 @@ const pages = [
     id: "Chef privado",
     name: "Chef privado",
     path: "/admin/chef",
+  },
+  {
+    id: "Scanner",
+    name: "Scanner",
+    path: "/admin/scanner",
   },
 ];
 
@@ -146,7 +150,6 @@ function TopNavigation() {
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
           <Typography
             variant="h5"
             noWrap
@@ -163,7 +166,12 @@ function TopNavigation() {
               textDecoration: "none",
             }}
           >
-            LOGO
+             <Image
+              alt="logo_pajaro_negro"
+              src={"/assets/img/logos/logo_pajaro_negro.png"}
+              width={85}
+              height={60}
+            />
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (

@@ -27,6 +27,11 @@ const columns = [
     width: 300,
   },
   {
+    field: "email",
+    headerName: "Correo Electrónico",
+    width: 300,
+  },
+  {
     field: "birthDay",
     headerName: "Cumpleaños",
     valueGetter: (params) => {
