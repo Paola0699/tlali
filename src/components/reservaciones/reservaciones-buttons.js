@@ -10,7 +10,8 @@ const ReservacionesButtons = () => {
     window.open(`tel:${numeroDeTelefono}`);
   };
   const handleWhatsAppClick = () => {
-    const url = `https://api.whatsapp.com/send?phone=${numeroDeTelefono}`;
+    const mensaje = encodeURIComponent('¡Hola! Quiero hacer una reservación');
+    const url = `https://api.whatsapp.com/send?phone=${numeroDeTelefono}&text=${mensaje}`;    
     window.open(url);
   };
   
