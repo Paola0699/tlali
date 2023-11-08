@@ -6,6 +6,7 @@ const FundacionButtons = () => {
     <Button
       style={{ borderColor: "#665959", color: "#665959", marginTop: "2rem", fontFamily:'Rufina' }}
       variant="outlined"
+      href="https://www.facebook.com/profile.php?id=100088142889123&mibextid=ZbWKwL"
     >
       Más Información
     </Button>
