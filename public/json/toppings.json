@@ -34,5 +34,10 @@
         "Descripcion": "Nutella, Ferrero, Blueberry, Frambuesa, Zarzamora",
         "Precio": 23,
         "Categoria": "Toppings para Crepas y Waffles"
+    },
+    {
+        "Platillo": "Toppings Salados (Premium)",
+        "Descripcion": "Queso de Cabra ($35), Guacamole ($35), Jamón serrano ($49), Tocino ($23), Chorizo ($35), Arrachera ($41), Pollo ($35)",
+        "Categoria": "Toppings para Crepas y Waffles"
     }
 ]
