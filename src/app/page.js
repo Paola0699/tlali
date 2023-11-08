@@ -38,7 +38,7 @@ const Home = () => {
       <SeccionReservaciones id={"reservaciones"} />
       <SeccionMembresias id="membresias" />
       <SeccionMembresiasTabla />
-      <SeccionFundador id={"fundador"} />
+      <SeccionFundador id={"nosotros"} />
       <SeccionFundacion id={"fundacion"} />
       <SeccionBlog id={"blog"} data={blogPosts} />
       <SeccionContacto id={"contacto"} />
