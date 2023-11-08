@@ -126,6 +126,25 @@
         ]
     },
     {
+        "Nombre_categoria": "Waffles",
+        "Descripcion": "Hechos de una exquisita masa belga. (En todos nuestros waffles puedes elegir base de chocolate o natural)",
+        "Icono": "",
+        "API": "/json/waffles.json",
+        "Categoria": "Comidas",
+        "Images": [
+            {
+                "id": "WFS-1",
+                "url": "https://firebasestorage.googleapis.com/v0/b/tlali-6b275.appspot.com/o/WAFFLE%20ARMENTA.jpg?alt=media&token=9c65114c-2847-4814-b927-42b56b223934",
+                "name": "Waffle Armenta"
+            },
+            {
+                "id": "WFS-2",
+                "url": "https://firebasestorage.googleapis.com/v0/b/tlali-6b275.appspot.com/o/WAFFLE%20SERRANO.JPG?alt=media&token=fce94747-bb2f-4f5b-ab19-2b523bfb9b07",
+                "name": "Waffle Serrano"
+            }
+        ]
+    },
+    {
         "Nombre_categoria": "Costras",
         "Descripcion": "Crujiente queso asado en tortilla de harina con proteína a elegir, acompañadas de guacamole y chilito toreado",
         "Icono": "",
@@ -164,6 +183,13 @@
         "Icono": "",
         "API": "/json/crepas.json",
         "Categoria": "Postres"
+    },
+    {
+        "Nombre_categoria": "Crepas",
+        "Descripcion": "",
+        "Icono": "",
+        "API": "/json/crepas.json",
+        "Categoria": "Comidas"
     },
     {
         "Nombre_categoria": "Toppings para Crepas y Waffles",
