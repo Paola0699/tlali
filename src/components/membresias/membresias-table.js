@@ -6,6 +6,7 @@ import {
   TableContainer,
   TableHead,
   TableRow,
+  Typography,
 } from "@mui/material";
 import React from "react";
 import MembresiasCard from "./membresias-card";
@@ -37,6 +38,7 @@ const MembresiasTable = () => {
     {
       id: "Bonificación de puntos",
       title: "Bonificación de puntos",
+      description: 'Te abonamos el 5% de tus compras', 
       tlali: true, 
       maya: true, 
       azteca: true
@@ -44,6 +46,7 @@ const MembresiasTable = () => {
     {
       id: "Prioridad a sus Platillos",
       title: "Prioridad a sus Platillos",
+      description: "Priorizamos tu orden sobre las demás para que esté lista más rapido",
       tlali: true, 
       maya: true, 
       azteca: true
@@ -51,6 +54,7 @@ const MembresiasTable = () => {
     {
       id: "Código de Referencia",
       title: "Código de Referencia",
+      description: "Si alguien tramita una membresía (excepto membresía Tlali) con tu código de cliente, tu siguiente compra tendrá un 50% de descuento.",
       tlali: true, 
       maya: true, 
       azteca: true
@@ -58,6 +62,7 @@ const MembresiasTable = () => {
     {
       id: "Conferencias y eventos",
       title: "Conferencias y eventos",
+      description: 'Acceso preferencial a todas las conferencias y eventos que se imparten en el restaurante.',
       tlali: true, 
       maya: true, 
       azteca: true
@@ -65,6 +70,7 @@ const MembresiasTable = () => {
     {
       id: "Suscripción de waffles",
       title: "Suscripción de waffles",
+      description: 'Agrega hasta 4 topings a tu waffle y solo paga la base.',
       tlali: false, 
       maya: true, 
       azteca: true
@@ -72,6 +78,7 @@ const MembresiasTable = () => {
     {
       id: "Pedidos anticipados",
       title: "Pedidos anticipados",
+      description: 'Puedes marcar al restaurante. y con tu nombre y número de membresía te los vamos preparando, paque que cuando llegues al restaurante. tu comida esté lista.',
       tlali: false, 
       maya: true, 
       azteca: true
@@ -79,6 +86,7 @@ const MembresiasTable = () => {
     {
       id: "Línea de crédito",
       title: "Línea de crédito",
+      description:'Tus consumos se van acumulando y solo los pagas al final del mes. Tal como funciona una tarjeta de crédito.',
       tlali: false, 
       maya: false, 
       azteca: true
@@ -86,6 +94,7 @@ const MembresiasTable = () => {
     {
       id: "Chef a domicilio",
       title: "Chef a domicilio",
+      description: 'Uno de nuestros chefs pueden ir a cocinar el menú que tu quieras, hasta tu domicilio. Haznos saber el menú que quieres y cotizamos.',
       tlali: false, 
       maya: false, 
       azteca: true
@@ -93,6 +102,7 @@ const MembresiasTable = () => {
     {
       id: "Cubiertos personalizados",
       title: "Cubiertos personalizados",
+      description: 'Cuchillo con nombre y apellido del comensal.',
       tlali: false, 
       maya: false, 
       azteca: true
@@ -100,6 +110,7 @@ const MembresiasTable = () => {
     {
       id: "Plan de nutrición",
       title: "Plan de nutrición",
+      description: 'La membresía incluye un plan inicial de nutrición. (Primer consulta sin costo)',
       tlali: false, 
       maya: false, 
       azteca: true
@@ -145,7 +156,7 @@ const MembresiasTable = () => {
           </TableRow>
           {beneficiosMembresias.map((beneficio)=>(
              <TableRow key={beneficio.id}>
-             <TableCell>{beneficio.title}</TableCell>
+             <TableCell><Typography>{beneficio.title}</Typography><Typography>{beneficio.description}</Typography></TableCell>
              <TableCell
                style={{
                  color: "rgba(131, 148, 143, 1)",
