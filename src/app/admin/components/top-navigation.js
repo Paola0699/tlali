@@ -38,6 +38,11 @@ const pages = [
     name: "Scanner",
     path: "/admin/scanner",
   },
+  {
+    id: "Cuentas",
+    name: "Cuentas",
+    path: "/admin/cuentas",
+  },
 ];
 
 function TopNavigation() {

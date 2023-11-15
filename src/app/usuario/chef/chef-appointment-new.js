@@ -11,8 +11,9 @@ import {
 import { useFormik } from "formik";
 import { useState } from "react";
 import * as yup from "yup";
+import emailjs from "emailjs-com";
 
-const ChefAppointmentNew = ({user}) => {
+const ChefAppointmentNew = ({ user }) => {
   const [successMessage, setSuccessMessage] = useState();
   const [errorMessage, setErrorMessage] = useState();
 
@@ -45,6 +46,14 @@ const ChefAppointmentNew = ({user}) => {
           user: user.uid,
         });
         console.log(response);
+        sendEmail({
+          userID: user.uid,
+          date: FECHA,
+          time: HORA,
+          address: DIRECCION,
+          guests: NUMERO_PERSONAS,
+          dishes: PLATILLOS,
+        });
         setSuccessMessage(
           "Se ha enviado tu solicitud con éxito, espera a que el restaurante se ponga en contacto contigo"
         );
@@ -57,6 +66,27 @@ const ChefAppointmentNew = ({user}) => {
       }
     },
   });
+
+  const sendEmail = (data) => {
+    const { userID, date, time, address, guests, dishes } = data;
+    try {
+      emailjs.send(
+        "service_2r054pk",
+        "template_8hs5uk6",
+        {
+          userID,
+          date,
+          time,
+          address,
+          guests,
+          dishes,
+        },
+        "user_tT2FqNHM2wYy7GZQ6IhJP"
+      );
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <Box

@@ -1,5 +1,5 @@
 import { Button } from "@mui/material";
-import { DataGrid } from "@mui/x-data-grid";
+import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import moment from "moment";
 import React, { useState } from "react";
 import PlanAlimentacionModal from "./plan-alimentacion-modal";
@@ -105,7 +105,14 @@ const UsuariosTable = ({ data, loading }) => {
   ];
   return (
     <>
-      <DataGrid rows={data} columns={columns} loading={loading} />
+      <DataGrid rows={data} columns={columns} loading={loading} 
+        slots={{ toolbar: GridToolbar }}
+        slotProps={{
+          toolbar: {
+            showQuickFilter: true,
+          },
+        }}
+        />
       {open && <PlanAlimentacionModal open={open} setOpen={setOpen} />}
       {openEdit && (
         <PlanAlimentacionEditarModal open={openEdit} setOpen={setOpenEdit} />

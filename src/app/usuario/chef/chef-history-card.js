@@ -4,7 +4,7 @@ import React from "react";
 
 const ChefHistoryCard = ({request}) => {
   return (
-    <Card elevation={0}>
+    <Card elevation={0} style={{marginTop: '1rem'}}>
       <CardContent>
         <Grid container>
           <Grid item xs={8}>
