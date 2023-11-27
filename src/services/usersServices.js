@@ -21,7 +21,6 @@ export const getAllUsers = async () => {
         }));
       }
     });
-    console.log(users);
     return users;
   } catch (error) {
     console.error("Error getting users: ", error);

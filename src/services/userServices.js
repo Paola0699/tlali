@@ -26,6 +26,18 @@ export const editUserMembership = async (uid, membership) => {
   return await updateDoc(doc(db, 'users', uid), {membership: membership});
 };
 
+export const editUserNutritionPlanRequest = async (uid) => {
+  const requestsRef = collection(db, "requests");
+  const requestRef = doc(requestsRef);
+  const id = requestRef.id;
+  await setDoc(requestRef, {
+    date: new Date(),
+    userID: uid,
+  });
+  await updateDoc(doc(db, 'users', uid), {nutritionRequest: id});
+  return id
+};
+
 export const editUserPoints = async (uid, points) => {
   return await updateDoc(doc(db, 'users', uid), {points: points});
 };

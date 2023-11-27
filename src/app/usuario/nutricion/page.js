@@ -1,20 +1,25 @@
 "use client";
 import { useTheme } from "@emotion/react";
-import { Grid, Typography, useMediaQuery } from "@mui/material";
+import { Alert, Button, Grid, Typography, useMediaQuery } from "@mui/material";
 import NutricionCard from "./nutricion-card";
 import BottomNavigationComponent from "../components/bottom-navigation";
 import { getUserPlan } from "@/services/planNutricionServices";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import TopNavbar from "../components/top-navbar";
 import NoDataMessage from "../components/no-data-message";
+import { editUserNutritionPlanRequest, getUser } from "@/services/userServices";
+import { addUserData } from "@/redux/reducers/user";
+import emailjs from "emailjs-com";
 
 const Nutricion = () => {
-  const { userData } = useSelector((state) => state.user);
+  const dispatch = useDispatch();
   const theme = useTheme();
+  const { userData } = useSelector((state) => state.user);
   const isMdAndLg = useMediaQuery(theme.breakpoints.up("md"));
   const padding = isMdAndLg ? 10 : 5;
   const [plan, setPlan] = useState();
+  const [successMessage, setSuccessMessage] = useState();
 
   const handleGetUserPlan = async () => {
     try {
@@ -24,9 +29,50 @@ const Nutricion = () => {
       console.log(error);
     }
   };
+
+  const handleGetUserData = async (uid) => {
+    try {
+      const response = await getUser(uid);
+      return(response);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const handleCreateRequest = async() => {
+    try{
+    await editUserNutritionPlanRequest(userData.uid);
+    sendEmail(userData.uid);
+    const data = await handleGetUserData(userData.uid);
+    if(data){
+      dispatch(addUserData({uid:userData.uid,...data, birthDay: data.birthDay.seconds}));
+    }
+    setSuccessMessage('Se ha enviado su solicitud con éxito')
+    }catch(error){
+      console.log(error)
+    }
+  }
+
+  const sendEmail = (userID) => {
+    try {
+      emailjs.send(
+        "service_2r054pk",
+        "template_m6vlelc",
+        {
+          userID,
+        },
+        "user_tT2FqNHM2wYy7GZQ6IhJP"
+      );
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   useEffect(() => {
-    handleGetUserPlan();
+    handleGetUserPlan(); 
   }, []);
+
+  
   return (
     <>
       <TopNavbar />
@@ -75,10 +121,15 @@ const Nutricion = () => {
             </Grid>
           )}
           {!plan && (
+            <>
+            {userData.nutritionRequest && <Alert style={{marginBottom: '1rem', marginTop: '1rem'}}>Ya se ha abierto una solicitud para el plan de nutrición</Alert>}
+            {successMessage && <Alert style={{marginBottom: '1rem'}}>{successMessage}</Alert>}
             <NoDataMessage
               title={"Oooops!"}
               subtitle={"Aún no cuentas con ningún plan de nutrición"}
             />
+            <Button onClick={handleCreateRequest} variant="contained" disabled={userData.nutritionRequest} style={{marginTop: '1rem'}}>Solicitar Plan</Button>
+            </>
           )}
         </Grid>
 

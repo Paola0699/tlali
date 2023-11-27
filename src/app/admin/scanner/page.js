@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import TopNavigation from "../components/top-navigation";
 import {
   Alert,
@@ -27,9 +27,11 @@ const Scanner = () => {
   const width = isMdAndLg ? "50%" : "100%";
   const [data, setData] = useState();
   const [option, setOption] = useState("abonar");
+  const [userTicketValue, setUserTicketValue] = useState(0);
   const [userAddPoints, setUserAddPints] = useState(0);
   const [userSubsPoints, setUserSubsPoints] = useState(0);
   const [successMessage, setSuccessMessage] = useState();
+
   const handleEditPoints = async () => {
     let points = 0;
     if (option === "abonar") {
@@ -40,8 +42,9 @@ const Scanner = () => {
     try {
       await editUserPoints(data.uid, points);
       setSuccessMessage(
-        "Se han agregado los puntos con éxito, tardará un momento en actualizarse."
+        "Se han actualizado los puntos con éxito, tardará un momento en actualizarse."
       );
+      setUserTicketValue(0);
       setUserAddPints(0);
       setUserSubsPoints(0);
     } catch (error) {
@@ -51,6 +54,10 @@ const Scanner = () => {
   const resetScanner = () => {
     window.location.reload();
   };
+  useEffect(()=>{
+    const points = Math.ceil(userTicketValue * .05)
+    setUserAddPints(points);
+  },[userTicketValue])
   return (
     <>
       <TopNavigation />
@@ -133,14 +140,24 @@ const Scanner = () => {
                   {option === "abonar" && (
                     <Box>
                       <Typography color="#665959">
-                        ¿Cuántos puntos deseas abonar?
+                       Introduce el monto del ticket de compra
+                      </Typography>
+                      <TextField
+                        type="number"
+                        size="small"
+                        fullWidth
+                        value={userTicketValue}
+                        onChange={(e)=>setUserTicketValue(e.target.value)}
+                      />
+                       <Typography color="#665959">
+                       Puntos a abonar (5% del ticket de compra)
                       </Typography>
                       <TextField
                         type="number"
                         size="small"
                         fullWidth
                         value={userAddPoints}
-                        onChange={(e) => setUserAddPints(e.target.value)}
+                        disabled
                       />
                       <Button
                         variant="outlined"

@@ -5,9 +5,10 @@ import PopupState, { bindMenu, bindTrigger } from "material-ui-popup-state";
 import moment from "moment";
 import React, { Fragment } from "react";
 
-const ChefTable = ({ data }) => {
+const ChefTable = ({ data, handleGetChefRequests }) => {
   const handleEditRequest = async (requestId, requestData) => {
     await putChefRequest(requestId, requestData);
+    handleGetChefRequests();
   };
   const columns = [
     {

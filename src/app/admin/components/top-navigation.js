@@ -34,6 +34,11 @@ const pages = [
     path: "/admin/chef",
   },
   {
+    id: "Plan de nutrición",
+    name: "Plan de nutrición",
+    path: "/admin/plan-nutricion",
+  },
+  {
     id: "Scanner",
     name: "Scanner",
     path: "/admin/scanner",

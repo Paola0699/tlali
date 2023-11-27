@@ -36,7 +36,7 @@ const ChefRequest = () => {
             }
           />
           <br></br>
-          <ChefTable data={chefRequests} />
+          <ChefTable data={chefRequests} handleGetChefRequests={handleGetChefRequests} />
         </Grid>
       </Grid>
     </>

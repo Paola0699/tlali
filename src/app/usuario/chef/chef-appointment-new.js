@@ -35,7 +35,7 @@ const ChefAppointmentNew = ({ user }) => {
     onSubmit: async (values) => {
       const { FECHA, HORA, DIRECCION, NUMERO_PERSONAS, PLATILLOS } = values;
       try {
-        const response = await postChefRequest({
+        await postChefRequest({
           appointmentDate: FECHA,
           appointmentTime: HORA,
           address: DIRECCION,
@@ -45,7 +45,6 @@ const ChefAppointmentNew = ({ user }) => {
           status: "Pendiente de confirmar",
           user: user.uid,
         });
-        console.log(response);
         sendEmail({
           userID: user.uid,
           date: FECHA,
