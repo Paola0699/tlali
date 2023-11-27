@@ -59,3 +59,9 @@ export const getUserByPhoneNumber = async (phoneNumber) => {
     throw error;
   }
 };
+
+export const getAdminUser = async (uid) => {
+  const ref = doc(db, "admin", uid);
+  const userData = await getDoc(ref);
+  return userData.data();
+};

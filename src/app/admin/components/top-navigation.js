@@ -16,44 +16,13 @@ import { useRouter } from "next/navigation";
 import { signOut } from "firebase/auth";
 import { auth } from "@/firebase/firebase";
 import { Person } from "@mui/icons-material";
-
-const pages = [
-  {
-    id: "Usuarios",
-    name: "Usuarios",
-    path: "/admin/usuarios",
-  },
-  {
-    id: "Blog",
-    name: "Blog",
-    path: "/admin/blog",
-  },
-  {
-    id: "Chef privado",
-    name: "Chef privado",
-    path: "/admin/chef",
-  },
-  {
-    id: "Plan de nutrición",
-    name: "Plan de nutrición",
-    path: "/admin/plan-nutricion",
-  },
-  {
-    id: "Scanner",
-    name: "Scanner",
-    path: "/admin/scanner",
-  },
-  {
-    id: "Cuentas",
-    name: "Cuentas",
-    path: "/admin/cuentas",
-  },
-];
+import { useSelector } from "react-redux";
 
 function TopNavigation() {
   const router = useRouter();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const { userData } = useSelector((state) => state.user);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -93,6 +62,45 @@ function TopNavigation() {
         console.log(error);
       });
   };
+
+  const pages = [
+    {
+      id: "Usuarios",
+      name: "Usuarios",
+      path: "/admin/usuarios",
+      user: ["superadmin", "admin"],
+    },
+    {
+      id: "Blog",
+      name: "Blog",
+      path: "/admin/blog",
+      user: ["superadmin"],
+    },
+    {
+      id: "Chef privado",
+      name: "Chef privado",
+      path: "/admin/chef",
+      user: ["superadmin", "admin"],
+    },
+    {
+      id: "Plan de nutrición",
+      name: "Plan de nutrición",
+      path: "/admin/plan-nutricion",
+      user: ["superadmin"],
+    },
+    {
+      id: "Scanner",
+      name: "Scanner",
+      path: "/admin/scanner",
+      user: ["superadmin", "admin"],
+    },
+    {
+      id: "Cuentas",
+      name: "Cuentas",
+      path: "/admin/cuentas",
+      user: ["superadmin"],
+    },
+  ];
 
   return (
     <AppBar position="static">
@@ -150,14 +158,16 @@ function TopNavigation() {
                 display: { xs: "block", md: "none" },
               }}
             >
-              {pages.map((page) => (
-                <MenuItem
-                  key={page.id}
-                  onClick={() => handleRedirect(page.path)}
-                >
-                  <Typography textAlign="center">{page.name}</Typography>
-                </MenuItem>
-              ))}
+              {pages
+                .filter((page) => page.user.includes(userData.role))
+                .map((page) => (
+                  <MenuItem
+                    key={page.id}
+                    onClick={() => handleRedirect(page.path)}
+                  >
+                    <Typography textAlign="center">{page.name}</Typography>
+                  </MenuItem>
+                ))}
             </Menu>
           </Box>
           <Typography
@@ -176,7 +186,7 @@ function TopNavigation() {
               textDecoration: "none",
             }}
           >
-             <Image
+            <Image
               alt="logo_pajaro_negro"
               src={"/assets/img/logos/logo_pajaro_negro.png"}
               width={85}
@@ -184,21 +194,25 @@ function TopNavigation() {
             />
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {pages.map((page) => (
-              <Button
-                key={page.id}
-                onClick={() => handleRedirect(page.path)}
-                sx={{ my: 2, color: "white", display: "block" }}
-              >
-                {page.name}
-              </Button>
-            ))}
+            {pages
+              .filter((page) => page.user.includes(userData.role))
+              .map((page) => (
+                <Button
+                  key={page.id}
+                  onClick={() => handleRedirect(page.path)}
+                  sx={{ my: 2, color: "white", display: "block" }}
+                >
+                  {page.name}
+                </Button>
+              ))}
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp"><Person/></Avatar>
+                <Avatar alt="Remy Sharp">
+                  <Person />
+                </Avatar>
               </IconButton>
             </Tooltip>
             <Menu

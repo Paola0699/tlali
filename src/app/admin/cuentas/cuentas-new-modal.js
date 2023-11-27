@@ -30,6 +30,7 @@ const CuentasNewModal = ({ open, setOpen }) => {
         const user = userCredential.user;
         const adminData = {
           name: NOMBRE_ADMINISTRADOR,
+          role: 'admin'
         };
         await postAdminAccount(user.uid, adminData);
         formik.handleReset();
