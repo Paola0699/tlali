@@ -6,6 +6,8 @@ import {
   updateDoc,
   doc,
   getDocs,
+  orderBy,
+  query,
 } from "firebase/firestore";
 
 const db = getFirestore(app);
@@ -46,5 +48,21 @@ export const getUserPlan = async (uid) => {
     return planRequests;
   } catch (error) {
     throw error;
+  }
+};
+
+export const getUserPlanRequests = async () => {
+  const requestsCollection = collection(db, 'requests');
+  try {
+      const q = query(requestsCollection, orderBy('date', 'desc'));
+      const querySnapshot = await getDocs(q);
+      const nutritionPlanRequests = querySnapshot.docs.map(doc => ({
+          id: doc.id,
+          ...doc.data(),
+      }));
+      return nutritionPlanRequests;
+  } catch (error) {
+      console.error("Error getting all chef requests: ", error);
+      throw error;
   }
 };
