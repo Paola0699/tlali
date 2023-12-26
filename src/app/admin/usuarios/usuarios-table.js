@@ -1,4 +1,4 @@
-import { Button } from "@mui/material";
+import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from "@mui/material";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import moment from "moment";
 import React, { useState } from "react";
@@ -6,11 +6,25 @@ import PlanAlimentacionModal from "./plan-alimentacion-modal";
 import { addSelectedUser } from "@/redux/reducers/users";
 import { useDispatch } from "react-redux";
 import PlanAlimentacionEditarModal from "./plan-alimentacion-editar-modal";
+import { editUserMembership } from "@/services/userServices";
 
-const UsuariosTable = ({ data, loading }) => {
+const UsuariosTable = ({ data, loading, handleGetUsers }) => {
   const [open, setOpen] = useState(false);
   const [openEdit, setOpenEdit] = useState(false);
   const dispatch = useDispatch();
+  const [openDialog, setOpenDialog] = useState(false);
+  const [selectedUser, setSelectedUser] = useState('');
+
+  const handleClose = () => {
+    setOpenDialog(false);
+  }
+  const handleEditUser = ( ) => {
+      editUserMembership(selectedUser, "tlali").then(()=>{
+      handleClose();
+      handleGetUsers();
+
+    })
+  }
   const columns = [
     {
       field: "id",
@@ -54,6 +68,11 @@ const UsuariosTable = ({ data, loading }) => {
       width: 200,
     },
     {
+      field: "Status de cuenta",
+      headerName: "Status de cuenta",
+      width: 200
+    },
+    {
       field: "Acciones",
       headerName: "Acciones",
       renderCell: (params) => {
@@ -62,6 +81,7 @@ const UsuariosTable = ({ data, loading }) => {
           params.row.plan_alimentacion?.length > 0
         ) {
           return (
+            <>
             <Button
               variant="contained"
               onClick={() => {
@@ -76,6 +96,8 @@ const UsuariosTable = ({ data, loading }) => {
             >
               Editar Plan de Alimentación
             </Button>
+            <Button  variant="contained" style={{marginLeft: '.5rem'}} onClick={()=>{setOpenDialog(true); setSelectedUser(params.row.id)}}>Degradar Cuenta</Button>
+            </>
           );
         }
         if (
@@ -83,6 +105,7 @@ const UsuariosTable = ({ data, loading }) => {
           !params.row.plan_alimentacion
         ) {
           return (
+            <>
             <Button
               variant="contained"
               onClick={() => {
@@ -97,12 +120,15 @@ const UsuariosTable = ({ data, loading }) => {
             >
               Plan de Alimentación
             </Button>
+            <Button  variant="contained" style={{marginLeft: '.5rem'}} onClick={()=>{setOpenDialog(true); setSelectedUser(params.row.id)}}>Degradar Cuenta</Button>
+            </>
           );
         }
       },
-      width: 250,
+      width: 400,
     },
   ];
+  console.log(selectedUser);
   return (
     <>
       <DataGrid rows={data} columns={columns} loading={loading} 
@@ -117,6 +143,27 @@ const UsuariosTable = ({ data, loading }) => {
       {openEdit && (
         <PlanAlimentacionEditarModal open={openEdit} setOpen={setOpenEdit} />
       )}
+       <Dialog
+        open={openDialog}
+        onClose={handleClose}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+      >
+        <DialogTitle id="alert-dialog-title">
+          ¿Deseas degradar esta cuenata membresía Tlali?
+        </DialogTitle>
+        <DialogContent>
+          <DialogContentText id="alert-dialog-description">
+            Al aceptar no podrás revertir este cambio.
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose}>Cancelar</Button>
+          <Button onClick={handleEditUser} autoFocus>
+            Aceptar
+          </Button>
+        </DialogActions>
+      </Dialog>
     </>
   );
 };

@@ -70,7 +70,7 @@ const Usuarios = () => {
           }
         />
         <br></br>
-        <UsuariosTable data={usersList} loading={loading}/>
+        <UsuariosTable data={usersList} loading={loading} handleGetUsers={handleGetUsers}/>
       </Grid>
     </Grid>
   </>
