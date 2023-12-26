@@ -12,7 +12,7 @@ const MembresiasTableMobile = () => {
       descripcion: "Afiliciación $0",
       precio: "Mensualidad $250.00 (en consumo)",
       color: '#C5C6C4',
-      beneficios: ['Bonificación de puntos','Prioridad a sus Platillos','Código de Referencia','Conferencias y eventos']
+      beneficios: ['Bonificación de puntos. Te abonamos el 5% de tus compras.','Prioridad a sus Platillos. Priorizamos tu orden sobre las demás para que esté lista más rapido.','Código de Referencia. Si alguien tramita una membresía (excepto membresía Tlali) con tu código de cliente, tu siguiente compra tendrá un 50% de descuento.','Conferencias y eventos. Acceso preferencial a todas las conferencias y eventos que se imparten en el restaurante.']
     },
     {
       id: 2,
@@ -20,7 +20,7 @@ const MembresiasTableMobile = () => {
       descripcion: "Afiliciación $165",
       precio: "Mensualidad $550 (en consumo)",
       color: '#A9BDB1',
-      beneficios: ['Beneficios de membresia Tlali','Suscripción de waffles','Pedidos anticipados']
+      beneficios: ['Beneficios de membresia Tlali','Suscripción de waffles. Agrega hasta 4 topings a tu waffle y solo paga la base.','Pedidos anticipados. Puedes marcar al restaurante. y con tu nombre y número de membresía te los vamos preparando, paque que cuando llegues al restaurante. tu comida esté lista.']
     },
     {
       id: 3,
@@ -28,7 +28,7 @@ const MembresiasTableMobile = () => {
       descripcion: "Afiliciación $260",
       precio: "Mensualidad $800 (en consumo)",
       color: '#83948F',
-      beneficios: ['Beneficios de membresia Maya','Línea de crédito','Chef a domicilio', 'Cubiertos personalizados', 'Plan de nutrición']
+      beneficios: ['Beneficios de membresia Maya','Línea de crédito. Tus consumos se van acumulando y solo los pagas al final del mes. Tal como funciona una tarjeta de crédito.','Chef a domicilio. Uno de nuestros chefs pueden ir a cocinar el menú que tu quieras, hasta tu domicilio. Haznos saber el menú que quieres y cotizamos.', 'Cubiertos personalizados. Cuchillo con nombre y apellido del comensal.', 'Plan de nutrición. La membresía incluye un plan inicial de nutrición. (Primer consulta sin costo)']
     },
 
   ];
