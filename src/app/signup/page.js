@@ -69,7 +69,7 @@ const Signup = () => {
       const recaptchaVerifier = initializeRecaptcha();
       const phoneNumber = formatPhoneNumber(values.NUMERO_TELEFONO);
       const userDoc = await getUserByPhoneNumber(phoneNumber);
-      if (userDoc !== null) {
+      if (userDoc && userDoc.status !== 'Cuenta Eliminada' ) {
         setErrorMessage({
           message:
             "Ya existe una cuenta que está utilizando ese número telefónico",

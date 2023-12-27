@@ -18,6 +18,7 @@ import { auth } from "@/firebase/firebase";
 import { useDispatch, useSelector } from "react-redux";
 import { resetUserData } from "@/redux/reducers/user";
 import { editUserStatus } from "@/services/userServices";
+import { Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from "@mui/material";
 
 const pages = [
   {
@@ -39,6 +40,7 @@ function TopNavbar() {
   const router = useRouter();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const [openDialog, setOpenDialog] = React.useState(false);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -83,7 +85,6 @@ function TopNavbar() {
   };
   const deleteUserAccount = () => {
     const userAux = auth.currentUser;
-    console.log(userAux);
     editUserStatus(userAux.uid, 'Cuenta Eliminada');
     deleteUser(userAux).then(() => {
       logOut();
@@ -91,8 +92,12 @@ function TopNavbar() {
      console.error(error)
     });
   }
+  const handleClose = () => {
+    setOpenDialog(false);
+  }
 
   return (
+    <>
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
@@ -220,7 +225,7 @@ function TopNavbar() {
               <MenuItem onClick={logOut}>
                 <Typography textAlign="center">Cerrar Sesión</Typography>
               </MenuItem>
-              <MenuItem onClick={deleteUserAccount}>
+              <MenuItem onClick={()=>setOpenDialog(true)}>
                 <Typography textAlign="center">Eliminar Cuenta</Typography>
               </MenuItem>
             </Menu>
@@ -228,6 +233,28 @@ function TopNavbar() {
         </Toolbar>
       </Container>
     </AppBar>
+           <Dialog
+           open={openDialog}
+           onClose={handleClose}
+           aria-labelledby="alert-dialog-title"
+           aria-describedby="alert-dialog-description"
+         >
+           <DialogTitle id="alert-dialog-title">
+             ¿Deseas eliminar tu cuenta?
+           </DialogTitle>
+           <DialogContent>
+             <DialogContentText id="alert-dialog-description">
+               Una vez que se elimine no podrás revertir la acción. Ni recuperar el historial de la cuenta.
+             </DialogContentText>
+           </DialogContent>
+           <DialogActions>
+             <Button onClick={handleClose}>Cancelar</Button>
+             <Button onClick={deleteUserAccount} autoFocus>
+               Eliminar
+             </Button>
+           </DialogActions>
+         </Dialog>
+    </>
   );
 }
 export default TopNavbar;
