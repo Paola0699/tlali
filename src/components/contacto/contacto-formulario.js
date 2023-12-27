@@ -31,6 +31,7 @@ const ContactoFormulario = () => {
           membership: "tlali",
           email: CORREO_ELECTRONICO,
           birthDay: new Date(FECHA_NACIMIENTO),
+          status: 'Activa'
         };
         await postUser(user.uid, userData);
         document.cookie = "userType=usuario";

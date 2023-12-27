@@ -29,13 +29,13 @@ export default async function middleware(req, res) {
 
     if (!cookie && !userType && isProtectedUserRoute) {
       resolve(NextResponse.redirect(`${origin}/login`));
-    } else if (cookie && userType.value === 'usuario' && (isPublicUserRoute || isProtectedAdminRoute)) {
+    } else if (cookie && userType?.value === 'usuario' && (isPublicUserRoute || isProtectedAdminRoute)) {
       resolve(NextResponse.redirect(`${origin}/usuario`));
-    } else if (cookie && userType.value === 'admin' && isProtectedUserRoute) {
+    } else if (cookie && userType?.value === 'admin' && isProtectedUserRoute) {
       resolve(NextResponse.redirect(`${origin}/admin/usuarios`));
     } else if (!cookie && !userType && isProtectedAdminRoute) {
       resolve(NextResponse.redirect(`${origin}/admin/login`));
-    } else if (cookie && userType.value === 'admin' && isPublicAdminRoute) {
+    } else if (cookie && userType?.value === 'admin' && isPublicAdminRoute) {
       resolve(NextResponse.redirect(`${origin}/admin/usuarios`));
     } else {
       resolve(NextResponse.next());

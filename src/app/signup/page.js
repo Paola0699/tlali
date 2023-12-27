@@ -7,6 +7,7 @@ import SignupForm from "./signup-form";
 import { useFormik } from "formik";
 import * as yup from "yup";
 import { formatPhoneNumber } from "@/utils/utils";
+const moment = require('moment-timezone');
 import {
   PhoneAuthProvider,
   RecaptchaVerifier,
@@ -60,8 +61,14 @@ const Signup = () => {
         .required("Debes ingresar tu fecha de nacimiento para continuar"),
     }),
     onSubmit: (values) => {
-      handleSendCode(values);
-    },
+      const originalDate = moment(values.FECHA_NACIMIENTO);
+      console.log(originalDate.format());
+      const newValues = {
+        ...values,
+        FECHA_NACIMIENTO: originalDate.format()
+      }
+      handleSendCode(newValues);
+      },
   });
 
   const handleSendCode = async (values) => {
@@ -69,7 +76,7 @@ const Signup = () => {
       const recaptchaVerifier = initializeRecaptcha();
       const phoneNumber = formatPhoneNumber(values.NUMERO_TELEFONO);
       const userDoc = await getUserByPhoneNumber(phoneNumber);
-      if (userDoc && userDoc.status !== 'Cuenta Eliminada' ) {
+      if (userDoc) {
         setErrorMessage({
           message:
             "Ya existe una cuenta que está utilizando ese número telefónico",
@@ -109,8 +116,11 @@ const Signup = () => {
         membership: "tlali",
         phoneNumber: formatPhoneNumber(NUMERO_TELEFONO),
         birthDay: new Date(FECHA_NACIMIENTO),
+        status: 'Activa'
       };
       await postUser(user.uid, userData);
+      document.cookie = 'userType=usuario';
+      document.cookie = "isAuthenticated=true";
       handleRedirect('/usuario');
     } catch (error) {
       setErrorMessage({
@@ -129,8 +139,6 @@ const Signup = () => {
         const userData = await getUser(user.uid);
         if(userData){
           document.cookie = 'userType=usuario';
-        }else{
-          document.cookie = 'userType=admin';
         }
         document.cookie = "isAuthenticated=true";
       }

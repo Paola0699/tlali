@@ -49,7 +49,7 @@ export const editUserStatus = async (uid, status) => {
 export const getUserByPhoneNumber = async (phoneNumber) => {
   const q = query(
     collection(db, "users"),
-    where("phoneNumber", "==", phoneNumber)
+    where("phoneNumber", "==", phoneNumber), where("status", '!=', 'Cuenta Eliminada')
   );
   try {
     const querySnapshot = await getDocs(q);

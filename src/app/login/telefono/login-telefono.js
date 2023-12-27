@@ -74,14 +74,14 @@ const LoginTelefono = ({ handleRedirect, loginMethod, setLoginMethod }) => {
       const recaptchaVerifier = initializeRecaptcha();
       const phoneNumber = formatPhoneNumber(values.NUMERO_TELEFONO);
       const userDoc = await getUserByPhoneNumber(phoneNumber);
-      if (userDoc === null || userDoc.status === 'Cuenta Eliminada' ) {
+      if ( !userDoc || userDoc.status === 'Cuenta Eliminada' ) {
         setErrorMessage({
           message:
             "No existe ningún usuario registrado con este número telefónico.",
         });
         return;
       }
-
+      else{
       const response = await signInWithPhoneNumber(
         auth,
         `+${phoneNumber}`,
@@ -89,7 +89,7 @@ const LoginTelefono = ({ handleRedirect, loginMethod, setLoginMethod }) => {
       );
       setConfirmationResult(response);
       setSendMessageSuccess(true);
-      
+      }
     } catch (error) {
       setErrorMessage({
         message: "Error sending code: ",
