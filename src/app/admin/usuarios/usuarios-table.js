@@ -70,7 +70,10 @@ const UsuariosTable = ({ data, loading, handleGetUsers }) => {
     {
       field: "Status de cuenta",
       headerName: "Status de cuenta",
-      width: 200
+      width: 200,
+      valueGetter: (params) => {
+        return params.row.status ? params.row.status : 'Cuenta Activa' ;
+      },
     },
     {
       field: "Acciones",

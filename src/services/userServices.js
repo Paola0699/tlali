@@ -42,6 +42,10 @@ export const editUserPoints = async (uid, points) => {
   return await updateDoc(doc(db, 'users', uid), {points: points});
 };
 
+export const editUserStatus = async (uid, status) => {
+  return await updateDoc(doc(db, 'users', uid), {status: status});
+};
+
 export const getUserByPhoneNumber = async (phoneNumber) => {
   const q = query(
     collection(db, "users"),
@@ -50,7 +54,12 @@ export const getUserByPhoneNumber = async (phoneNumber) => {
   try {
     const querySnapshot = await getDocs(q);
     if (querySnapshot.size > 0) {
-      return querySnapshot.docs[0];
+      const phoneNumbers = querySnapshot.docs.map(doc => ({
+        id: doc.id,
+        ...doc.data(),
+    }));
+
+      return phoneNumbers[0];
     } else {
       return null;
     }

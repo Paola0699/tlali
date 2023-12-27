@@ -13,10 +13,11 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { signOut } from "firebase/auth";
+import { deleteUser, signOut } from "firebase/auth";
 import { auth } from "@/firebase/firebase";
 import { useDispatch, useSelector } from "react-redux";
 import { resetUserData } from "@/redux/reducers/user";
+import { editUserStatus } from "@/services/userServices";
 
 const pages = [
   {
@@ -80,6 +81,16 @@ function TopNavbar() {
         console.log(error);
       });
   };
+  const deleteUserAccount = () => {
+    const userAux = auth.currentUser;
+    console.log(userAux);
+    editUserStatus(userAux.uid, 'Cuenta Eliminada');
+    deleteUser(userAux).then(() => {
+      logOut();
+    }).catch((error) => {
+     console.error(error)
+    });
+  }
 
   return (
     <AppBar position="static">
@@ -208,6 +219,9 @@ function TopNavbar() {
             >
               <MenuItem onClick={logOut}>
                 <Typography textAlign="center">Cerrar Sesión</Typography>
+              </MenuItem>
+              <MenuItem onClick={deleteUserAccount}>
+                <Typography textAlign="center">Eliminar Cuenta</Typography>
               </MenuItem>
             </Menu>
           </Box>
