@@ -58,7 +58,7 @@ const UsuariosTable = ({ data, loading, handleGetUsers }) => {
       field: "birthDay",
       headerName: "Cumpleaños",
       valueGetter: (params) => {
-        return moment.unix(params.row.birthDay.seconds).format("DD MMMM YYYY");
+        return moment.unix(params.row.birthDay.seconds).add(1, 'day').format("DD MMMM YYYY");
       },
       width: 300,
     },
