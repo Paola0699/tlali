@@ -11,7 +11,7 @@ import { addSelectedSubcription } from "@/redux/reducers/user";
 const products = [
   {
     id: "maya",
-    price: "price_1O0tHGJtRlO4IsvvvTmnxsOM",
+    price: "price_1OZ12WHAhXq7aUmNuWisHHaN",
     name: "maya",
     nombre: "Maya",
     descripcion: "Afiliciación $165",
@@ -26,7 +26,7 @@ const products = [
   },
   {
     id: "azteca",
-    price: "price_1O4TvmJtRlO4IsvvjeQcs69i",
+    price: "price_1OZ13cHAhXq7aUmNPSndogS4",
     name: "azteca",
     nombre: "Azteca",
     descripcion: "Afiliciación $260",
